@@ -3,7 +3,7 @@
   content: "";
   flex: 1;
   height: 1px;
-  background: #eee; 
+  background: #eee;
 }
 
 .h-custom {
@@ -40,7 +40,7 @@
 
 .side-bar {
   max-width: 200px;
-  background-color: #EF5959;
+  background-color: #ef5959;
   height: 100%;
 }
 
@@ -67,7 +67,12 @@
 
 .lead-button {
   width: 100% !important;
- 
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: var(--bs-nav-pills-link-active-color);
+  background-color: #ef5959 !important;
 }
 
 .table {
@@ -153,7 +158,6 @@
   text-decoration: none;
   display: block;
 }
-
 
 .dropdown a:hover {
   background-color: #ddd;
