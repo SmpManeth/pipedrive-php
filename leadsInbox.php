@@ -18,8 +18,11 @@
 
     <div class="d-flex sidenav-menu">
         <div class="nav flex-column nav-pills me-3 px-2 sidenav-item" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <button class="nav-link lead_button active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+            <button class="nav-link lead_button" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
                 Lead Inbox
+            </button>
+            <button class="nav-link lead_button" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                Lead Inbox 2
             </button>
         </div>
         <div class="tab-content table" id="v-pills-tabContent">
