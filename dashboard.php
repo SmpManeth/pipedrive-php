@@ -13,10 +13,19 @@
 
 <body style="background-color:#F7F7F7 ">
     <!-- header and Sidebar -->
+    <!-- header and Sidebar -->
     <?php include("app/includes/header.php") ?>
 
+    <div class="d-flex sidenav-menu">
+        <div class="tab-content table" id="v-pills-tabContent">
+            <?php include("app/includes/leads.php") ?>
+            <?php include("app/includes/deals.php") ?>
+        </div>
 
-   <?php include("app/includes/footer.php") ?>
+
+    </div>
+
+    <?php include("app/includes/footer.php") ?>
 </body>
 
 </html>

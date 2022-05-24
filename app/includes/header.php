@@ -29,6 +29,13 @@
 
     </div>
     <!-- side bar -->
-    <div class="side-bar fixed-top">
-
+    <div class=" d-flex side-bar fixed-top ">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <button class="nav-link lead_buttons active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-leads" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                Leads
+            </button>
+            <button class="nav-link lead_buttons" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-deals" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                Deals
+            </button>
+        </div>
     </div>
