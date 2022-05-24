@@ -140,7 +140,7 @@
   position: absolute;
   right: 10px;
   background-color: #ffffff;
-  min-width: 360px;
+  min-width: 300px;
   overflow: auto;
   z-index: 1;
 }
@@ -153,8 +153,13 @@
   display: block;
 }
 
+
 .dropdown a:hover {
   background-color: #ddd;
+}
+.dropdown a img {
+  width: 25px;
+  margin-right: 15px;
 }
 
 .show {
