@@ -1,0 +1,46 @@
+.divider:after,
+.divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+
+.h-custom {
+    height: calc(100% - 73px);
+}
+
+@media (max-width: 450px) {
+    .h-custom {
+        height: 100%;
+    }
+}
+.border{
+    border: 2px solid red !important;
+}
+.btn{
+    background-color: #EF5959;
+    border: none;
+}
+.company-logo{
+   
+   text-align: center;
+   
+}
+.company-logo img{
+object-fit: contain;
+}
+.navbar{
+    margin-left: 56px;
+    max-height: 56px;
+}
+.side-bar{
+    max-width: 56px;
+    background-color: #404346;
+    height: 100%;
+}
+.head-text{
+  font-size: large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Cochin, Georgia, Times, serif;
+}
+
