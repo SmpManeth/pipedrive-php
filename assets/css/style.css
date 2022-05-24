@@ -43,40 +43,37 @@
     "Lucida Sans", Arial, sans-serif, Cochin, Georgia, Times, serif;
 }
 
-<<<<<<< HEAD
 .sidenav-menu {
   padding-top: 20px !important;
   padding-left: 80px !important;
 }
-=======
+
 /* Style the search box inside the navigation bar */
 .search-container {
-position: relative;
-margin: auto;
-
+  position: relative;
+  margin: auto;
 }
-.search-container input[type=text] {
-    padding: 6px;
-    margin-top: 0px;
-    font-size: 17px;
-    border: 1px solid grey;
-    width: 450px;
-    border-radius: 40px;
-    margin-bottom: 8px;
+.search-container input[type="text"] {
+  padding: 6px;
+  margin-top: 0px;
+  font-size: 17px;
+  border: 1px solid grey;
+  width: 450px;
+  border-radius: 40px;
+  margin-bottom: 8px;
 }
 .search-container button {
-    float: right;
-    padding: 6px 10px;
-    margin-left: 10px;
-    margin-right: 16px;
-    background: #ddd;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-    border-radius: 40px;
+  float: right;
+  padding: 6px 10px;
+  margin-left: 10px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  border-radius: 40px;
 }
- .search-container button:hover {
-     background: #ccc;
-     border:none;
- }
->>>>>>> 633aa1d5f23f537157f4dc4fd58d197daa8e72d1
+.search-container button:hover {
+  background: #ccc;
+  border: none;
+}
