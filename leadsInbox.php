@@ -16,13 +16,13 @@
     <!-- header and Sidebar -->
     <?php include("app/includes/header.php") ?>
 
-    <div class="d-flex align-items-start sidenav-menu">
+    <div class="d-flex sidenav-menu">
         <div class="nav flex-column nav-pills me-3 px-2 sidenav-item" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+            <button class="nav-link lead_button active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
                 Lead Inbox
             </button>
         </div>
-        <div class="tab-content sidenav-item" id="v-pills-tabContent">
+        <div class="tab-content table" id="v-pills-tabContent">
             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
                 <table class="table">
                     <thead>
@@ -53,6 +53,7 @@
     </div>
 
     <script src="https://kit.fontawesome.com/27dd36351b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
 </html>
