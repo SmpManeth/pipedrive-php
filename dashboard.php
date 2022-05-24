@@ -16,8 +16,7 @@
     <?php include("app/includes/header.php") ?>
 
 
-    <script src="https://kit.fontawesome.com/27dd36351b.js" crossorigin="anonymous"></script>
-   <script src="assets/js/scripts.js"></script>
+   <?php include("app/includes/footer.php") ?>
 </body>
 
 </html>
