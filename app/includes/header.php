@@ -22,8 +22,8 @@
             <div id="myDropdown" class="dropdown-content shadow-sm">
                 <p class="text-muted pt-3 ps-4">MANETH PATHIRANA</p>
                 <a href="#"><img width="25px" src="https://img.icons8.com/pastel-glyph/64/000000/pupil-male--v2.png" />Personal Preferences</a>
-                <a href="logout.php">Settings</a>
-                <a href="#">Log Out</a>
+                <a href="#">Settings</a>
+                <a href="logout.php">Log Out</a>
             </div>
         </div>
 
