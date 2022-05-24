@@ -3,7 +3,7 @@
   content: "";
   flex: 1;
   height: 1px;
-  background: #eee;
+  background: #eee; 
 }
 
 .h-custom {
@@ -34,13 +34,13 @@
 }
 
 .navbar {
-  margin-left: 56px;
+  margin-left: 200px;
   max-height: 56px;
 }
 
 .side-bar {
-  max-width: 56px;
-  background-color: #404346;
+  max-width: 200px;
+  background-color: #EF5959;
   height: 100%;
 }
 
@@ -52,21 +52,22 @@
 
 .sidenav-menu {
   padding-top: 20px !important;
-  padding-left: 80px !important;
+  padding-left: 210px !important;
   width: 100% !important;
   height: 100% !important;
 }
 
 .sidenav-item {
-  padding-right: 50px !important;
+  padding-right: 20px !important;
   padding-top: 20px !important;
-  width: 10%;
+  width: 20%;
   height: 1000px !important;
   border-right: 1px solid black;
 }
 
 .lead-button {
   width: 100% !important;
+ 
 }
 
 .table {
