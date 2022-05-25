@@ -1,5 +1,5 @@
 
-    <div class="tab-pane fade show active" id="v-pills-leads" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
+    <div class="tab-pane fade show" id="v-pills-leads" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
         <table class="table">
             <thead>
                 <tr>
