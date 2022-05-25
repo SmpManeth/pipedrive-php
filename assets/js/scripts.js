@@ -47,10 +47,13 @@ function dragOver(e) {
     e.preventDefault();
     // console.log("Dragging Over");
 }
-function dragEnter(){
+function dragEnter() {
+    this.style.border = "2px solid #2924241f";
+   
     console.log("Dragg Entered");
 }
-function dragLeave(){
+function dragLeave() {
+    this.style.border = "none";
     console.log("Dragg Leaved");
 }
 function dragDrop() {
