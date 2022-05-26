@@ -1,4 +1,96 @@
 <div class="tab-pane fade show active" id="v-pills-deals" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
+   <!-- Button trigger modal -->
+   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Add Deal
+   </button>
+   <!-- Modal -->
+   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">Add Deal</h5>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0 ps-3 pe-3">
+               <form action="#" method="get">
+                  <div class="row">
+                     <div class="col-6 left-col-deal p-2 ps-3">
+                        <div>
+                           <div class="model-item text-muted">
+                              <p class="">Contact Person</p>
+                              <i class="fa fa-user icon"></i>
+                              <input class="input-field input-text" type="text">
+                           </div>
+                           <div class="model-item text-muted">
+                              <p class="">Organizationn</p>
+                              <i class="fa fa-building icon"></i>
+                              <input class="input-field input-text" type="text">
+                           </div>
+                           <div class="model-item text-muted">
+                              <p class="">Title</p>
+
+                              <input class="input-field" type="text">
+                           </div>
+                           <div class="model-item text-muted">
+                              <p class="">Value</p>
+
+                              <input class="input-field" type="text" style="width: 125px;">
+                              <select class="input-field" name="" id="" style="width: 120px; height: 27px; padding: 0px;">
+                                 <option class="" value="">Sri Lankan Rupee (LKR)</option>
+                              </select>
+                           </div>
+                           <div class="model-item text-muted">
+                              <p class="">Pipeline</p>
+
+                              <input class="input-field" type="text">
+                           </div>
+
+                           <div class="model-item text-muted">
+                              <p class="">Pipeline Stage</p>
+
+                              <select class="input-field" name="" id="" style="height: 27px; padding: 0px;">
+                                 <option class="" value="">Tage One</option>
+                              </select>
+                           </div>
+                           <div class="model-item text-muted">
+                              <p class="">Expected Closing Date</p>
+
+                              <input class="input-field" type="date">
+                           </div>
+
+                        </div>
+                     </div>
+
+                     <div class="col-6 p-2 ps-3">
+                        <div class="model-item text-muted">
+                           <p class="">Phone</p>
+
+                           <input class="input-field" type="text">
+                           <a class="add_field_button text-decoration-none  h6">+Add Phone</a>
+                           <div class="input_fields_wrap">
+
+
+
+                           </div>
+
+
+                        </div>
+
+
+                     </div>
+
+                  </div>
+
+               </form>
+
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+               <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+         </div>
+      </div>
+   </div>
 
    <div class="row d-flex">
       <h2>
@@ -7,16 +99,6 @@
    </div>
    <div class="d-flex flex-row stage-row">
       <!-- stage one -->
-      <div class="modal ps-5 border" id="">
-         <div class="mohdal_header">
-            <div class="model_title">Add Deals</div>
-            <button class="btn close-modal">&times;</button>
-         </div>
-         <div class="deal_body">
-            <input type="text" />
-            <input type="submit" />
-         </div>
-      </div>
       <div class="p-2 stage border">
 
          <div class="stage-box">
@@ -82,9 +164,6 @@
                fhjd <br>gbnf,
             </div>
 
-
-
-
          </div>
       </div>
 
@@ -108,7 +187,6 @@
             </div>
          </div>
          <div class="deal-stage-col">
-
 
          </div>
       </div>
@@ -189,7 +267,5 @@
 
 
    </div>
-
-   <!-- modal -->
 
 </div>

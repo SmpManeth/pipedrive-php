@@ -28,7 +28,7 @@ position: relative;
 
 .deal-stage-col {
   position: relative;
-  width: 370px;
+  width: 300px;
   height: 100%;
   margin-top: 11px;
   left: -20px;
@@ -236,4 +236,89 @@ position: relative;
 .dropdown a img {
   width: 25px;
   margin-right: 15px;
+}
+
+.show {
+  display: block;
+}
+.model-item p {
+  margin: 0px;
+  padding: 0px;
+  font-size:14px ;
+}
+.model-item{
+  height: fit-content;
+  
+  margin-bottom: 10px;
+}
+
+.icon {
+  position: relative;
+  z-index: 1;
+  left: 5px;
+  margin-left: 5px;
+  font-size: 15px;
+}
+
+.input-text {
+  padding: 0px;
+  padding-left: 30px !important;
+  border: 0.5px solid grey;
+  border-radius: 5px;
+  width: 250px;
+  position: relative;
+ left: -22px;
+  color: grey;
+  font-size: 16px;
+}
+.input-field {
+padding-left: 2px !important;
+  padding: 0px;
+  border: 0.5px solid grey;
+  border-radius: 5px;
+  width: 250px;
+  color: grey;
+  font-size: 16px;
+}
+
+.modal-content {
+ 
+width: 620px;
+height: 727px;
+}
+.left-col-deal{
+  border-right: 1px solid gray;
+  height:587px;
+}
+ .pipeline {
+   position: relative;
+   
+   width: 250px;
+   height: 30px;
+ }
+
+.stage-one {
+  width: 50px;
+  height: 28px;
+  background-color: green;
+  clip-path: polygon(75% 0%, 95% 50%, 75% 100%, 0% 100%, 0% 0%);
+}
+
+.stage-next {
+  position: relative;
+  margin-left: -16px;
+  width: 50px;
+  height: 28px;
+  background-color: rgba(177, 175, 175, 0.424);
+    
+  clip-path: polygon(75% 0%, 95% 50%, 75% 100%, 0% 100%, 20% 50%, 0% 0%);
+}
+.stage-last {
+  position: relative;
+  margin-left: -16px;
+  width: 50px;
+  height: 28px;
+  background-color: rgba(177, 175, 175, 0.424);
+
+  clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 0% 100%, 20% 50%, 0% 0%);
 }
