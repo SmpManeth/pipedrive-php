@@ -14,6 +14,7 @@
         <div class="tab-content table" id="v-pills-tabContent">
             <?php include("app/includes/leads.php") ?>
             <?php include("app/includes/deals.php") ?>
+            <?php include("app/includes/settings.php") ?>
         </div>
     </div>
     <?php include("app/includes/footer.php") ?>
