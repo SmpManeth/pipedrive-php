@@ -57,6 +57,7 @@ function dragLeave() {
     console.log("Dragg Leaved");
 }
 function dragDrop() {
+    this.style.border = "none";
     this.appendChild(draggable_deal_box);
     console.log("Dragg Drop");
 }
