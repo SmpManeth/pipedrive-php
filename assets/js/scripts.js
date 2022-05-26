@@ -61,3 +61,4 @@ function dragDrop() {
     this.appendChild(draggable_deal_box);
     console.log("Dragg Drop");
 }
+

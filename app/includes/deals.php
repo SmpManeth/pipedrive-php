@@ -7,6 +7,16 @@
    </div>
    <div class="d-flex flex-row stage-row">
       <!-- stage one -->
+      <div class="modal ps-5 border" id="">
+         <div class="mohdal_header">
+            <div class="model_title">Add Deals</div>
+            <button class="btn close-modal">&times;</button>
+         </div>
+         <div class="deal_body">
+            <input type="text" />
+            <input type="submit" />
+         </div>
+      </div>
       <div class="p-2 stage border">
 
          <div class="stage-box">
@@ -180,5 +190,6 @@
 
    </div>
 
+   <!-- modal -->
 
 </div>
