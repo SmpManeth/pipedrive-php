@@ -75,6 +75,19 @@
 
 
                         </div>
+                        <div class="model-item text-muted">
+                           <p class="">Email</p>
+
+                           <input class="input-field" type="text">
+                           <a class="add_f_button text-decoration-none  h6">+Add Email</a>
+                           <div class="input_wrap">
+
+
+
+                           </div>
+
+
+                        </div>
 
 
                      </div>

@@ -112,3 +112,23 @@ $(document).ready(function () {
         $(this).parent('div').parent('div').remove(); x--;
     })
 });
+$(document).ready(function () {
+    var max_fields = 10; //maximum input boxes allowed
+    var wrapper = $(".input_wrap"); //Fields wrapper
+    var add_button = $(".add_f_button"); //Add button ID
+
+    var x = 0; //initlal text box count
+    $(add_button).click(function (e) { //on add input button click
+        e.preventDefault();
+        if (x < max_fields) { //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div><input type="text" name="email" class="input-field"><div class="input-group-append"><button class="btn btn-outline-danger remove_field" type="button">Remove</button></div></div>');
+
+        }
+    });
+
+    $(wrapper).on("click", ".remove_field", function (e) { //user click on remove text
+        e.preventDefault();
+        $(this).parent('div').parent('div').remove(); x--;
+    })
+});
