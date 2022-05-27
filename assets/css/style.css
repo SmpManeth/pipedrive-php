@@ -62,9 +62,9 @@ position: relative;
 
 }
 
-.stage-row {
+/* .stage-row {
 
-}
+} */
 
 .deal-topic {
   height: 20px;
@@ -339,4 +339,18 @@ height: 727px;
   background-color: rgba(177, 175, 175, 0.424);
 
   clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 0% 100%, 20% 50%, 0% 0%);
+}
+
+.filter-menu-options {
+  height: 35px;
+  border: 1px solid black;
+ 
+  
+}
+.filters button{
+  border: none !important;
+  /* border: 1px solid black ; */
+}
+.filter-head{
+  border: 1px solid grey;
 }

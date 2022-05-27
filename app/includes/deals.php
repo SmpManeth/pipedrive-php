@@ -1,8 +1,5 @@
 <div class="tab-pane fade show active" id="v-pills-deals" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
-   <!-- Button trigger modal -->
-   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Add Deal
-   </button>
+
 
    <!-- Modal -->
    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -102,20 +99,39 @@
                </form>
 
             </div>
-
          </div>
       </div>
    </div>
 
-   <div class="row d-flex">
-      <h2>
-         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eligendi atque perferendis quos fuga modi totam, neque voluptas quis inventore commodi repellat voluptates! Tenetur repudiandae nostrum iste reiciendis excepturi voluptas?
-      </h2>
+   <!-- filtering heading -->
+   <div class="row d-flex filter-head">
+      <div class="d-flex filters">
+         <div class="me-1"> <button type="button">
+               <img class="filter-menu-options" src="https://img.icons8.com/ios-glyphs/30/000000/bar-chart.png" />
+            </button>
+         </div>
+         <div class="me-1"> <button type="button">
+               <img class="filter-menu-options" src="https://img.icons8.com/material-sharp/24/000000/stack.png" />
+            </button></div>
+         <div class="me-1"> <button type="button">
+               <img class="filter-menu-options" src="https://img.icons8.com/ios-filled/50/000000/money-circulation.png" />
+            </button></div>
+         <div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+               Add Deal
+            </button>
+         </div>
+      </div>
+
    </div>
-   <div class="d-flex flex-row stage-row">
+
+   <!-- stages and cards -->
+   <div class="d-flex flex-row stage-row ">
       <!-- stage one -->
       <div class="p-2 stage">
 
+         <!-- stage heading -->
          <div class="stage-box">
             <div class="stage-head-card mb-2">
                <p class="fw-bold stage-name ms-3 mt-2 mt-0 me-0 deal-topic">Stage One</p>
@@ -132,7 +148,32 @@
                </svg>
             </div>
          </div>
+
+         <!-- stage card -->
          <div class="deal-stage-col ">
+
+            <!-- single deal caed -->
+            <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
+               <p id="deal-name" class=" m-0">Sterling Deal</p>
+               <p id="deal-organization" class="text-muted m-0">Sterling</p>
+               <div class="d-flex  pt-1">
+                  <i class="fa fa-user icon-stage me-1"></i>
+                  <p id="deal-price" class=" m-0 text-muted ">LKR100</p>
+               </div>
+
+            </div>
+
+            <!-- single deal caed -->
+            <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
+               <p id="deal-name" class=" m-0">Sterling Deal</p>
+               <p id="deal-organization" class="text-muted m-0">Sterling</p>
+               <div class="d-flex  pt-1">
+                  <i class="fa fa-user icon-stage me-1"></i>
+                  <p id="deal-price" class=" m-0 text-muted ">LKR100</p>
+               </div>
+
+            </div>
+            <!-- single deal caed -->
             <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
                <p id="deal-name" class=" m-0">Sterling Deal</p>
                <p id="deal-organization" class="text-muted m-0">Sterling</p>
@@ -145,19 +186,7 @@
 
 
          </div>
-         <div class="deal-stage-col ">
-            <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
-               <p id="deal-name" class=" m-0">Sterling Deal</p>
-               <p id="deal-organization" class="text-muted m-0">Sterling</p>
-               <div class="d-flex  pt-1">
-                  <i class="fa fa-user icon-stage me-1"></i>
-                  <p id="deal-price" class=" m-0 text-muted ">LKR100</p>
-               </div>
 
-            </div>
-
-
-         </div>
       </div>
 
       <!-- stage two -->
@@ -179,30 +208,7 @@
                </svg>
             </div>
          </div>
-         <div class="deal-stage-col ">
-            <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
-               <p id="deal-name" class=" m-0">Sterling Deal</p>
-               <p id="deal-organization" class="text-muted m-0">Sterling</p>
-               <div class="d-flex  pt-1">
-                  <i class="fa fa-user icon-stage me-1"></i>
-                  <p id="deal-price" class=" m-0 text-muted ">LKR100</p>
-               </div>
-
-            </div>
-
-
-         </div>
-         <div class="deal-stage-col ">
-            <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
-               <p id="deal-name" class=" m-0">Sterling Deal</p>
-               <p id="deal-organization" class="text-muted m-0">Sterling</p>
-               <div class="d-flex  pt-1">
-                  <i class="fa fa-user icon-stage me-1"></i>
-                  <p id="deal-price" class=" m-0 text-muted ">LKR100</p>
-               </div>
-
-            </div>
-
+         <div class="deal-stage-col">
 
          </div>
       </div>
@@ -226,16 +232,7 @@
                </svg>
             </div>
          </div>
-         <div class="deal-stage-col ">
-            <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
-               <p id="deal-name" class=" m-0">Sterling Deal</p>
-               <p id="deal-organization" class="text-muted m-0">Sterling</p>
-               <div class="d-flex  pt-1">
-                  <i class="fa fa-user icon-stage me-1"></i>
-                  <p id="deal-price" class=" m-0 text-muted ">LKR100</p>
-               </div>
-
-            </div>
+         <div class="deal-stage-col">
 
 
          </div>
@@ -260,16 +257,7 @@
                </svg>
             </div>
          </div>
-         <div class="deal-stage-col ">
-            <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
-               <p id="deal-name" class=" m-0">Sterling Deal</p>
-               <p id="deal-organization" class="text-muted m-0">Sterling</p>
-               <div class="d-flex  pt-1">
-                  <i class="fa fa-user icon-stage me-1"></i>
-                  <p id="deal-price" class=" m-0 text-muted ">LKR100</p>
-               </div>
-
-            </div>
+         <div class="deal-stage-col">
 
 
          </div>
@@ -293,16 +281,7 @@
                </svg>
             </div>
          </div>
-         <div class="deal-stage-col ">
-            <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
-               <p id="deal-name" class=" m-0">Sterling Deal</p>
-               <p id="deal-organization" class="text-muted m-0">Sterling</p>
-               <div class="d-flex  pt-1">
-                  <i class="fa fa-user icon-stage me-1"></i>
-                  <p id="deal-price" class=" m-0 text-muted ">LKR100</p>
-               </div>
-
-            </div>
+         <div class="deal-stage-col">
 
 
          </div>
