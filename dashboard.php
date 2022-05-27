@@ -16,7 +16,7 @@
             <?php include("app/includes/deals.php") ?>
             <?php include("app/includes/settings.php") ?>
         </div>
-        <h2>odf</h2>
+        
     </div>
     <?php include("app/includes/footer.php") ?>
 </body>
