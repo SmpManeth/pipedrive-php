@@ -49,7 +49,7 @@ function dragOver(e) {
 }
 function dragEnter() {
     this.style.border = "2px solid #2924241f";
-   
+
     console.log("Dragg Entered");
 }
 function dragLeave() {
@@ -103,7 +103,7 @@ $(document).ready(function () {
         if (x < max_fields) { //max input box allowed
             x++; //text box increment
             $(wrapper).append('<div><input type="text" name="phone" class="input-field"><div class="input-group-append"><button class="btn btn-outline-danger remove_field" type="button">Remove</button></div></div>');
- 
+
         }
     });
 
@@ -132,3 +132,5 @@ $(document).ready(function () {
         $(this).parent('div').parent('div').remove(); x--;
     })
 });
+
+

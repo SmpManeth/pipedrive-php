@@ -3,6 +3,7 @@
    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
       Add Deal
    </button>
+
    <!-- Modal -->
    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -12,7 +13,7 @@
                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body p-0 ps-3 pe-3">
-               <form action="#" method="get">
+               <form action="dashboard.php" method="get" class="border">
                   <div class="row">
                      <div class="col-6 left-col-deal p-2 ps-3">
                         <div>
@@ -93,14 +94,15 @@
                      </div>
 
                   </div>
+                  <div class="modal-footer">
 
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                     <button type="submit" value="add_deal" id="deal_submit" class="btn btn-primary">Save changes</button>
+                  </div>
                </form>
 
             </div>
-            <div class="modal-footer">
-               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-               <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+
          </div>
       </div>
    </div>
@@ -112,7 +114,7 @@
    </div>
    <div class="d-flex flex-row stage-row">
       <!-- stage one -->
-      <div class="p-2 stage border">
+      <div class="p-2 stage">
 
          <div class="stage-box">
             <div class="stage-head-card mb-2">
@@ -130,52 +132,30 @@
                </svg>
             </div>
          </div>
-         <div class="deal-stage-col">
-            <div class="d-flex flex-column  border deals-box" draggable="true">
-               ;'ljk'
-               hkl;<br>
-               fhjd <br>gbnf,
+         <div class="deal-stage-col ">
+            <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
+               <p id="deal-name" class=" m-0">Sterling Deal</p>
+               <p id="deal-organization" class="text-muted m-0">Sterling</p>
+               <div class="d-flex  pt-1">
+                  <i class="fa fa-user icon-stage me-1"></i>
+                  <p id="deal-price" class=" m-0 text-muted ">LKR100</p>
+               </div>
+
             </div>
-            <div class="d-flex flex-column  border deals-box" draggable="true">
-               ;'ljk'
-               hkl;<br>
-               fhjd <br>gbnf,
+
+
+         </div>
+         <div class="deal-stage-col ">
+            <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
+               <p id="deal-name" class=" m-0">Sterling Deal</p>
+               <p id="deal-organization" class="text-muted m-0">Sterling</p>
+               <div class="d-flex  pt-1">
+                  <i class="fa fa-user icon-stage me-1"></i>
+                  <p id="deal-price" class=" m-0 text-muted ">LKR100</p>
+               </div>
+
             </div>
-            <div class="d-flex flex-column  border deals-box" draggable="true">
-               ;'ljk'
-               hkl;<br>
-               fhjd <br>gbnf,
-            </div>
-            <div class="d-flex flex-column  border deals-box" draggable="true">
-               ;'ljk'
-               hkl;<br>
-               fhjd <br>gbnf,
-            </div>
-            <div class="d-flex flex-column  border deals-box" draggable="true">
-               ;'ljk'
-               hkl;<br>
-               fhjd <br>gbnf,
-            </div>
-            <div class="d-flex flex-column  border deals-box" draggable="true">
-               ;'ljk'
-               hkl;<br>
-               fhjd <br>gbnf,
-            </div>
-            <div class="d-flex flex-column  border deals-box" draggable="true">
-               ;'ljk'
-               hkl;<br>
-               fhjd <br>gbnf,
-            </div>
-            <div class="d-flex flex-column  border deals-box" draggable="true">
-               ;'ljk'
-               hkl;<br>
-               fhjd <br>gbnf,
-            </div>
-            <div class="d-flex flex-column  border deals-box" draggable="true">
-               ;'ljk'
-               hkl;<br>
-               fhjd <br>gbnf,
-            </div>
+
 
          </div>
       </div>
@@ -199,7 +179,30 @@
                </svg>
             </div>
          </div>
-         <div class="deal-stage-col">
+         <div class="deal-stage-col ">
+            <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
+               <p id="deal-name" class=" m-0">Sterling Deal</p>
+               <p id="deal-organization" class="text-muted m-0">Sterling</p>
+               <div class="d-flex  pt-1">
+                  <i class="fa fa-user icon-stage me-1"></i>
+                  <p id="deal-price" class=" m-0 text-muted ">LKR100</p>
+               </div>
+
+            </div>
+
+
+         </div>
+         <div class="deal-stage-col ">
+            <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
+               <p id="deal-name" class=" m-0">Sterling Deal</p>
+               <p id="deal-organization" class="text-muted m-0">Sterling</p>
+               <div class="d-flex  pt-1">
+                  <i class="fa fa-user icon-stage me-1"></i>
+                  <p id="deal-price" class=" m-0 text-muted ">LKR100</p>
+               </div>
+
+            </div>
+
 
          </div>
       </div>
@@ -223,7 +226,16 @@
                </svg>
             </div>
          </div>
-         <div class="deal-stage-col">
+         <div class="deal-stage-col ">
+            <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
+               <p id="deal-name" class=" m-0">Sterling Deal</p>
+               <p id="deal-organization" class="text-muted m-0">Sterling</p>
+               <div class="d-flex  pt-1">
+                  <i class="fa fa-user icon-stage me-1"></i>
+                  <p id="deal-price" class=" m-0 text-muted ">LKR100</p>
+               </div>
+
+            </div>
 
 
          </div>
@@ -248,7 +260,16 @@
                </svg>
             </div>
          </div>
-         <div class="deal-stage-col">
+         <div class="deal-stage-col ">
+            <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
+               <p id="deal-name" class=" m-0">Sterling Deal</p>
+               <p id="deal-organization" class="text-muted m-0">Sterling</p>
+               <div class="d-flex  pt-1">
+                  <i class="fa fa-user icon-stage me-1"></i>
+                  <p id="deal-price" class=" m-0 text-muted ">LKR100</p>
+               </div>
+
+            </div>
 
 
          </div>
@@ -272,7 +293,16 @@
                </svg>
             </div>
          </div>
-         <div class="deal-stage-col">
+         <div class="deal-stage-col ">
+            <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
+               <p id="deal-name" class=" m-0">Sterling Deal</p>
+               <p id="deal-organization" class="text-muted m-0">Sterling</p>
+               <div class="d-flex  pt-1">
+                  <i class="fa fa-user icon-stage me-1"></i>
+                  <p id="deal-price" class=" m-0 text-muted ">LKR100</p>
+               </div>
+
+            </div>
 
 
          </div>
