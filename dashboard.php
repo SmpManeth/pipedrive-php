@@ -1,3 +1,7 @@
+<?php include("path.php");
+// include($ROOT_PATH . "/Includes/controllers/posts.php");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,13 +15,13 @@
     <!-- header and Sidebar -->
     <?php include("app/includes/header.php") ?>
     <div class="d-flex sidenav-menu">
-     
+
         <div class="tab-content table" id="v-pills-tabContent">
             <?php include("app/includes/leads.php") ?>
             <?php include("app/includes/deals.php") ?>
             <?php include("app/includes/settings.php") ?>
         </div>
-       
+
     </div>
     <?php include("app/includes/footer.php") ?>
 </body>

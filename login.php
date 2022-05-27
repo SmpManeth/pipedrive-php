@@ -1,15 +1,11 @@
+<?php include("path.php");
+include($ROOT_PATH . "/app/controllers/users.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Login</title>
+    <?php include("app/includes/head.php") ?>
+    <title>Pipeline name + Dashboard</title>
 </head>
 
 <body>
@@ -23,24 +19,20 @@
                     <div class="company-logo">
                         <img src="https://www.sterlinglanka.com/wp-content/uploads/2019/08/rrrr.png" alt="company logo">
                     </div>
-                    <form>
-
-
+                    <form id="login-form" class="form" action="login.php" method="post">
                         <div class="divider d-flex align-items-center my-4">
                             <p class="text-center fw-bold mx-3 mb-0 h4">Login</p>
                         </div>
 
                         <!-- Email input -->
                         <div class="form-outline mb-4">
-                            <input type="email" id="form3Example3" class="form-control form-control-lg"
-                                placeholder="Enter a valid email address" />
-                            <label class="form-label" for="form3Example3">Email address</label>
+                            <input type="text" name="username" id="username" placeholder="Username" class="form-control" />
+                            <label class="form-label" for="form3Example3">Username</label>
                         </div>
 
                         <!-- Password input -->
                         <div class="form-outline mb-3">
-                            <input type="password" id="form3Example4" class="form-control form-control-lg"
-                                placeholder="Enter password" />
+                            <input type="password" name="password" id="password" placeholder="Password" class="form-control">
                             <label class="form-label" for="form3Example4">Password</label>
                         </div>
 
@@ -56,8 +48,7 @@
                         </div>
 
                         <div class="text-center  mt-5 pt-2">
-                            <button type="button" class="btn btn-primary btn-lg centered"
-                                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                            <button type="submit" name="login-btn" class="btn btn-primary btn-lg centered" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
                         </div>
 
                     </form>

@@ -10,7 +10,7 @@
                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body p-0 ps-3 pe-3">
-               <form action="dashboard.php" method="get" class="border">
+               <form action="dashboard.php" method="get" class="">
                   <div class="row">
                      <div class="col-6 left-col-deal p-2 ps-3">
                         <div>
@@ -105,23 +105,49 @@
 
    <!-- filtering heading -->
    <div class="row d-flex filter-head">
-      <div class="d-flex filters">
-         <div class="me-1"> <button type="button">
+      <div class="d-flex filters ms-4">
+         <div class="shadow mx-1 btnfilter"> <button type="button">
                <img class="filter-menu-options" src="https://img.icons8.com/ios-glyphs/30/000000/bar-chart.png" />
             </button>
          </div>
-         <div class="me-1"> <button type="button">
-               <img class="filter-menu-options" src="https://img.icons8.com/material-sharp/24/000000/stack.png" />
+         <div class="shadow mx-1 btnfilter"> <button type="button">
+               <img class="filter-menu-options" src="<?php echo $BASE_URL . 'assets/images/stack-48.png' ?>" />
             </button></div>
-         <div class="me-1"> <button type="button">
+         <div class="shadow mx-1 btnfilter"> <button type="button">
                <img class="filter-menu-options" src="https://img.icons8.com/ios-filled/50/000000/money-circulation.png" />
             </button></div>
          <div>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
                Add Deal
             </button>
+
+
+
          </div>
+
+         <div>
+            <p>
+               LKR 26,100
+            </p>
+         </div>
+         <div>
+            <p>
+               5 Deals
+            </p>
+         </div>
+         <div class="pipeline-dropdown d-flex">
+            <img class="" src="<?php echo $BASE_URL . 'assets/images/bar-chart-30.png' ?>" />
+            <select class="pipeline-dropdown-input-text" name="" id="" style="height: 27px; padding: 0px;">
+               <option class="" value="">Tage One</option>
+               <option class="" value="">Tage 2</option>
+            </select>
+            <div class="pipeline-edit">
+               <img src="<?php echo $BASE_URL . 'assets/images/icons8-quill-pen-48.png' ?>" alt="">
+            </div>
+         </div>
+
+
       </div>
 
    </div>
