@@ -60,6 +60,7 @@ function dragDrop() {
     this.style.border = "none";
     this.appendChild(draggable_deal_box);
     console.log("Dragg Drop");
+   
 }
 
 
@@ -134,3 +135,11 @@ $(document).ready(function () {
 });
 
 
+jQuery('.stage').bind('DOMSubtreeModified', function (event) {
+   
+
+    var typeidsetresult = $('.deal-stage-col').find('#deal-id');
+    console.log(typeidsetresult);
+        
+}); 
+ 

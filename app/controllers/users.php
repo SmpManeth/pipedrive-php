@@ -3,6 +3,7 @@
 include($ROOT_PATH . "/app/database/db.php");
 include($ROOT_PATH . "/app/helpers/validateUsers.php");
 
+
 $errors = array();
 $username = '';
 $id = '';
@@ -14,6 +15,12 @@ $table = 'users';
 // $client_users = selectAllClients($table, [`admin` => 1]);
 // $admin_users = selectAllfreelancers($table, [`admin` => 1]);
 
+
+
+echo '<script type="text/JavaScript"> 
+    console.log("Hello");
+     </script>'
+;
 
 
 function loginUser($user)

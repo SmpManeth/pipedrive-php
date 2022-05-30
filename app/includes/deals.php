@@ -166,7 +166,7 @@ $stages = selectAll('stages');
 
    <!-- stages and cards -->
    <div class="d-flex flex-row stage-row ">
-      <!-- stage one -->
+      <!-- stage cards -->
 
       <?php foreach ($stages as $key => $stage) { ?>
          <div class="p-2 stage">
@@ -196,6 +196,7 @@ $stages = selectAll('stages');
                <?php foreach ($deals as $key => $deal) {
                   if ($stage['stage_id'] == $deal['pipeline_stage']) { ?>
                      <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
+                        <input type="text" id="deal-id" name="deal_id"  value="<?php echo $deal['deal_id'] ?>">
                         <p id="deal-name" class=" m-0"><?php echo $deal['title'] ?></p>
                         <p id="deal-organization" class="text-muted m-0">Sterling</p>
                         <div class="d-flex  pt-1">
@@ -203,8 +204,13 @@ $stages = selectAll('stages');
                            <p id="deal-price" class=" m-0 text-muted ">LKR100</p>
                         </div>
 
-                     </div>.
-               <?php  }
+                     </div>
+
+               <?php
+                     // if ($stage['stage_id'] != $deal['pipeline_stage']) {
+                     //    dd("Bijja");
+                     // }
+                  }
                } ?>
 
 
@@ -212,109 +218,9 @@ $stages = selectAll('stages');
 
          </div>
 
-      <?php } ?>
+      <?php } ?> 
 
 
-
-
-
-      <!-- stage two -->
-      <div class="p-2 stage ">
-
-         <div class="stage-box">
-            <div class="stage-head-card mb-2">
-               <p class="fw-bold stage-name ms-3 mt-2 mt-0 me-0 deal-topic">Stage One</p>
-               <div class="d-flex">
-                  <p class="text-muted stage-name ms-3 mt-2 mt-0 me-0 deal-p">LKR 23,00000000 :</p>
-                  <p class="text-muted stage-name ms-1 mt-2 mt-0 me-0 deal-p">2 Deals</p>
-               </div>
-               <svg class="arrow" width="16" height="56" xmlns="http://www.w3.org/2000/svg">
-                  <g fill="none" fill-rule="evenodd">
-                     <path class="arrow__right" fill="#F7F7F7" d="M0 0h16v56H0z"></path>
-                     <path class="arrow__border" fill="#E5E5E5" d="M1 0l8 28-8 28H0V0z"></path>
-                     <path class="arrow__left" fill="#F7F7F7" d="M0 1l8 27-8 27z"></path>
-                  </g>
-               </svg>
-            </div>
-         </div>
-         <div class="deal-stage-col">
-
-         </div>
-      </div>
-
-      <!-- stage Three -->
-      <div class="p-2 stage ">
-
-         <div class="stage-box">
-            <div class="stage-head-card mb-2">
-               <p class="fw-bold stage-name ms-3 mt-2 mt-0 me-0 deal-topic">Stage One</p>
-               <div class="d-flex">
-                  <p class="text-muted stage-name ms-3 mt-2 mt-0 me-0 deal-p">LKR 23,00000000 :</p>
-                  <p class="text-muted stage-name ms-1 mt-2 mt-0 me-0 deal-p">2 Deals</p>
-               </div>
-               <svg class="arrow" width="16" height="56" xmlns="http://www.w3.org/2000/svg">
-                  <g fill="none" fill-rule="evenodd">
-                     <path class="arrow__right" fill="#F7F7F7" d="M0 0h16v56H0z"></path>
-                     <path class="arrow__border" fill="#E5E5E5" d="M1 0l8 28-8 28H0V0z"></path>
-                     <path class="arrow__left" fill="#F7F7F7" d="M0 1l8 27-8 27z"></path>
-                  </g>
-               </svg>
-            </div>
-         </div>
-         <div class="deal-stage-col">
-
-
-         </div>
-      </div>
-
-      <!-- stage Four -->
-      <div class="p-2 stage ">
-
-         <div class="stage-box">
-            <div class="stage-head-card mb-2">
-               <p class="fw-bold stage-name ms-3 mt-2 mt-0 me-0 deal-topic">Stage One</p>
-               <div class="d-flex">
-                  <p class="text-muted stage-name ms-3 mt-2 mt-0 me-0 deal-p">LKR 23,00000000 :</p>
-                  <p class="text-muted stage-name ms-1 mt-2 mt-0 me-0 deal-p">2 Deals</p>
-               </div>
-               <svg class="arrow" width="16" height="56" xmlns="http://www.w3.org/2000/svg">
-                  <g fill="none" fill-rule="evenodd">
-                     <path class="arrow__right" fill="#F7F7F7" d="M0 0h16v56H0z"></path>
-                     <path class="arrow__border" fill="#E5E5E5" d="M1 0l8 28-8 28H0V0z"></path>
-                     <path class="arrow__left" fill="#F7F7F7" d="M0 1l8 27-8 27z"></path>
-                  </g>
-               </svg>
-            </div>
-         </div>
-         <div class="deal-stage-col">
-
-
-         </div>
-      </div>
-      <!-- stage Five -->
-      <div class="p-2 stage ">
-
-         <div class="stage-box">
-            <div class="stage-head-card mb-2">
-               <p class="fw-bold stage-name ms-3 mt-2 mt-0 me-0 deal-topic">Stage One</p>
-               <div class="d-flex">
-                  <p class="text-muted stage-name ms-3 mt-2 mt-0 me-0 deal-p">LKR 23,00000000 :</p>
-                  <p class="text-muted stage-name ms-1 mt-2 mt-0 me-0 deal-p">2 Deals</p>
-               </div>
-               <svg class="arrow" width="16" height="56" xmlns="http://www.w3.org/2000/svg">
-                  <g fill="none" fill-rule="evenodd">
-                     <path class="arrow__right" fill="#F7F7F7" d="M0 0h16v56H0z"></path>
-                     <path class="arrow__border" fill="#E5E5E5" d="M1 0l8 28-8 28H0V0z"></path>
-                     <path class="arrow__left" fill="#F7F7F7" d="M0 1l8 27-8 27z"></path>
-                  </g>
-               </svg>
-            </div>
-         </div>
-         <div class="deal-stage-col">
-
-
-         </div>
-      </div>
 
 
    </div>
