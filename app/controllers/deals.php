@@ -1,8 +1,5 @@
 <?php
-
-include($ROOT_PATH . "/app/database/db.php");
-include($ROOT_PATH . "/app/helpers/validateUsers.php");
-
+include($ROOT_PATH . "/app/helpers/validatedeal.php");
 $errors = array();
 $username = '';
 $id = '';
@@ -10,32 +7,19 @@ $email = '';
 $admin = '';
 $password = '';
 $passwordConf = '';
-$table = 'users';
+$table = 'deal';
 // $client_users = selectAllClients($table, [`admin` => 1]);
 // $admin_users = selectAllfreelancers($table, [`admin` => 1]);
 
 
 
-function loginUser($user)
-{
-
-    $_SESSION['id'] = $user['id'];
-    $_SESSION['username'] = $user['username'];
-    $_SESSION['user_type'] = $user['admin'];
-    $_SESSION['role'] = $user['user_type'];
-    $_SESSION['message'] = 'Logged in!';
-    $_SESSION['type'] = 'success';
-
-    header('location: ' . $BASE_URL . 'dashboard.php');
-    exit();
-}
 //delete users
 if (isset($_GET['del_id'])) {
     $count = delete($table, $_GET['del_id']);
     $_SESSION['message'] = 'User Deleted Succesfully';
     $_SESSION['type'] = '';
     header('location: ' . $BASE_URL . 'admin/managefreelancers.php');
-    exit();
+    
 }
 if (isset($_GET['dell_id'])) {
     $count = delete($table, $_GET['dell_id']);
@@ -46,41 +30,37 @@ if (isset($_GET['dell_id'])) {
 }
 
 
-if (isset($_POST["register-btn"]) || isset($_POST["create-admin"])) {
-    $errors = validateUser($_POST);
-
+if (isset($_GET["submit_deal"])) {
+   
+    $errors = validatedeal($_GET);
+ 
     /* if (isset($_POST["client"])) {
         $_POST['urole'] = 'client';
     } elseif (isset($_POST["freelancer"])) {
         $_POST['urole'] = 'freelancer';
     }*/
     if (count($errors) === 0) {
+       
+        unset($_GET["submit_deal"]);
+        unset($_GET["phone"]);
+        unset($_GET["email"]);
+        unset($_GET["currency"]);
+      
 
-        unset($_POST["register-btn"], $_POST["passwordConf"], $_POST["create-admin"], $_POST["agree"]);
-
-        $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
 
-        if (isset($_POST["admin"])) {
-            $_POST['admin'] = 1;
-            $user_id = create($table, $_POST);
-            $_SESSION['message'] = " User Created Succesfuly";
-            $_SESSION['type'] = '';
-            header('location: ' . $BASE_URL . 'admin/users/index.php');
-            exit();
-        } else {
-            $_POST['admin'] = 0;
+        $_GET['user_id'] = $_SESSION['id'];
+        
 
-            $user_id = create($table, $_POST);
-
-            $user = selectOne($table, ['id' => $user_id]);
-            loginUser($user);
-        }
-    } else {
-        $username = $_POST['username'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $passwordConf = $_POST['passwordConf'];
+     $postid = create($table, $_GET);
+        $_SESSION['message'] = 'Deal Added Succesfully';
+        $_SESSION['type'] = '';
+        header('location: ' . $BASE_URL . 'dashboard.php');
+      
+    } 
+    else{
+        $_SESSION['message'] = 'Error';
+        $_SESSION['type'] = '';
     }
 }
 

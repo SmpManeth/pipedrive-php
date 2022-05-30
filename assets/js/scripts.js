@@ -102,7 +102,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x < max_fields) { //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div><input type="text" name="phone" class="input-field"><div class="input-group-append"><button class="btn btn-outline-danger remove_field" type="button">Remove</button></div></div>');
+            $(wrapper).append('<div><input type="text" name="phone-extra" class="input-field"><div class="input-group-append"><button class="btn btn-outline-danger remove_field" type="button">Remove</button></div></div>');
 
         }
     });
@@ -122,7 +122,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x < max_fields) { //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div><input type="text" name="email" class="input-field"><div class="input-group-append"><button class="btn btn-outline-danger remove_field" type="button">Remove</button></div></div>');
+            $(wrapper).append('<div><input type="text" name="email-extra" class="input-field"><div class="input-group-append"><button class="btn btn-outline-danger remove_field" type="button">Remove</button></div></div>');
 
         }
     });

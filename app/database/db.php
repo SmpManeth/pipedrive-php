@@ -12,12 +12,18 @@ function dd($value) //to be deleted
 //Execution Quary
 function executeQuery($sql, $data)
 {
+    
     //sql = 'INSERT INTO `topics`( `name`, `description`) VALUES (?,?)'
     global $conn;
     $stmt = $conn->prepare($sql);
+    
     $values = array_values($data);
+
+    
     $types= str_repeat('s', count($values));
+   
     $stmt->bind_param($types,...$values);
+   
     $stmt->execute();
     
     return $stmt;
@@ -199,9 +205,10 @@ function create($table, $data)
          }
          $i++;
      }
-    
 
+   
      $stmt = executeQuery($sql, $data);
+   
      $id = $stmt->insert_id;
      return $id;
      

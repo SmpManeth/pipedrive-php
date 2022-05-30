@@ -1,5 +1,6 @@
 <?php include("path.php");
 include($ROOT_PATH . "/app/controllers/users.php");
+include($ROOT_PATH . "/app/controllers/deals.php");
 
 ?>
 <!DOCTYPE html>

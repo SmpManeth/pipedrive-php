@@ -1,3 +1,8 @@
+<?php
+$deals = selectAll('deal');
+$stages = selectAll('stages');
+
+?>
 <div class="tab-pane fade show active" id="v-pills-deals" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
 
 
@@ -10,50 +15,57 @@
                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body p-0 ps-3 pe-3">
-               <form action="dashboard.php" method="get" class="">
+               <form action="dashboard.php" method="get">
                   <div class="row">
                      <div class="col-6 left-col-deal p-2 ps-3">
                         <div>
                            <div class="model-item text-muted">
                               <p class="">Contact Person</p>
                               <i class="fa fa-user icon"></i>
-                              <input class="input-field input-text" type="text">
+                              <input class="input-field input-text" name="Contact_person_Name" type="text">
                            </div>
                            <div class="model-item text-muted">
                               <p class="">Organizationn</p>
                               <i class="fa fa-building icon"></i>
-                              <input class="input-field input-text" type="text">
+                              <input class="input-field input-text" name="organization" type="text">
                            </div>
                            <div class="model-item text-muted">
                               <p class="">Title</p>
 
-                              <input class="input-field" type="text">
+                              <input class="input-field" name="title" type="text">
                            </div>
                            <div class="model-item text-muted">
                               <p class="">Value</p>
 
-                              <input class="input-field" type="text" style="width: 125px;">
-                              <select class="input-field" name="" id="" style="width: 120px; height: 27px; padding: 0px;">
+                              <input class="input-field" type="text" name="value" style="width: 125px;">
+                              <select class="input-field" name="currency" id="" style="width: 120px; height: 27px; padding: 0px;">
                                  <option class="" value="">Sri Lankan Rupee (LKR)</option>
                               </select>
                            </div>
                            <div class="model-item text-muted">
                               <p class="">Pipeline</p>
 
-                              <input class="input-field" type="text">
+
+                              <select class="input-field" name="pipeline" id="" style="height: 27px; padding: 0px;">
+                                 <option class="" value="Pipeline_One">Pipeline One</option>
+                                 <option class="" value="Pipeline_Two">Pipeline Two</option>
+                              </select>
                            </div>
 
                            <div class="model-item text-muted">
                               <p class="">Pipeline Stage</p>
 
-                              <select class="input-field" name="" id="" style="height: 27px; padding: 0px;">
-                                 <option class="" value="">Tage One</option>
+                              <select class="input-field" name="pipeline_stage" id="" style="height: 27px; padding: 0px;">
+                                 <?php foreach ($stages as $key => $stage) { ?>
+                                    <option class="" value="<?php echo $stage['stage_id'] ?>"><?php echo $stage['stage_name'] ?></option>
+                                 <?php   } ?>
+
                               </select>
                            </div>
                            <div class="model-item text-muted">
                               <p class="">Expected Closing Date</p>
 
-                              <input class="input-field" type="date">
+                              <input class="input-field" type="date" name="expected_closing_date">
                            </div>
 
                         </div>
@@ -63,7 +75,7 @@
                         <div class="model-item text-muted">
                            <p class="">Phone</p>
 
-                           <input class="input-field" type="text">
+                           <input class="input-field" type="text" name="phone">
                            <a class="add_field_button text-decoration-none  h6">+Add Phone</a>
                            <div class="input_fields_wrap">
 
@@ -76,7 +88,7 @@
                         <div class="model-item text-muted">
                            <p class="">Email</p>
 
-                           <input class="input-field" type="text">
+                           <input class="input-field" type="text" name="email">
                            <a class="add_f_button text-decoration-none  h6">+Add Email</a>
                            <div class="input_wrap">
 
@@ -94,7 +106,7 @@
                   <div class="modal-footer">
 
                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                     <button type="submit" value="add_deal" id="deal_submit" class="btn btn-primary">Save changes</button>
+                     <button type="submit" value="add_deal" id="deal_submit" name="submit_deal" class="btn btn-primary">Save changes</button>
                   </div>
                </form>
 
@@ -155,65 +167,56 @@
    <!-- stages and cards -->
    <div class="d-flex flex-row stage-row ">
       <!-- stage one -->
-      <div class="p-2 stage">
 
-         <!-- stage heading -->
-         <div class="stage-box">
-            <div class="stage-head-card mb-2">
-               <p class="fw-bold stage-name ms-3 mt-2 mt-0 me-0 deal-topic">Stage One</p>
-               <div class="d-flex">
-                  <p class="text-muted stage-name ms-3 mt-2 mt-0 me-0 deal-p">LKR 23,00000000 :</p>
-                  <p class="text-muted stage-name ms-1 mt-2 mt-0 me-0 deal-p">2 Deals</p>
+      <?php foreach ($stages as $key => $stage) { ?>
+         <div class="p-2 stage">
+
+            <!-- stage heading -->
+            <div class="stage-box">
+               <div class="stage-head-card mb-2">
+                  <p class="fw-bold stage-name ms-3 mt-2 mt-0 me-0 deal-topic"><?php echo $stage['stage_name'] ?></p>
+                  <div class="d-flex">
+                     <p class="text-muted stage-name ms-3 mt-2 mt-0 me-0 deal-p">LKR 23,00000000 :</p>
+                     <p class="text-muted stage-name ms-1 mt-2 mt-0 me-0 deal-p">2 Deals</p>
+                  </div>
+                  <svg class="arrow" width="16" height="56" xmlns="http://www.w3.org/2000/svg">
+                     <g fill="none" fill-rule="evenodd">
+                        <path class="arrow__right" fill="#F7F7F7" d="M0 0h16v56H0z"></path>
+                        <path class="arrow__border" fill="#E5E5E5" d="M1 0l8 28-8 28H0V0z"></path>
+                        <path class="arrow__left" fill="#F7F7F7" d="M0 1l8 27-8 27z"></path>
+                     </g>
+                  </svg>
                </div>
-               <svg class="arrow" width="16" height="56" xmlns="http://www.w3.org/2000/svg">
-                  <g fill="none" fill-rule="evenodd">
-                     <path class="arrow__right" fill="#F7F7F7" d="M0 0h16v56H0z"></path>
-                     <path class="arrow__border" fill="#E5E5E5" d="M1 0l8 28-8 28H0V0z"></path>
-                     <path class="arrow__left" fill="#F7F7F7" d="M0 1l8 27-8 27z"></path>
-                  </g>
-               </svg>
-            </div>
-         </div>
-
-         <!-- stage card -->
-         <div class="deal-stage-col ">
-
-            <!-- single deal caed -->
-            <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
-               <p id="deal-name" class=" m-0">Sterling Deal</p>
-               <p id="deal-organization" class="text-muted m-0">Sterling</p>
-               <div class="d-flex  pt-1">
-                  <i class="fa fa-user icon-stage me-1"></i>
-                  <p id="deal-price" class=" m-0 text-muted ">LKR100</p>
-               </div>
-
             </div>
 
-            <!-- single deal caed -->
-            <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
-               <p id="deal-name" class=" m-0">Sterling Deal</p>
-               <p id="deal-organization" class="text-muted m-0">Sterling</p>
-               <div class="d-flex  pt-1">
-                  <i class="fa fa-user icon-stage me-1"></i>
-                  <p id="deal-price" class=" m-0 text-muted ">LKR100</p>
-               </div>
+            <!-- stage card -->
+            <div class="deal-stage-col ">
+
+               <!-- single deal caed -->
+               <?php foreach ($deals as $key => $deal) {
+                  if ($stage['stage_id'] == $deal['pipeline_stage']) { ?>
+                     <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
+                        <p id="deal-name" class=" m-0"><?php echo $deal['title'] ?></p>
+                        <p id="deal-organization" class="text-muted m-0">Sterling</p>
+                        <div class="d-flex  pt-1">
+                           <i class="fa fa-user icon-stage me-1"></i>
+                           <p id="deal-price" class=" m-0 text-muted ">LKR100</p>
+                        </div>
+
+                     </div>.
+               <?php  }
+               } ?>
+
 
             </div>
-            <!-- single deal caed -->
-            <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
-               <p id="deal-name" class=" m-0">Sterling Deal</p>
-               <p id="deal-organization" class="text-muted m-0">Sterling</p>
-               <div class="d-flex  pt-1">
-                  <i class="fa fa-user icon-stage me-1"></i>
-                  <p id="deal-price" class=" m-0 text-muted ">LKR100</p>
-               </div>
-
-            </div>
-
 
          </div>
 
-      </div>
+      <?php } ?>
+
+
+
+
 
       <!-- stage two -->
       <div class="p-2 stage ">
