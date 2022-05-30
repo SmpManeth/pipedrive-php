@@ -1,5 +1,5 @@
 <?php include("path.php");
-// include($ROOT_PATH . "/Includes/controllers/posts.php");
+include($ROOT_PATH . "/app/controllers/users.php");
 
 ?>
 <!DOCTYPE html>

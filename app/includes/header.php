@@ -22,8 +22,8 @@
             <div id="myDropdown" class="dropdown-content shadow-sm">
 
                 <div class="nav" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <p class="text-muted pt-3 ps-4">MANETH PATHIRANA</p>
-                    <a href="#"><img src="https://img.icons8.com/pastel-glyph/64/000000/pupil-male--v2.png" />Personal Preferences</a>
+                    <p class="text-muted pt-3 ps-4"><?php echo $_SESSION['username']?></p><br><br><br>
+                    <a href="#" ><img src="https://img.icons8.com/pastel-glyph/64/000000/pupil-male--v2.png" />Personal Preferences</a>
                     <a href="#" class="nav-link lead_buttons" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true"><img src="https://img.icons8.com/ios/24/000000/settings--v1.png" />Settings
                     </a>
                     <a href="logout.php"><img src="https://img.icons8.com/ios/50/000000/exit.png" />Log Out</a>
