@@ -17,10 +17,7 @@ $table = 'users';
 
 
 
-echo '<script type="text/JavaScript"> 
-    console.log("Hello");
-     </script>'
-;
+
 
 
 function loginUser($user)

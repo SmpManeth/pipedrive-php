@@ -196,7 +196,7 @@ $stages = selectAll('stages');
                <?php foreach ($deals as $key => $deal) {
                   if ($stage['stage_id'] == $deal['pipeline_stage']) { ?>
                      <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
-                        <input type="text" id="deal-id" name="deal_id" hidden  value="<?php echo $deal['deal_id'] ?>">
+                       
                         <p id="deal-name" class=" m-0"><?php echo $deal['title'] ?></p>
                         <p id="deal-organization" class="text-muted m-0">Sterling</p>
                         <div class="d-flex  pt-1">
