@@ -12,6 +12,7 @@ position: relative;
   /* margin-left: 20px; */
   margin-bottom: 20px;
   width: 290px;
+  /* width: 290px; */
   height: fit-content !important;
   padding: 10px;
   background-color: white;
@@ -333,7 +334,15 @@ position: relative;
   margin-left: 5px;
   font-size: 15px;
 }
-
+.input-field {
+padding-left: 4px !important;
+  padding: 0px;
+  border: 0.5px solid grey;
+  border-radius: 5px;
+  width: 250px;
+  color: grey;
+  font-size: 16px;
+}
 .input-text {
   padding: 0px;
   padding-left: 30px !important;
@@ -345,20 +354,14 @@ position: relative;
   color: grey;
   font-size: 16px;
 }
-.input-field {
-padding-left: 2px !important;
-  padding: 0px;
-  border: 0.5px solid grey;
-  border-radius: 5px;
-  width: 250px;
-  color: grey;
-  font-size: 16px;
-}
+
 
 .modal-content {
  
-width: 620px;
-height: 727px;
+width: 750px;
+/* width: 620px; */
+height: 800px;
+/* height: 727px; */
 }
 .left-col-deal{
   border-right: 1px solid gray;
