@@ -24,6 +24,7 @@ $stages = selectAll('stages');
                               <i class="fa fa-user icon"></i>
                               <input class="input-field input-text" name="Contact_person_Name" type="text">
                            </div>
+
                            <div class="model-item text-muted">
                               <p class="">Organizationn</p>
                               <i class="fa fa-building icon"></i>
@@ -36,12 +37,18 @@ $stages = selectAll('stages');
                            </div>
                            <div class="model-item text-muted">
                               <p class="">Value</p>
-
+<!--  priya edited -->
                               <input class="input-field" type="text" name="value" style="width: 125px;">
                               <select class="input-field" name="currency" id="" style="width: 120px; height: 27px; padding: 0px;">
+                              <?php foreach ($xxx as $key => $xxx) { ?>
+                                    <option class="" value="<?php echo $xxx['stage_id'] ?>"><?php echo $xxx['xxx_name'] ?></option>
+                                 <?php   } ?>
+<!-- priya edited -->
                                  <option class="" value="">Sri Lankan Rupee (LKR)</option>
                               </select>
                            </div>
+
+
                            <div class="model-item text-muted">
                               <p class="">Pipeline</p>
 
@@ -62,12 +69,32 @@ $stages = selectAll('stages');
 
                               </select>
                            </div>
+
+                           <div class="model-item text-muted">
+                              <p class="">Prospected Closing Date</p>
+
+                              <input class="input-field" type="date" name="prospected_closing_date">
+                           </div>
+
                            <div class="model-item text-muted">
                               <p class="">Expected Closing Date</p>
 
                               <input class="input-field" type="date" name="expected_closing_date">
                            </div>
 
+                           <div class="model-item text-muted">
+                              <p class="">Visible to</p>
+<!-- priya edited -->
+                              <select class="input-field" name="Visible_to" id="" style="height: 27px; padding: 0px;">
+                                 <?php foreach ($xxx as $key => $xxx) { ?>
+                                    <option class="" value="<?php echo $xxx['xxx_id'] ?>"><?php echo $xxx['xxx_name'] ?></option>
+                                 <?php   } ?>
+
+                              </select>
+     <!-- priya edited -->          
+                           </div>
+
+ 
                         </div>
                      </div>
 
@@ -77,26 +104,19 @@ $stages = selectAll('stages');
 
                            <input class="input-field" type="text" name="phone">
                            <a class="add_field_button text-decoration-none  h6">+Add Phone</a>
-                           <div class="input_fields_wrap">
-
-
-
-                           </div>
-
-
+                           <div class="input_fields_wrap">                        
+                           </div>                         
                         </div>
+
+
+
                         <div class="model-item text-muted">
                            <p class="">Email</p>
 
                            <input class="input-field" type="text" name="email">
                            <a class="add_f_button text-decoration-none  h6">+Add Email</a>
                            <div class="input_wrap">
-
-
-
                            </div>
-
-
                         </div>
 
 
