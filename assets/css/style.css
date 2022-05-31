@@ -35,14 +35,27 @@ position: relative;
 }
 
 .filter-menu-options {
-  height: 25px;
- 
-  /* border: 1px solid black; */
-
-
+  height: 20px;
+  border: 1px solid black;
+  border-radius: 2px;
+  margin-right: -10px;
 }
-.btn-primary:hover{
+.btn-primary {
+  width: 100px;
+}
+.btn-filter{
+  width: 50px;
+  height: 25px;
+  font-size: 12px;
+  color: white;
+  font-weight: 900;
+  background-color: #ef5959 !important;
+  border-radius: 5px;
+  margin-left: 150px !important;
+}
 
+
+.btn-primary:hover{
   background-color: #292424 !important;
     transition: 0.30s ease-in-out;
 }
@@ -50,20 +63,46 @@ position: relative;
 .filters button {
   background-color: white;
   border: none !important;
+  margin-left: 20px;
 
 }
+.deal-total-1 p{
+  height: 10px;
+  width: 100px;
+  margin-left: 450px !important;
+  font-size: 12px;
+  position: relative;
+  margin-top: 5px;
+}
+
+.deal-total-2 p{
+  height: 10px;
+  width: 100px;
+  font-size: 12px;
+  margin-left: -75px;
+  margin-top: 5px;
+}
+
 .btnfilter:hover ,button:hover {
   background-color: rgba(195, 195, 195, 0.122);
   transition: 0.10s ease-in;
+  
+}
 
 
+
+.deal-total {
+  margin-left: 30px;
+  height: 25px;
+  width: fit-content;
+  margin-left: 30%;
 }
 
 .filter-head {
   border: 1px solid grey !important;
 }
 .pipeline-dropdown{
-  margin-left: 50%;
+  margin-left: -30px;
   float: right;
   position: relative;
 }
@@ -141,8 +180,6 @@ position: relative;
   top: -50px;
   left: 20px;
 }
-
-
 
 .h-custom {
   height: calc(100% - 73px);
@@ -333,27 +370,27 @@ position: relative;
   margin-left: 5px;
   font-size: 15px;
 }
-
+.input-field {
+padding-left: 5px !important;
+  padding: 0px;
+  border: 0.5px solid grey;
+  border-radius: 5px;
+  width: 250px;
+  color: grey;
+  font-size: 16px;
+}
 .input-text {
   padding: 0px;
-  padding-left: 30px !important;
+  padding-left: 25px !important;
   border: 0.5px solid grey;
   border-radius: 5px;
   width: 250px;
   position: relative;
- left: -22px;
+  left: -22px;
   color: grey;
   font-size: 16px;
 }
-.input-field {
-padding-left: 2px !important;
-  padding: 0px;
-  border: 0.5px solid grey;
-  border-radius: 5px;
-  width: 250px;
-  color: grey;
-  font-size: 16px;
-}
+
 
 .modal-content {
  

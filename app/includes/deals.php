@@ -117,33 +117,33 @@ $stages = selectAll('stages');
 
    <!-- filtering heading -->
    <div class="row d-flex filter-head">
-      <div class="d-flex filters ms-4">
-         <div class="shadow mx-1 btnfilter"> <button type="button">
+      <div class="d-flex filters ms-0.5">
+         <div class="btnfilter"> <button type="button">
                <img class="filter-menu-options" src="https://img.icons8.com/ios-glyphs/30/000000/bar-chart.png" />
             </button>
          </div>
-         <div class="shadow mx-1 btnfilter"> <button type="button">
+         <div class="btnfilter"> <button type="button">
                <img class="filter-menu-options" src="<?php echo $BASE_URL . 'assets/images/stack-48.png' ?>" />
             </button></div>
-         <div class="shadow mx-1 btnfilter"> <button type="button">
+         <div class="btnfilter"> <button type="button">
                <img class="filter-menu-options" src="https://img.icons8.com/ios-filled/50/000000/money-circulation.png" />
             </button></div>
          <div>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-               Add Deal
+            <button type="button" class=" btn-filter ms-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+               + Deal
             </button>
 
 
 
          </div>
 
-         <div>
+         <div class="deal-total-1 ms-5">
             <p>
                LKR 26,100
             </p>
          </div>
-         <div>
+         <div class="deal-total-2 ms-5">
             <p>
                5 Deals
             </p>
@@ -157,6 +157,21 @@ $stages = selectAll('stages');
             <div class="pipeline-edit">
                <img src="<?php echo $BASE_URL . 'assets/images/icons8-quill-pen-48.png' ?>" alt="">
             </div>
+            <div class="btn-group">
+            <button type="button" class=" dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+               Pipeline
+            </button>
+            <ul class="dropdown-menu">
+               <li><a class="dropdown-item" href="#">Action</a></li>
+               <li><a class="dropdown-item" href="#">Another action</a></li>
+               <li><a class="dropdown-item" href="#">Something else here</a></li>
+               <li>
+                  <hr class="dropdown-divider">
+               </li>
+               <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+         </div>
+         
          </div>
 
 
@@ -191,12 +206,11 @@ $stages = selectAll('stages');
 
             <!-- stage card -->
             <div class="deal-stage-col ">
-
                <!-- single deal caed -->
                <?php foreach ($deals as $key => $deal) {
                   if ($stage['stage_id'] == $deal['pipeline_stage']) { ?>
                      <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
-                       
+
                         <p id="deal-name" class=" m-0"><?php echo $deal['title'] ?></p>
                         <p id="deal-organization" class="text-muted m-0">Sterling</p>
                         <div class="d-flex  pt-1">
@@ -218,7 +232,7 @@ $stages = selectAll('stages');
 
          </div>
 
-      <?php } ?> 
+      <?php } ?>
 
 
 
