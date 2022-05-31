@@ -191,6 +191,7 @@ $stages = selectAll('stages');
 
             <!-- stage card -->
             <div class="deal-stage-col ">
+               
 
                <!-- single deal caed -->
                <?php foreach ($deals as $key => $deal) {
@@ -205,13 +206,20 @@ $stages = selectAll('stages');
                         </div>
 
                      </div>
-
+                              
                <?php
+
                      // if ($stage['stage_id'] != $deal['pipeline_stage']) {
                      //    dd("Bijja");
                      // }
                   }
                } ?>
+               <!--add buton -->
+               <div class="add-button">
+                  <a href="#">
+                  <button></button>
+                  </a>
+               </div>
 
 
             </div>
