@@ -187,8 +187,6 @@ $currencies = selectAll('currency');
             <div class="pipeline-edit">
                <img src="<?php echo $BASE_URL . 'assets/images/icons8-quill-pen-48.png' ?>" alt="">
             </div>
-<<<<<<< HEAD
-=======
             <div class="btn-group">
             <button type="button" class=" dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                Pipeline
@@ -219,7 +217,6 @@ $currencies = selectAll('currency');
             </div>
         </div>
          
->>>>>>> 1b7924c10a96e6fc37a698039d22d153758cf473
          </div>
 
 
@@ -276,17 +273,6 @@ $currencies = selectAll('currency');
                      // }
                   }
                } ?>
-<<<<<<< HEAD
-               <!--add buton -->
-               <div class="add-button">
-                  
-                  <button class="btn-add"><i class="fa fa-plus"></i></button>
-               </button>
-            
-               </div>
-               <!--add buton end-->
-=======
->>>>>>> fc2a30b5379530d6db4c6819e950e5dfb5677fc9
 
 
             </div>
