@@ -372,7 +372,15 @@ position: relative;
   font-size: 15px;
 }
 .input-field {
+<<<<<<< HEAD
 padding-left: 4px !important;
+=======
+<<<<<<< HEAD
+padding-left: 4px !important;
+=======
+  padding-left: 4px !important;
+>>>>>>> 1b7924c10a96e6fc37a698039d22d153758cf473
+>>>>>>> fc2a30b5379530d6db4c6819e950e5dfb5677fc9
   padding: 0px;
   border: 0.5px solid grey;
   border-radius: 5px;
@@ -387,7 +395,14 @@ padding-left: 4px !important;
   border-radius: 5px;
   width: 250px;
   position: relative;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> fc2a30b5379530d6db4c6819e950e5dfb5677fc9
  left: -22px;
+=======
+  left: -22px;
+>>>>>>> 1b7924c10a96e6fc37a698039d22d153758cf473
   color: grey;
   font-size: 16px;
 }
@@ -396,9 +411,9 @@ padding-left: 4px !important;
 
 .modal-content {
  
-width: 750px;
+width: 630px;
 /* width: 620px; */
-height: 800px;
+height: 700px;
 /* height: 727px; */
 }
 .left-col-deal{
