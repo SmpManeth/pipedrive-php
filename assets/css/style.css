@@ -372,11 +372,7 @@ position: relative;
   font-size: 15px;
 }
 .input-field {
-<<<<<<< HEAD
-padding-left: 5px !important;
-=======
-padding-left: 4px !important;
->>>>>>> 560ebca043d3ffe4ee8edd81dd0759a2480ef340
+  padding-left: 4px !important;
   padding: 0px;
   border: 0.5px solid grey;
   border-radius: 5px;
@@ -391,18 +387,11 @@ padding-left: 4px !important;
   border-radius: 5px;
   width: 250px;
   position: relative;
-<<<<<<< HEAD
   left: -22px;
   color: grey;
   font-size: 16px;
 }
-=======
- left: -22px;
-  color: grey;
-  font-size: 16px;
-}
 
->>>>>>> 560ebca043d3ffe4ee8edd81dd0759a2480ef340
 
 
 .modal-content {
