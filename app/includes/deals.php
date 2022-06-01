@@ -38,14 +38,7 @@ $currencies = selectAll('currency');
                            </div>
                            <div class="model-item text-muted">
                               <p class="">Value</p>
-<<<<<<< HEAD
-                         
-                              <input class="input-field" type="text" name="value" style="width: 120px;">
-                              <select class="input-field" name="Value" id="" style="width: 120px; height: 27px; padding: 0px;">
 
-                                 <option class="" value="">Sri Lankan Rupee (LKR)</option>
-=======
-<!--  priya edited -->
                               <input class="input-field" type="text" name="value" style="width: 125px;">
                               <select class="input-field" name="currency" id="" style="width: 120px; height: 27px; padding: 0px;">
                               <?php foreach ($currencies as $key => $currency) { ?>
@@ -55,8 +48,7 @@ $currencies = selectAll('currency');
                                 
                                  ?>
       
-<!-- priya edited -->
->>>>>>> 1b7924c10a96e6fc37a698039d22d153758cf473
+<
                               </select>
                            </div>
 
