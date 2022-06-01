@@ -111,3 +111,4 @@ if (isset($_POST['update-post'])) {
         $published = isset($_POST['published']) ? 1:0;
     }
 }
+
