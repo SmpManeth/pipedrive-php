@@ -86,14 +86,13 @@ $currencies = selectAll('currency');
 
                            <div class="model-item text-muted">
                               <p class="">Visible to</p>
-<!-- priya edited -->
+
                               <select class="input-field" name="Visible_to" id="" style="height: 27px; padding: 0px;">
                                  <?php foreach ($xxx as $key => $xxx) { ?>
                                     <option class="" value="<?php echo $xxx['xxx_id'] ?>"><?php echo $xxx['xxx_name'] ?></option>
                                  <?php   } ?>
 
-                              </select>
-     <!-- priya edited -->          
+                              </select>        
                            </div>
 
  
