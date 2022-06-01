@@ -372,7 +372,11 @@ position: relative;
   font-size: 15px;
 }
 .input-field {
+<<<<<<< HEAD
 padding-left: 4px !important;
+=======
+  padding-left: 4px !important;
+>>>>>>> 1b7924c10a96e6fc37a698039d22d153758cf473
   padding: 0px;
   border: 0.5px solid grey;
   border-radius: 5px;
@@ -387,7 +391,11 @@ padding-left: 4px !important;
   border-radius: 5px;
   width: 250px;
   position: relative;
+<<<<<<< HEAD
  left: -22px;
+=======
+  left: -22px;
+>>>>>>> 1b7924c10a96e6fc37a698039d22d153758cf473
   color: grey;
   font-size: 16px;
 }
