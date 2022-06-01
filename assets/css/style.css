@@ -12,6 +12,7 @@ position: relative;
   /* margin-left: 20px; */
   margin-bottom: 20px;
   width: 290px;
+  /* width: 290px; */
   height: fit-content !important;
   padding: 10px;
   background-color: white;
@@ -371,7 +372,11 @@ position: relative;
   font-size: 15px;
 }
 .input-field {
+<<<<<<< HEAD
 padding-left: 5px !important;
+=======
+padding-left: 4px !important;
+>>>>>>> 560ebca043d3ffe4ee8edd81dd0759a2480ef340
   padding: 0px;
   border: 0.5px solid grey;
   border-radius: 5px;
@@ -386,16 +391,26 @@ padding-left: 5px !important;
   border-radius: 5px;
   width: 250px;
   position: relative;
+<<<<<<< HEAD
   left: -22px;
   color: grey;
   font-size: 16px;
 }
+=======
+ left: -22px;
+  color: grey;
+  font-size: 16px;
+}
+
+>>>>>>> 560ebca043d3ffe4ee8edd81dd0759a2480ef340
 
 
 .modal-content {
  
-width: 620px;
-height: 727px;
+width: 750px;
+/* width: 620px; */
+height: 800px;
+/* height: 727px; */
 }
 .left-col-deal{
   border-right: 1px solid gray;
@@ -433,4 +448,15 @@ height: 727px;
 
   clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 0% 100%, 20% 50%, 0% 0%);
 }
+/*add buton */
+.add-button button{
+  border-radius: 6px;
+  border: hidden;
+  cursor: pointer;
+  background: hidden;
+}
 
+.add-button button:hover {
+  background-color: rgb(248, 50, 103);
+  background-image: url(icons8-plus-48.png);
+}

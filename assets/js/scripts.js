@@ -20,7 +20,7 @@ window.onclick = function (event) {
 
 const deal_box = document.querySelectorAll(".deals-box");
 const all_deal_stage_cols = document.querySelectorAll(".deal-stage-col");
-let draggable_deal_box = null;
+let draggable_deal_box = null; 
 
 deal_box.forEach((dealbox) => {
     dealbox.addEventListener("dragstart", dragStart);
@@ -64,6 +64,7 @@ function dragDrop() {
 }
 
 
+
 /* modal */
 const btns = document.querySelectorAll("[data-target-modal]");
 const close_modals = document.querySelectorAll(".close-modal");
@@ -75,6 +76,8 @@ btns.forEach((btn) => {
         overlay.classList.add("active");
     });
 });
+
+
 
 close_modals.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -133,5 +136,6 @@ $(document).ready(function () {
         $(this).parent('div').parent('div').remove(); x--;
     })
 });
+
 
 
