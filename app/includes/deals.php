@@ -38,13 +38,6 @@ $currencies = selectAll('currency');
                            </div>
                            <div class="model-item text-muted">
                               <p class="">Value</p>
-<<<<<<< HEAD
-                         
-                              <input class="input-field" type="text" name="value" style="width: 120px;">
-                              <select class="input-field" name="Value" id="" style="width: 120px; height: 27px; padding: 0px;">
-
-                                 <option class="" value="">Sri Lankan Rupee (LKR)</option>
-=======
 <!--  priya edited -->
                               <input class="input-field" type="text" name="value" style="width: 125px;">
                               <select class="input-field" name="currency" id="" style="width: 120px; height: 27px; padding: 0px;">
@@ -56,7 +49,6 @@ $currencies = selectAll('currency');
                                  ?>
       
 <!-- priya edited -->
->>>>>>> 1b7924c10a96e6fc37a698039d22d153758cf473
                               </select>
                            </div>
 
@@ -156,20 +148,20 @@ $currencies = selectAll('currency');
    <!-- filtering heading -->
    <div class="row d-flex filter-head">
       <div class="d-flex filters ms-4">
-         <div class="shadow mx-1 btnfilter"> <button type="button">
+         <div class="shadow btnfilter"> <button type="button">
                <img class="filter-menu-options" src="https://img.icons8.com/ios-glyphs/30/000000/bar-chart.png" />
             </button>
          </div>
-         <div class="shadow mx-1 btnfilter"> <button type="button">
+         <div class="shadow btnfilter"> <button type="button">
                <img class="filter-menu-options" src="<?php echo $BASE_URL . 'assets/images/stack-48.png' ?>" />
             </button></div>
-         <div class="shadow mx-1 btnfilter"> <button type="button">
+         <div class="shadow btnfilter"> <button type="button">
                <img class="filter-menu-options" src="https://img.icons8.com/ios-filled/50/000000/money-circulation.png" />
             </button></div>
          <div>
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-               Add Deal
+              + Deal
             </button>
 
 
@@ -195,8 +187,6 @@ $currencies = selectAll('currency');
             <div class="pipeline-edit">
                <img src="<?php echo $BASE_URL . 'assets/images/icons8-quill-pen-48.png' ?>" alt="">
             </div>
-<<<<<<< HEAD
-=======
             <div class="btn-group">
             <button type="button" class=" dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                Pipeline
@@ -227,7 +217,6 @@ $currencies = selectAll('currency');
             </div>
         </div>
          
->>>>>>> 1b7924c10a96e6fc37a698039d22d153758cf473
          </div>
 
 
@@ -262,10 +251,7 @@ $currencies = selectAll('currency');
 
             <!-- stage card -->
             <div class="deal-stage-col ">
-<<<<<<< HEAD
-=======
                
->>>>>>> 1b7924c10a96e6fc37a698039d22d153758cf473
 
                <!-- single deal caed -->
                <?php foreach ($deals as $key => $deal) {
