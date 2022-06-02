@@ -2,6 +2,7 @@
 $deals = selectAll('deal');
 $stages = selectAll('stages');
 $currencies = selectAll('currency');
+$mob_type = selectAll('phone_type');
 // dd($currencies);
 ?>
 
@@ -81,6 +82,7 @@ $currencies = selectAll('currency');
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Add Deal</h5>
+                    
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-0 ps-3 pe-3">
@@ -94,7 +96,7 @@ $currencies = selectAll('currency');
                                         <p class="">Contact Person</p>
                                         <i class="fa fa-user icon"></i>
                                         <input class="input-field input-text" name="Contact_person_Name" type="text">
-                                        <span class='red-message'>* <?php echo $nameErr;?></span>
+                                        <span class='red-message'> <?php echo $nameErr;?></span>
                                         </div>
 
                                     <div class="model-item text-muted">
@@ -109,25 +111,21 @@ $currencies = selectAll('currency');
                                     </div>
                                     <div class="model-item text-muted">
                                         <p class="">Value</p>
-                                        <!--  priya edited -->
-
                                         <input class="input-field" type="text" name="value" style="width: 125px;">
                                         <select class="input-field" name="currency" id=""
                                             style="width: 120px; height: 27px; padding: 0px;">
                                             <?php foreach ($currencies as $key => $currency) { ?>
                                             <option class="" value="<?php echo $currency['curr_id'] ?>">
                                                 <?php echo $currency['currency_name'] ?></option>
-                                            <?php   }
-
+                                            <?php  
+                                             }
+                                       
 
                                  ?>
-    
+                                         </select>
+                                             </div>
 
-                                        </select>
-                                    </div>
-
-
-                                    <div class="model-item text-muted">
+                                 <div class="model-item text-muted">
                                         <p class="">Pipeline</p>
                                         <select class="input-field" name="pipeline" id=""
                                             style="height: 27px; padding: 0px;">
@@ -161,45 +159,42 @@ $currencies = selectAll('currency');
                                         <input class="input-field" type="date" name="expected_closing_date">
                                     </div>
                                 </div>
-                            </div>
+                           
 
       
                      </div>
 
                      <div class="col-6 p-2 ps-3">
-                                <div class="model-item text-muted">
+                                    <div class="model-item text-muted">
                                     <p class="">Phone</p>
-
                                     <input class="input-field" type="text" name="value" maxlength="10" style="width: 150px;">
-                                    <span class='red-message'>* <?php echo $phonenoErr;?></span>
+                                    <span class='red-message'> <?php echo $phonenoErr;?></span>
                                       <select class="input-field" name="phone category" id=""
                                         style="width: 120px; height: 27px; padding: 0px;">
-                                        <?php foreach ($xxx as $key => $xxx) { ?>
-                                        <option class="" value="<?php echo $xxx['stage_id'] ?>">
-                                            <?php echo $xxx['xxx_name'] ?></option>
+                                        <?php foreach ($mob_type as $key => $phone_type) { ?>
+                                        <option class="" value="<?php echo $phone_type['pho_type_id'] ?>">
+                                            <?php echo $phone_type['type_name'] ?></option>
                                         <?php   } ?>
-
-                                        <input class="input-field" type="text" name="Add Phone">
-
-                                        <a class="add_field_button text-decoration-none  h6"> + Add Phone </a>
-                                        <div class="input_fields_wrap">
+                                        </select>
+                                       <br> 
+                                        <!-- <input class="input-field" type="text" name="Add Phone"> -->
+                                        <a class="add_f_button text-decoration-none  h6"> + Add Phone </a>
+                                        <div class="input_wrap" >
                                         </div>
                                 </div>
 
                         <div class="model-item text-muted">
                            <p class="">Email</p>
-
-
                            <input class="input-field" type="text" name="email">
+                           <br> 
                            <a class="add_f_button text-decoration-none  h6"> + Add Email </a>
                            <div class="input_wrap">
                            </div>
+                           
                         </div>
-
-
                      </div>
-
                   </div>
+
                   <div class="modal-footer">
 
                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
