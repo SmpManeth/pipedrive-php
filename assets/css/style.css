@@ -528,3 +528,11 @@ height: 700px;
   transform:  rgb(243, 116, 116);
 }
 /*floating add button end */
+
+
+.red-message
+{
+    color: red;
+    position: absolute;
+}
+

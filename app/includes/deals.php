@@ -4,7 +4,112 @@ $stages = selectAll('stages');
 $currencies = selectAll('currency');
 // dd($currencies);
 ?>
-<div class="tab-pane fade show active" id="v-pills-deals" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
+
+<?php
+   $nameErr=$emailErr=$phonenoErr="";
+   $name=$email=$phoneno="";
+
+   if($_SERVER['REQUEST_METHOD']=='POST')
+   {
+      if(empty($_POST['name']))
+      {
+         $nameErr="This field is required";
+      }
+      else
+      {
+         $pattern="/^[a-zA-Z]+$/";
+         $check=preg_match_all($pattern,$_POST['name']);
+         if($check)
+         {
+            $name=$_POST['name'];
+         }
+         else
+         {
+            $nameErr="Enter the correct pattern";
+         }
+      }
+
+       //validating email
+      if(empty($_POST['email']))
+      {
+         $emailErr="This field is required";
+      }
+      else
+      {
+        $check=filter_var($_POST['email'],FILTER_VALIDATE_EMAIL);
+        if($check)
+        {
+           $email=$_POST['email'];
+        }
+        else
+        {
+           $emailErr="Enter the correct email format";
+        }
+      }
+      //validating phone no
+      if(empty($_POST['phoneno']))
+      {
+         $phonenoErr="This field is required";
+      }
+      else
+      {
+         $pattern="/^[6-9]{1}[0-9]{9}/";
+         $check=preg_match_all($pattern,$_POST['phoneno']);
+         if($check)
+         {
+            $phoneno=$_POST['phoneno'];
+         }
+         else
+         {
+            $phonenoErr="Enter correct phone number";
+         }
+      }
+      if($_POST['comment'])
+      {
+         $comment=htmlspecialchars($_POST['comment']);
+      }
+   }
+?>
+
+<div class="tab-pane fade show active" id="v-pills-deals" role="tabpanel" aria-labelledby="v-pills-home-tab"
+    tabindex="0">
+
+  
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Deal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0 ps-3 pe-3">
+                    <form action="dashboard.php" method="get">
+                        <div class="row">
+                            <div class="col-6 left-col-deal p-2 ps-3">
+  
+                                <div>
+
+                                    <div class="model-item text-muted">
+                                        <p class="">Contact Person</p>
+                                        <i class="fa fa-user icon"></i>
+                                        <input class="input-field input-text" name="Contact_person_Name" type="text">
+                                        <span class='red-message'>* <?php echo $nameErr;?></span>
+                                        </div>
+
+                                    <div class="model-item text-muted">
+                                        <p class="">Organization</p>
+                                        <i class="fa fa-building icon"></i>
+                                        <input class="input-field input-text" name="organization" type="text">
+                                    </div>
+                                    <div class="model-item text-muted">
+                                        <p class="">Title</p>
+
+                                        <input class="input-field" name="title" type="text">
+                                    </div>
+                                    <div class="model-item text-muted">
+                                        <p class="">Value</p>
+                                        <!--  priya edited -->
 
 
    <!-- Modal -->
@@ -122,7 +227,71 @@ $currencies = selectAll('currency');
                               </div>
                         </div>
 
+                                 ?>
+    
 
+                                        </select>
+                                    </div>
+
+
+                                    <div class="model-item text-muted">
+                                        <p class="">Pipeline</p>
+                                        <select class="input-field" name="pipeline" id=""
+                                            style="height: 27px; padding: 0px;">
+                                            <option class="" value="Pipeline_One">Pipeline One</option>
+                                            <option class="" value="Pipeline_Two">Pipeline Two</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="model-item text-muted">
+                                        <p class="">Pipeline Stage</p>
+
+                                        <select class="input-field" name="pipeline_stage" id=""
+                                            style="height: 27px; padding: 0px;">
+                                            <?php foreach ($stages as $key => $stage) { ?>
+                                            <option class="" value="<?php echo $stage['stage_id'] ?>">
+                                                <?php echo $stage['stage_name'] ?></option>
+                                            <?php   } ?>
+
+                                        </select>
+                                    </div>
+
+                                    <div class="model-item text-muted">
+                                        <p class="">Prospected Closing Date</p>
+
+                                        <input class="input-field" type="date" name="prospected_closing_date">
+                                    </div>
+
+                                    <div class="model-item text-muted">
+                                        <p class="">Expected Closing Date</p>
+
+                                        <input class="input-field" type="date" name="expected_closing_date">
+                                    </div>
+                                </div>
+                            </div>
+
+      
+                     </div>
+
+                     <div class="col-6 p-2 ps-3">
+                                <div class="model-item text-muted">
+                                    <p class="">Phone</p>
+
+                                    <input class="input-field" type="text" name="value" maxlength="10" style="width: 150px;">
+                                    <span class='red-message'>* <?php echo $phonenoErr;?></span>
+                                      <select class="input-field" name="phone category" id=""
+                                        style="width: 120px; height: 27px; padding: 0px;">
+                                        <?php foreach ($xxx as $key => $xxx) { ?>
+                                        <option class="" value="<?php echo $xxx['stage_id'] ?>">
+                                            <?php echo $xxx['xxx_name'] ?></option>
+                                        <?php   } ?>
+
+                                        <input class="input-field" type="text" name="Add Phone">
+
+                                        <a class="add_field_button text-decoration-none  h6"> + Add Phone </a>
+                                        <div class="input_fields_wrap">
+                                        </div>
+                                </div>
 
                         <div class="model-item text-muted">
                            <p class="">Email</p>
