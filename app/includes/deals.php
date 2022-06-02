@@ -3,7 +3,50 @@ $deals = selectAll('deal');
 $stages = selectAll('stages');
 $currencies = selectAll('currency');
 // dd($currencies);
-?>
+
+   $nameErr=$phonenoErr="";
+   $name=$phoneno="";
+
+   if($_SERVER['REQUEST_METHOD']=='POST')
+   {
+      if(empty($_POST['name']))
+      {
+         $nameErr="This field is required";
+      }
+      else
+      {
+         $pattern="/^[a-zA-Z]+$/";
+         $check=preg_match_all($pattern,$_POST['name']);
+         if($check)
+         {
+            $name=$_POST['name'];
+         }
+         else
+         {
+            $nameErr="Enter the correct pattern";
+         }
+      }
+   }
+         //validating phone no
+         if(empty($_POST['phoneno']))
+         {
+            $phonenoErr="This field is required";
+         }
+         else
+         {
+            $pattern="/^[6-9]{1}[0-9]{9}/";
+            $check=preg_match_all($pattern,$_POST['phoneno']);
+            if($check)
+            {
+               $phoneno=$_POST['phoneno'];
+            }
+            else
+            {
+               $phonenoErr="Enter correct phone number";
+            }
+         }
+ ?>
+
 <div class="tab-pane fade show active" id="v-pills-deals" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
 
 
@@ -15,6 +58,7 @@ $currencies = selectAll('currency');
                <h5 class="modal-title" id="exampleModalLabel">Add Deal</h5>
                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            
             <div class="modal-body p-0 ps-3 pe-3">
                <form action="dashboard.php" method="get">
                   <div class="row">
@@ -24,6 +68,8 @@ $currencies = selectAll('currency');
                               <p class="">Contact Person</p>
                               <i class="fa fa-user icon"></i>
                               <input class="input-field input-text" name="Contact_person_Name" type="text">
+                              <span class='red-message'>* <?php echo $nameErr;?></span>
+                              
                            </div>
 
                            <div class="model-item text-muted">
@@ -84,31 +130,26 @@ $currencies = selectAll('currency');
                               <input class="input-field" type="date" name="expected_closing_date">
                            </div>
 
-                           <div class="model-item text-muted">
-                              <p class="">Visible to</p>
-
-                              <select class="input-field" name="Visible_to" id="" style="height: 27px; padding: 0px;">
-                                 <?php foreach ($xxx as $key => $xxx) { ?>
-                                    <option class="" value="<?php echo $xxx['xxx_id'] ?>"><?php echo $xxx['xxx_name'] ?></option>
-                                 <?php   } ?>
-
-                              </select>        
-                           </div>
-
- 
                         </div>
                      </div>
 
                      <div class="col-6 p-2 ps-3">
                         <div class="model-item text-muted">
-                           <p class="">Phone</p>
+                           <!-- <p class="">Phone</p> -->
+                           <!-- <input class="input-field" type="text" name="value" style="width: 150px;">    -->
 
-                           <input class="input-field" type="text" name="value" style="width: 150px;">
-                              <select class="input-field" name="phone category" id="" style="width: 120px; height: 27px; padding: 0px;">
+                           <div>
+                           <!-- <label for="phone">Phone</label> -->
+                           <p class="">Phone</p>
+                              <input name="phoneno" id="phoneno" type="" maxlength="10" placeholder="Enter your phone no">
+                              <span class='red-message'>* <?php echo $phonenoErr;?></span>
+                                </div>
+
+                           <select class="input-field" name="phone category" id="" style="width: 120px; height: 27px; padding: 0px;">
                               <?php foreach ($xxx as $key => $xxx) { ?>
                                     <option class="" value="<?php echo $xxx['stage_id'] ?>"><?php echo $xxx['xxx_name'] ?></option>
                                  <?php   } ?>
-
+                                
                             <input class="input-field" type="text" name="Add Phone" > 
 
                            <a class="add_field_button text-decoration-none  h6"> + Add Phone </a>
@@ -134,8 +175,8 @@ $currencies = selectAll('currency');
                   </div>
                   <div class="modal-footer">
 
-                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                     <button type="submit" value="add_deal" id="deal_submit" name="submit_deal" class="btn btn-primary">Save changes</button>
+                     <button type="button" class="btn btn_Close" data-bs-dismiss="modal">Close</button>
+                     <button type="submit" value="add_deal" id="deal_submit" name="submit_deal" class="btn btn_Save_Changes">Save changes</button>
                   </div>
                </form>
                                  
