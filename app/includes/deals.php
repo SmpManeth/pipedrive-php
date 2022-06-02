@@ -6,84 +6,7 @@ $currencies = selectAll('currency');
 ?>
 <div class="tab-pane fade show active" id="v-pills-deals" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
 
-                                        <input class="input-field" type="text" name="value" style="width: 125px;">
-                                        <select class="input-field" name="currency" id=""
-                                            style="width: 120px; height: 27px; padding: 0px;">
-                                            <?php foreach ($currencies as $key => $currency) { ?>
-                                            <option class="" value="<?php echo $currency['curr_id'] ?>">
-                                                <?php echo $currency['currency_name'] ?></option>
-                                            <?php   }
 
-
-                                 ?>
-    
-
-                                        </select>
-                                    </div>
-
-
-                                    <div class="model-item text-muted">
-                                        <p class="">Pipeline</p>
-                                        <select class="input-field" name="pipeline" id=""
-                                            style="height: 27px; padding: 0px;">
-                                            <option class="" value="Pipeline_One">Pipeline One</option>
-                                            <option class="" value="Pipeline_Two">Pipeline Two</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="model-item text-muted">
-                                        <p class="">Pipeline Stage</p>
-
-                                        <select class="input-field" name="pipeline_stage" id=""
-                                            style="height: 27px; padding: 0px;">
-                                            <?php foreach ($stages as $key => $stage) { ?>
-                                            <option class="" value="<?php echo $stage['stage_id'] ?>">
-                                                <?php echo $stage['stage_name'] ?></option>
-                                            <?php   } ?>
-
-                                        </select>
-                                    </div>
-
-                                    <div class="model-item text-muted">
-                                        <p class="">Prospected Closing Date</p>
-
-                                        <input class="input-field" type="date" name="prospected_closing_date">
-                                    </div>
-
-                                    <div class="model-item text-muted">
-                                        <p class="">Expected Closing Date</p>
-
-                                        <input class="input-field" type="date" name="expected_closing_date">
-                                    </div>
-
-                                    <div class="model-item text-muted">
-                                        <p class="">Visible to</p>
-
-                                        <select class="input-field" name="Visible_to" id=""
-                                            style="height: 27px; padding: 0px;">
-                                            <?php foreach ($xxx as $key => $xxx) { ?>
-                                            <option class="" value="<?php echo $xxx['xxx_id'] ?>">
-                                                <?php echo $xxx['xxx_name'] ?></option>
-                                            <?php   } ?>
-
-                                        </select>
-                                    </div>
-
-
-                                </div>
-                            </div>
-
-                            <div class="col-6 p-2 ps-3">
-                                <div class="model-item text-muted">
-                                    <p class="">Phone</p>
-
-                                    <input class="input-field" type="text" name="value" style="width: 150px;">
-                                    <select class="input-field" name="phone category" id=""
-                                        style="width: 120px; height: 27px; padding: 0px;">
-                                        <?php foreach ($xxx as $key => $xxx) { ?>
-                                        <option class="" value="<?php echo $xxx['stage_id'] ?>">
-                                            <?php echo $xxx['xxx_name'] ?></option>
-                                        <?php   } ?>
    <!-- Modal -->
    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -177,7 +100,6 @@ $currencies = selectAll('currency');
                               </select>
                               <!-- priya edited -->
                            </div>
-
 
 
                         </div>
@@ -321,12 +243,6 @@ $currencies = selectAll('currency');
                   <div class="d-flex">
                      <p class="text-muted stage-name ms-3 mt-2 mt-0 me-0 deal-p">LKR 23,00000000 :</p>
                      <p class="text-muted stage-name ms-1 mt-2 mt-0 me-0 deal-p">2 Deals</p>
-                     <!--start add button-->
-                     <div class="add-button">
-                         <button class="btn-add"><i class="fa fa-plus"></i></button>
-                        </button>
-                      </div>
-                      <!--end add buton-->
 
                   </div>
                   <svg class="arrow" width="16" height="56" xmlns="http://www.w3.org/2000/svg">
@@ -352,7 +268,6 @@ $currencies = selectAll('currency');
                            <i class="fa fa-user icon-stage me-1"></i>
                            <p id="deal-price" class=" m-0 text-muted ">LKR100</p>
                         </div>
-
                      </div>
                <?php
                      // if ($stage['stage_id'] != $deal['pipeline_stage']) {
@@ -361,7 +276,6 @@ $currencies = selectAll('currency');
                   }
                } ?>
 
-
             </div>
 
          </div>
@@ -369,7 +283,9 @@ $currencies = selectAll('currency');
 
       <?php } ?>
 
-
+      <div class="floating-button">
+         <a href="#" class="material-icons"><i class="fa fa-plus"></i></a>
+      </div>
 
 
    </div>
