@@ -243,6 +243,13 @@ $currencies = selectAll('currency');
                   <div class="d-flex">
                      <p class="text-muted stage-name ms-3 mt-2 mt-0 me-0 deal-p">LKR 23,00000000 :</p>
                      <p class="text-muted stage-name ms-1 mt-2 mt-0 me-0 deal-p">2 Deals</p>
+                     <!--start add button-->
+                     <div class="add-button">
+                         <button class="btn-add"><i class="fa fa-plus"></i></button>
+                        </button>
+                      </div>
+                      <!--end add buton-->
+
                   </div>
                   <svg class="arrow" width="16" height="56" xmlns="http://www.w3.org/2000/svg">
                      <g fill="none" fill-rule="evenodd">
@@ -276,12 +283,6 @@ $currencies = selectAll('currency');
                   }
                } ?>
 
-
-            </div>
-            <div class="add-button">
-
-               <button class="btn-add"><i class="fa fa-plus"></i></button>
-               </button>
 
             </div>
 
