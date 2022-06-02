@@ -14,6 +14,7 @@ function validatedeal($post)
 
         array_push($errors, 'organization is Required');
     }
+   
 
     return $errors;
 }
@@ -42,3 +43,6 @@ function UpdatePost($post)
 
     return $errors;
 }
+
+
+

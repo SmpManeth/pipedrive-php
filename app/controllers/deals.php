@@ -34,6 +34,17 @@ if (isset($_GET["submit_deal"])) {
    
     $errors = validatedeal($_GET);
  
+    $pattern="/^[a-zA-Z]+$/";
+    $check=preg_match_all($pattern,$_GET['Contact_person_Name']);
+    if($check)
+    {
+       $name=$_GET['Contact_person_Name'];
+    }
+    else
+    {
+        $errors['error']=1;
+       $nameErr="Enter the correct pattern";
+    }
     /* if (isset($_POST["client"])) {
         $_POST['urole'] = 'client';
     } elseif (isset($_POST["freelancer"])) {
@@ -45,6 +56,7 @@ if (isset($_GET["submit_deal"])) {
         unset($_GET["phone"]);
         unset($_GET["email"]);
         unset($_GET["currency"]);
+        unset($_GET["phone_category"]);
       
 
 
