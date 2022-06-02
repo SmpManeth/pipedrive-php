@@ -39,16 +39,24 @@ position: relative;
   height: 20px;
   border: 1px solid black;
   border-radius: 2px;
-  margin-right: -10px;
 }
-.btn-primary {
-  width: 100px;
+
+.btn-primary-deal {
+  margin-left: 300px;
+  color: white;
+  margin-top: 8px;
 }
+
+
+.btn-primary-1 {
+  color: white;
+}
+
 .btn-filter{
   width: 50px;
   height: 25px;
   font-size: 12px;
-  color: white;
+  color: rgb(12, 0, 0);
   font-weight: 900;
   background-color: #ef5959 !important;
   border-radius: 5px;
@@ -60,13 +68,35 @@ position: relative;
   background-color: #292424 !important;
     transition: 0.30s ease-in-out;
 }
+.btn-primary-1:hover{
+  background-color: #292424 !important;
+    transition: 0.30s ease-in-out;
+}
+
+.btn-primary-deal:hover{
+  background-color: #292424 !important;
+    transition: 0.30s ease-in-out;
+}
 
 .filters button {
   background-color: white;
   border: none !important;
-  margin-left: 20px;
 
 }
+
+.btnfilter{
+  margin-top: 10px;
+  margin-left: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.filter-menu-options:hover{
+  background-color: #ef5959 !important;
+    transition: 0.30s ease-in-out;
+  
+}
+
 .deal-total-1 p{
   height: 10px;
   width: 100px;
@@ -84,17 +114,6 @@ position: relative;
   margin-top: 5px;
 }
 
-.btnfilter {
-  margin-left: 5px;
-}
-
-.btnfilter:hover ,button:hover {
-  background-color: rgba(195, 195, 195, 0.122);
-  transition: 0.10s ease-in;
-  
-}
-
-
 
 .deal-total {
   margin-left: 30px;
@@ -107,17 +126,22 @@ position: relative;
   border: 1px solid grey !important;
 }
 .pipeline-dropdown{
-  margin-left: -30px;
+  margin-left: 30px;
   float: right;
   position: relative;
+}
+
+.pip_img{
+  margin-right: 10px;
+  margin-top: 10px;
 }
 
 .pipeline-dropdown-input-text {
   padding-left: 15px;
   width: 150px;
- 
   border-left: 30px solid transparent !important;
 }
+
 .pipeline-dropdown img{
   position: inherit;
   top: 5px;
@@ -376,15 +400,7 @@ position: relative;
   font-size: 15px;
 }
 .input-field {
-<<<<<<< HEAD
   padding-left: 4px !important;
-=======
-
-  padding-left: 4px !important;
-padding-left: 4px !important;
-padding-left: 4px !important;
- padding-left: 4px !important;
->>>>>>> d5da60a9e3f728b20c9d54e215e4e0cbc8c10813
   padding: 0px;
   border: 0.5px solid grey;
   border-radius: 5px;
@@ -399,16 +415,43 @@ padding-left: 4px !important;
   border-radius: 5px;
   width: 250px;
   position: relative;
-<<<<<<< HEAD
-=======
- left: -22px;
->>>>>>> d5da60a9e3f728b20c9d54e215e4e0cbc8c10813
   left: -22px;
   color: grey;
   font-size: 16px;
 }
 
+.lkr_tag p{
+  margin-left: 250px;
+  font-size: 12px;
+  margin-top: 20px;
+  
+}
 
+.deals_tag p{
+  font-size: 12px;
+  margin-left: 10px;
+  margin-top: 20px;
+  
+}
+
+.group_1{
+  margin-left: 10px;
+  margin-top: 8px;
+}
+
+.group_2{
+  margin-left: 10px;
+  margin-top: 8px;
+}
+
+.active-pink input.form-control[type=text] {
+  border-bottom: 1px solid #f48fb1;
+  box-shadow: 0 1px 0 0 #f48fb1;
+}
+
+.dropdown-menu{
+  margin-top: 10px;
+}
 
 .modal-content {
  
