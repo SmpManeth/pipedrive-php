@@ -376,7 +376,15 @@ position: relative;
   font-size: 15px;
 }
 .input-field {
+<<<<<<< HEAD
   padding-left: 4px !important;
+=======
+
+  padding-left: 4px !important;
+padding-left: 4px !important;
+padding-left: 4px !important;
+ padding-left: 4px !important;
+>>>>>>> d5da60a9e3f728b20c9d54e215e4e0cbc8c10813
   padding: 0px;
   border: 0.5px solid grey;
   border-radius: 5px;
@@ -391,6 +399,10 @@ position: relative;
   border-radius: 5px;
   width: 250px;
   position: relative;
+<<<<<<< HEAD
+=======
+ left: -22px;
+>>>>>>> d5da60a9e3f728b20c9d54e215e4e0cbc8c10813
   left: -22px;
   color: grey;
   font-size: 16px;
@@ -442,14 +454,18 @@ height: 700px;
   clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 0% 100%, 20% 50%, 0% 0%);
 }
 /*add buton */
-.add-button button{
-  border-radius: 6px;
-  border: hidden;
-  cursor: pointer;
-  background: hidden;
+.btn-add{
+  background-color: #f8f9fa;; 
+  border: none; 
+  color: white; 
+  padding: 1px 16px; 
+  font-size: 16px; 
+  cursor: pointer; 
 }
 
-.add-button button:hover {
-  background-color: rgb(248, 50, 103);
-  background-image: url(icons8-plus-48.png);
+/* Darker background on mouse-over */
+.btn-add:hover {
+  background-color: RoyalBlue;
 }
+
+/*add button end */

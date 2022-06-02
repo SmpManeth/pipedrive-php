@@ -38,7 +38,11 @@ $currencies = selectAll('currency');
                            </div>
                            <div class="model-item text-muted">
                               <p class="">Value</p>
+<<<<<<< HEAD
 <!--  priya edited -->
+=======
+
+>>>>>>> d5da60a9e3f728b20c9d54e215e4e0cbc8c10813
                               <input class="input-field" type="text" name="value" style="width: 125px;">
                               <select class="input-field" name="currency" id="" style="width: 120px; height: 27px; padding: 0px;">
                               <?php foreach ($currencies as $key => $currency) { ?>
@@ -48,7 +52,11 @@ $currencies = selectAll('currency');
                                 
                                  ?>
       
+<<<<<<< HEAD
 <!-- priya edited -->
+=======
+
+>>>>>>> d5da60a9e3f728b20c9d54e215e4e0cbc8c10813
                               </select>
                            </div>
 
@@ -86,14 +94,13 @@ $currencies = selectAll('currency');
 
                            <div class="model-item text-muted">
                               <p class="">Visible to</p>
-<!-- priya edited -->
+
                               <select class="input-field" name="Visible_to" id="" style="height: 27px; padding: 0px;">
                                  <?php foreach ($xxx as $key => $xxx) { ?>
                                     <option class="" value="<?php echo $xxx['xxx_id'] ?>"><?php echo $xxx['xxx_name'] ?></option>
                                  <?php   } ?>
 
-                              </select>
-     <!-- priya edited -->          
+                              </select>        
                            </div>
 
  
