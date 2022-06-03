@@ -81,35 +81,29 @@ $mob_typr = selectAll('phone_type')
 
                                     <div class="model-item text-muted">
                                         <p class="">Prospected Closing Date</p>
-
                                         <input class="input-field" type="date" name="prospected_closing_date">
                                     </div>
 
                                     <div class="model-item text-muted">
                                         <p class="">Expected Closing Date</p>
-
                                         <input class="input-field" type="date" name="expected_closing_date">
                                     </div>
-                                </div>
-                           
-
-      
+                                </div>    
                      </div>
 
                      <div class="col-6 p-2 ps-3">
+
                                     <div class="model-item text-muted">
+                                    <h9 class="modal-title"  style="color:black" > Person </h9>
                                     <p class="">Phone</p>
                                     <input class="input-field" type="text" name="value" maxlength="10" style="width: 150px;">                             
-                                      <select class="input-field" name="phone category" id=""
+                                      <select class="input-field" name="phone category" id4er=""
                                         style="width: 120px; height: 27px; padding: 0px;">
                                         <?php foreach ($mob_typr as $key => $phone_type) { ?>
                                         <option class="" value="<?php echo $phone_type['pho_type_id'] ?>">
                                             <?php echo $phone_type['type_name'] ?></option>
                                         <?php   } ?>
                                         </select>
-
-                     
-
                                        <br> 
                                         <!-- <input class="input-field" type="text" name="Add Phone"> -->
                                         <a class="add_field_button text-decoration-none  h6"> + Add Phone </a>
@@ -122,7 +116,7 @@ $mob_typr = selectAll('phone_type')
                            <input class="input-field" type="text" name="email">
                            <br> 
                            <a class="add_f_button text-decoration-none  h6"> + Add Email </a>
-                           <div class="input_wrap">
+                            <div class="input_wrap">
                            </div>
                            
                         </div>
@@ -311,9 +305,10 @@ $mob_typr = selectAll('phone_type')
    <?php } ?>
 
    <div class="floating-button">
-      <a href="#" class="material-icons"><i class="fa fa-plus"></i></a>
+      <a href="#" class="material-icons" ><i class="fa fa-plus"></i></a>
+  <a href=
+  
    </div>
-
 
 
 
