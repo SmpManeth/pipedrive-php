@@ -520,14 +520,12 @@ position: relative;
 
 .modal-content {
  
-width: 630px;
-/* width: 620px; */
-height: 700px;
-/* height: 727px; */
+width: 650px;
+
 }
 .left-col-deal{
   border-right: 1px solid gray;
-  height:587px;
+  height:500px;
 }
  .pipeline {
    position: relative;
@@ -623,3 +621,5 @@ height: 700px;
   transform:  rgb(243, 116, 116);
 }
 /*floating add button end */
+
+
