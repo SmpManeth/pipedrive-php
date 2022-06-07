@@ -144,6 +144,7 @@ $mob_type = selectAll('phone_type');
             5 Deals
          </p>
       </div>
+      
       <div class="pipeline-dropdown d-flex">
          <img class="" src="<?php echo $BASE_URL . 'assets/images/bar-chart-30.png' ?>" />
          <select class="pipeline-dropdown-input-text" name="" id="" style="height: 27px; padding: 0px;">
@@ -178,25 +179,74 @@ $mob_type = selectAll('phone_type');
                   <a href="#" class="nav-link lead_buttons" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true"><img src="https://img.icons8.com/ios/24/000000/settings--v1.png" />Settings
                   </a>
                   <a href="logout.php"><img src="https://img.icons8.com/ios/50/000000/exit.png" />Log Out</a>
-
                </div>
             </div>
          </div>
-
       </div>
-
-
    </div>
+</div>
 
+
+<div class="group_1">
+            <button class="btn btn-primary-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+               Pipeline
+            </button>
+            <ul class="dropdown-menu">
+               <li><a class="dropdown-item" href="#">Pipeline</a></li>
+               <li>
+                  <hr class="dropdown-divider">
+               </li>
+               <li><a class="dropdown-item" href="#">+ New Pipline</a></li>
+               <li><a class="dropdown-item" href="#">+ Edit Pipline</a></li>
+            </ul>
+         </div>
+         <!--everyone dropdown list start-->
+         <div class="group_2 dropdown">
+            <button type="button" onclick="myFunction1()" class="btn btn-primary-every">
+               Everyone
+            </button>
+            <div id="myDropdown1" class="dropdown-content1 shadow-sm">
+               <!--everyone button edit start dhanushka -->
+               <div class="nav everyone" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                  <div class="tab">
+                     <button class="tablinks" onclick="openCity(event, 'London')">Favorites</button>
+                     <button class="tablinks" onclick="openCity(event, 'Paris')">owners</button>
+                     <button class="tablinks" onclick="openCity(event, 'Tokyo')">Filters</button>
+                  </div>
+                  <!-- Tab content -->
+                  <div id="London" class="tabcontent">
+                     <h3>Favorites</h3>
+                     <h6>Owners</h6>
+                     <a href="#">add new filter</a>
+                  </div>
+                  <div id="Paris" class="tabcontent">
+                     <h3>Owners</h3>
+                     <h6>Everyone</h6>
+                     <a href="#">add new filter</a>
+                  </div>
+                  <div id="Tokyo" class="tabcontent">
+                     <h3>Filters</h3>
+                     <a href="#">All deleted deals</a>
+                     <a href="#">All lost deals</a>
+                     <a href="#">All open deals</a>
+                     <a href="#">All won deals</a>
+                     <a href="#">More than 3 months old deals</a>
+                     <a href="#">Rotten deals</a>
+                  </div>
+               </div>
+               <!--everyone button edit start dhanushka -->
+            </div>
+         </div>
+         <!--everyone dropdown list end-->
+      </div>
+   </div>
 </div>
 
 <!-- stages and cards -->
 <div class="d-flex flex-row stage-row ">
    <!-- stage cards -->
-
    <?php foreach ($stages as $key => $stage) { ?>
       <div class="p-2 stage">
-
          <!-- stage heading -->
          <div class="stage-box">
             <div class="stage-head-card mb-2">
@@ -204,7 +254,6 @@ $mob_type = selectAll('phone_type');
                <div class="d-flex">
                   <p class="text-muted stage-name ms-3 mt-2 mt-0 me-0 deal-p">LKR 23,00000000 :</p>
                   <p class="text-muted stage-name ms-1 mt-2 mt-0 me-0 deal-p">2 Deals</p>
-
                </div>
                <svg class="arrow" width="16" height="56" xmlns="http://www.w3.org/2000/svg">
                   <g fill="none" fill-rule="evenodd">
@@ -215,14 +264,12 @@ $mob_type = selectAll('phone_type');
                </svg>
             </div>
          </div>
-
          <!-- stage card -->
          <div class="deal-stage-col ">
             <!-- single deal caed -->
             <?php foreach ($deals as $key => $deal) {
                if ($stage['stage_id'] == $deal['pipeline_stage']) { ?>
                   <div class="d-flex flex-column deals-box shadow-sm" draggable="true">
-
                      <p id="deal-name" class=" m-0"><?php echo $deal['title'] ?></p>
                      <p id="deal-organization" class="text-muted m-0">Sterling</p>
                      <div class="d-flex  pt-1">
@@ -239,6 +286,7 @@ $mob_type = selectAll('phone_type');
          </div>
       </div>
    <?php } ?>
+
    <div class="floating-button"   data-bs-toggle="modal" data-bs-target="#exampleModal">
       <a href="#" class="material-icons"><i class="fa fa-plus"></i></a>
    </div>
