@@ -4,6 +4,64 @@ function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
+
+
+function validateAddDealForm(){
+    var contactPerson = document.forms["add-deal-form"]["Contact_person_Name"].value;
+    var PhoneNo = document.forms["add-deal-form"]["Phone_No"].value;
+    var Value = document.forms["add-deal-form"]["Value_No"].value;
+    var EmailAddress = document.forms["add-deal-form"]["Email_Address"].value;
+    var error_flag = false;
+
+    //first name
+    if (/^[a-zA-Z]+$/.test(contactPerson)){
+        document.getElementById('Contact_person_Name_error').style.color = "";
+    }else {
+       
+       document.getElementById('Contact_person_Name_error').innerHTML=' * Contact Person must have alphabet characters only';
+       error_flag = true;
+    }
+
+         //mobile no
+         if (/^[0]{1}[0-9]{9}$/.test(PhoneNo)){
+            document.getElementById('Phone_No_error').style.color = "";
+        }
+        else{
+            document.getElementById('Phone_No_error').innerHTML=' * You did not enter numbers only. Please enter only numbers';
+            error_flag = true;
+        }
+
+         //value
+               if (/^[0-9]+$/.test(Value)){
+                document.getElementById('Value_error').style.color = "";
+            }
+            else{
+                document.getElementById('Value_error').innerHTML=' * Only Numeric Characters';
+                error_flag = true;
+            }
+
+                //   email
+                  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(EmailAddress)){
+                      document.getElementById('Email_Address_error').style.color = "";
+                  }else {
+                      document.getElementById('Email_Address_error').innerHTML=' * Please Enter Correct Email Address';
+                      error_flag = true;
+                  }
+
+    if (error_flag){
+        return false;
+    }else{
+        return true;
+    }
+}
+
+function clearForms()
+{
+    $(':input').not(':button, :submit, :reset, :hidden, :checkbox, :radio').val('');
+    $(':checkbox, :radio').prop('checked', false);
+}
+
+
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {
     if (!event.target.matches('.dropbtn')) {
@@ -96,6 +154,12 @@ window.onclick = (event) => {
 };
 
 
+// function closeWindow() {
+//     if (confirm("Close window?")){
+//         close();
+//     }
+// }
+
 $(document).ready(function () {
     var max_fields = 10; //maximum input boxes allowed
     var wrapper = $(".input_fields_wrap"); //Fields wrapper
@@ -106,14 +170,12 @@ $(document).ready(function () {
         e.preventDefault();
         if (x < max_fields) { //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div><input type="text" name="phone-extra" class="input-field"><div class="input-group-append"><button class="btn btn-outline-danger remove_field" type="button">Remove</button></div></div>');
-
-        }
+            $(wrapper).append('<div><input type="text" name="phone-extra" style="width: 150px;" class="input-field"> <select class="input-field" name="phone category" id4er="" style="width: 120px; height: 27px; padding: 0px;"><?php foreach ($mob_typr as $key => $phone_type) { ?><option class="" value="<?php echo $phone_type["pho_type_id"] ?>   <?php echo $phone_type["type_name"] ?></option><?php}?> </select><button class="remove_field" style="margin-top:2px; margin-bottom:2px; type="button"><i class="fas fa-trash-alt" aria-hidden="true"></i></button><div class="input-group-append"></div></div>');        }
     });
 
     $(wrapper).on("click", ".remove_field", function (e) { //user click on remove text
         e.preventDefault();
-        $(this).parent('div').parent('div').remove(); x--;
+        $(this).parent('div').remove(); x--;
     })
 });
 $(document).ready(function () {
@@ -126,14 +188,13 @@ $(document).ready(function () {
         e.preventDefault();
         if (x < max_fields) { //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div><input type="text" name="email-extra" class="input-field"><div class="input-group-append"><button class="btn btn-outline-danger remove_field" type="button">Remove</button></div></div>');
-
+            $(wrapper).append('<div><input type="text" name="email-extra" style="width: 275px;" class="input-field"><button class="remove_field" style="margin-top:2px; margin-bottom:2px;" type="button"><i class="fa fa-trash" aria-hidden="true"></i></button><div class="input-group-append"></div></div> ');
         }
     });
 
     $(wrapper).on("click", ".remove_field", function (e) { //user click on remove text
         e.preventDefault();
-        $(this).parent('div').parent('div').remove(); x--;
+        $(this).parent('div').remove(); x--;
     })
 });
 
