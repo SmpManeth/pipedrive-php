@@ -151,6 +151,7 @@ $mob_typr = selectAll('phone_type')
 
 
 
+
          </div>
          <div>
 
@@ -180,45 +181,44 @@ $mob_typr = selectAll('phone_type')
             </ul>
          </div>
          <!--everyone dropdown list start-->
-         <div class="group_2">
+         <div class="group_2 dropdown">
+            <button type="button" onclick="myFunction1()" class="btn btn-primary-every">
+               Everyone
+            </button>
+            <div id="myDropdown1" class="dropdown-content1 shadow-sm">
 
-            <div class="dropdown2">
-               <button onclick="myFunction1()" class="dropbtn user everyone">Everyone<i class='fas fa-caret-square-down'></i></button>
-               <div id="myDropdown1" class="dropdown-content1 shadow-sm">
-
-                  <!--everyone button edit start dhanushka -->
-                  <div class="nav everyone" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                     <div class="tab">
-                        <button class="tablinks" onclick="openCity(event, 'London')">Favorites</button>
-                        <button class="tablinks" onclick="openCity(event, 'Paris')">owners</button>
-                        <button class="tablinks" onclick="openCity(event, 'Tokyo')">Filters</button>
-                     </div>
-
-                     <!-- Tab content -->
-                     <div id="London" class="tabcontent">
-                        <h3>Favorites</h3>
-                        <h6>Owners</h6>
-                        <a href="#">add new filter</a>
-                     </div>
-
-                     <div id="Paris" class="tabcontent">
-                        <h3>Owners</h3>
-                        <h6>Everyone</h6>
-                        <a href="#">add new filter</a>
-                     </div>
-
-                     <div id="Tokyo" class="tabcontent">
-                        <h3>Filters</h3>
-                        <a href="#">All deleted deals</a>
-                        <a href="#">All lost deals</a>
-                        <a href="#">All open deals</a>
-                        <a href="#">All won deals</a>
-                        <a href="#">More than 3 months old deals</a>
-                        <a href="#">Rotten deals</a>
-                     </div>
+               <!--everyone button edit start dhanushka -->
+               <div class="nav everyone" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                  <div class="tab">
+                     <button class="tablinks" onclick="openCity(event, 'London')">Favorites</button>
+                     <button class="tablinks" onclick="openCity(event, 'Paris')">owners</button>
+                     <button class="tablinks" onclick="openCity(event, 'Tokyo')">Filters</button>
                   </div>
-                  <!--everyone button edit start dhanushka -->
+
+                  <!-- Tab content -->
+                  <div id="London" class="tabcontent">
+                     <h3>Favorites</h3>
+                     <h6>Owners</h6>
+                     <a href="#">add new filter</a>
+                  </div>
+
+                  <div id="Paris" class="tabcontent">
+                     <h3>Owners</h3>
+                     <h6>Everyone</h6>
+                     <a href="#">add new filter</a>
+                  </div>
+
+                  <div id="Tokyo" class="tabcontent">
+                     <h3>Filters</h3>
+                     <a href="#">All deleted deals</a>
+                     <a href="#">All lost deals</a>
+                     <a href="#">All open deals</a>
+                     <a href="#">All won deals</a>
+                     <a href="#">More than 3 months old deals</a>
+                     <a href="#">Rotten deals</a>
+                  </div>
                </div>
+               <!--everyone button edit start dhanushka -->
             </div>
 
 

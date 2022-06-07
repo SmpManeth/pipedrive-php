@@ -58,7 +58,7 @@ position: relative;
   font-size: 12px;
   color: rgb(12, 0, 0);
   font-weight: 900;
-  background-color: #ef5959 !important;
+  background-color: #ef5959;
   border-radius: 5px;
   margin-left: 150px !important;
 }
@@ -335,15 +335,6 @@ position: relative;
 
   margin-right: 20px;
 }
-
-/* Dropdown Button */
-.dropbtn {
-  background-color: inherit;
-
-  border: none;
-  cursor: pointer;
-}
-
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
@@ -369,7 +360,7 @@ position: relative;
   width: 300px;
   overflow: auto;
   z-index: 1;
-  border: 1px solid red;
+
 }
 
 /* Links inside the dropdown */
@@ -447,8 +438,12 @@ position: relative;
 
                                                       /*Dhanushka Edit start everyone button */
 /*everyone button*/
--img .everyone{
-  background-color: red;
+button.btn.btn-primary-every{
+  color: #f8f9fa;
+}
+button.btn.btn-primary-every:hover{
+  transition: 0.7s;
+  background-color: #000807 !important;
 }
 /* Style the tab */
 .tab {
