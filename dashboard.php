@@ -11,6 +11,7 @@ include($ROOT_PATH . "/app/controllers/deals.php");
     <title>Pipeline name + Dashboard</title>
 </head>
 
+
 <body style="background-color:#F7F7F7 ">
 
     <!-- header and Sidebar -->
