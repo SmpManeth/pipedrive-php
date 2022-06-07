@@ -6,77 +6,26 @@ $mob_type = selectAll('phone_type');
 // dd($currencies);
 ?>
 
-<?php
-$nameErr = $emailErr = $phonenoErr = "";
-$name = $email = $phoneno = "";
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-   if (empty($_POST['name'])) {
-      $nameErr = "This field is required";
-   } else {
-      $pattern = "/^[a-zA-Z]+$/";
-      $check = preg_match_all($pattern, $_POST['name']);
-      if ($check) {
-         $name = $_POST['name'];
-      } else {
-         $nameErr = "Enter the correct pattern";
-      }
-   }
-
-   //validating email
-   if (empty($_POST['email'])) {
-      $emailErr = "This field is required";
-   } else {
-      $check = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
-      if ($check) {
-         $email = $_POST['email'];
-      } else {
-         $emailErr = "Enter the correct email format";
-      }
-   }
-   //validating phone no
-   if (empty($_POST['phoneno'])) {
-      $phonenoErr = "This field is required";
-   } else {
-      $pattern = "/^[6-9]{1}[0-9]{9}/";
-      $check = preg_match_all($pattern, $_POST['phoneno']);
-      if ($check) {
-         $phoneno = $_POST['phoneno'];
-      } else {
-         $phonenoErr = "Enter correct phone number";
-      }
-   }
-   if ($_POST['comment']) {
-      $comment = htmlspecialchars($_POST['comment']);
-   }
-}
-?>
-
 <div class="tab-pane fade show active" id="v-pills-deals" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
-
-
-   <!-- Modal -->
-   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
          <div class="modal-content">
-            <div class="modal-header">
-               <h5 class="modal-title" id="exampleModalLabel">Add Deal</h5>
+           <div class="modal-header " style="background-color:#dee2e6" > 
+              <h5 class="modal-title" id="exampleModalLabel">Add Deal</h5>
                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body p-0 ps-3 pe-3">
-               <form action="dashboard.php" method="get">
+            <div class="modal-body p-0 ps-3 pe-3" >
+               <form action="dashboard.php" method="post" enctype="multipart/form-data" name="add-deal-form" onsubmit="return validateAddDealForm()">
                   <div class="row">
-                     <div class="col-6 left-col-deal p-2 ps-3">
-
-                        <div>
-
+                     <div class="col-6 p-2 ps-3">
+                        <div
                            <div class="model-item text-muted">
                               <p class="">Contact Person</p>
                               <i class="fa fa-user icon"></i>
-                              <input class="input-field input-text" name="Contact_person_Name" type="text">
-                              <span class='red-message'>* <?php echo $nameErr; ?></span>
+                              <input class="input-field input-text" name="Contact_person_Name" id="Contact_person_Name" type="text">
+                              <label id="Contact_person_Name_error" style="font-size: 12px; color: red"></label>
                            </div>
-
                            <div class="model-item text-muted">
                               <p class="">Organization</p>
                               <i class="fa fa-building icon"></i>
@@ -84,15 +33,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                            </div>
                            <div class="model-item text-muted">
                               <p class="">Title</p>
-
                               <input class="input-field" name="title" type="text">
                            </div>
                            <div class="model-item text-muted">
-                              <p class="">Value</p>
-                              <!--  priya edited -->
-                           </div>
-
-
+                              <p class="">Value</p> 
+                              <input class="input-field" type="text" name="value" id="Value_No" style="width: 125px;">
+                              <select class="input-field" name="currency" id="" style="width: 120px; height: 27px; padding: 0px;">
+                                 <?php foreach ($currencies as $key => $currency) { ?>
+                                    <option class="" value="<?php echo $currency['curr_id'] ?>">
+                                       <?php echo $currency['currency_name'] ?></option>
+                                 <?php
+                                 }
+                                 ?>
+                              </select>
+                              <label id="Value_error" style="font-size: 12px; color: red"></label>
+                           </div>                      
                            <div class="model-item text-muted">
                               <p class="">Pipeline</p>
                               <select class="input-field" name="pipeline" id="" style="height: 27px; padding: 0px;">
@@ -100,76 +55,61 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                  <option class="" value="Pipeline_Two">Pipeline Two</option>
                               </select>
                            </div>
-
                            <div class="model-item text-muted">
                               <p class="">Pipeline Stage</p>
-
                               <select class="input-field" name="pipeline_stage" id="" style="height: 27px; padding: 0px;">
                                  <?php foreach ($stages as $key => $stage) { ?>
                                     <option class="" value="<?php echo $stage['stage_id'] ?>">
                                        <?php echo $stage['stage_name'] ?></option>
                                  <?php   } ?>
-
                               </select>
                            </div>
-
                            <div class="model-item text-muted">
                               <p class="">Prospected Closing Date</p>
-
                               <input class="input-field" type="date" name="prospected_closing_date">
                            </div>
-
                            <div class="model-item text-muted">
                               <p class="">Expected Closing Date</p>
-
                               <input class="input-field" type="date" name="expected_closing_date">
-                           </div>
-                           
+                           </div>                  
                         </div>
-                     </div>
 
-                  </div>
-
-                  <div class="col-6 p-2 ps-3">
+                     <div class="col-6 p-2 ps-9">
                      <div class="model-item text-muted">
-                        <p class="">Phone</p>
-
-                        <input class="input-field" type="text" name="value" maxlength="10" style="width: 150px;">
-                        <span class='red-message'>* <?php echo $phonenoErr; ?></span>
-                        <select class="input-field" name="phone category" id="" style="width: 120px; height: 27px; padding: 0px;">
-                           <?php foreach ($xxx as $key => $xxx) { ?>
-                              <option class="" value="<?php echo $xxx['stage_id'] ?>">
-                                 <?php echo $xxx['xxx_name'] ?></option>
-                           <?php   } ?>
-
-                           <input class="input-field" type="text" name="Add Phone">
-
+                     <h11 class="modal-title" style="color:black"> PERSON </h11>
+                     <p class="">Phone</p>
+                           <input class="input-field" name="Phone_No" id="Phone_No" type="text" maxlength="10" style="width: 150px;" size="27" class="rounded-lg float-right ml-2 mr-3">
+                           <select class="input-field" name="phone category" id4er="" style="width: 120px; height: 27px; padding: 0px;">
+                           <?php foreach ($mob_type as $key => $phone_type) { ?>
+                                    <option class="" value="<?php echo $phone_type['pho_type_id'] ?>">
+                                       <?php echo $phone_type['type_name'] ?></option>
+                                 <?php
+                                 }
+                                 ?>
+                           </select>
+                           <label id="Phone_No_error" style="font-size: 12px; color: red"></label>
+                           <br>                
+                           <div class="input_fields_wrap" style="margin-top:6px;">
+                           </div>
                            <a class="add_field_button text-decoration-none  h6"> + Add Phone </a>
-                           <div class="input_fields_wrap">
                            </div>
-                     </div>
 
                      <div class="model-item text-muted">
-                        <p class="">Email</p>
-
-
-                        <input class="input-field" type="text" name="email">
-                        <a class="add_f_button text-decoration-none  h6"> + Add Email </a>
-                        <div class="input_wrap">
-                        </div>
+                        <p class="">EmailAddress</p>
+                        <input class="input-field" name="Email_Address" id="Email_Address" type="text" style="width: 275px;">
+                        <label id="Email_Address_error" style="font-size: 12px; color: red"></label>
+                        <br>
+                        <div class="input_wrap" style="margin-top:6px;"></div>
+                        <a class="add_f_button text-decoration-none  h6"> + Add Email </a>    
                      </div>
-
-
                   </div>
-
             </div>
-            <div class="modal-footer">
-
-               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-               <button type="submit" value="add_deal" id="deal_submit" name="submit_deal" class="btn btn-primary">Save changes</button>
+            <div class="modal-footer" >
+            <input type="reset" name="reset" value="Reset" class="btn btn-primary">
+            <button type="button" class="btn btn-secondary" id="clearForms" data-bs-dismiss="modal" > Close</button>  
+               <input type="submit" name="submit_deal" value="Save" id="deal_submit" class="btn btn-primary">
             </div>
             </form>
-
          </div>
       </div>
    </div>
@@ -193,12 +133,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
          <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Add Deal
          </button>
-
-
-
       </div>
-
-      <div>
+        <div>
          <p>
             LKR 26,100
          </p>
@@ -300,19 +236,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                   // }
                }
             } ?>
-
          </div>
-
       </div>
-
-
    <?php } ?>
-
-   <div class="floating-button">
+   <div class="floating-button"   data-bs-toggle="modal" data-bs-target="#exampleModal">
       <a href="#" class="material-icons"><i class="fa fa-plus"></i></a>
    </div>
-
-
 </div>
 
 </div>
