@@ -55,11 +55,20 @@ function validateAddDealForm(){
     }
 }
 
-function clearForms()
+function reset_form()
 {
-    $(':input').not(':button, :submit, :reset, :hidden, :checkbox, :radio').val('');
-    $(':checkbox, :radio').prop('checked', false);
+ if ( confirm("Are you sure that you want to reset this form?") )
+   {
+  window.document.contact.reset();
+   }
+  
+   else
+   {
+    window.document.contact.cname.focus();
+   }
 }
+
+
 
 
 // Close the dropdown menu if the user clicks outside of it
