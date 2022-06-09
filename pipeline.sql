@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2022 at 12:43 PM
+-- Generation Time: Jun 09, 2022 at 12:17 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -236,7 +236,7 @@ CREATE TABLE `deal` (
   `value` varchar(255) NOT NULL,
   `pipeline` varchar(255) NOT NULL,
   `pipeline_stage` varchar(255) NOT NULL,
-  `prospected_closing_date` varchar(255) NOT NULL,
+  `project_name` varchar(255) NOT NULL,
   `expected_closing_date` varchar(255) NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -245,17 +245,14 @@ CREATE TABLE `deal` (
 -- Dumping data for table `deal`
 --
 
-INSERT INTO `deal` (`deal_id`, `Contact_person_Name`, `organization`, `title`, `value`, `pipeline`, `pipeline_stage`, `prospected_closing_date`, `expected_closing_date`, `user_id`) VALUES
-(32, 'Ravindu', 'WIDZMART', 'Creative Start idea', '', 'Pipeline_Two', '3', '', '2022-05-04', 1),
-(33, 'Isuru Diluminda', 'WIDZMART', 'Receive Your Paper', '2151', 'Pipeline_One', '1', '', '2022-05-06', 1),
-(34, 'Maneth Ovindu Siman Meru Pathirana', 'sdgndsn', 'Creative Start idea', '75000', 'Pipeline_Two', '2', '', '2022-05-26', 1),
-(35, 'stage one sample', 'stage one sample', 'stage one sample', '123', 'Pipeline_One', '1', '', '2022-05-10', 1),
-(36, 'stage two sample', 'stage two sample', 'stage two sample', '123', 'Pipeline_One', '2', '', '2022-05-11', 1),
-(37, 'stage three', 'stage three', 'stage three', '1243', 'Pipeline_One', '3', '', '2022-05-19', 1),
-(38, 'blah', 'blah', 'blah', '122', 'Pipeline_One', '3', '', '2022-05-20', 1),
-(39, 'john', 'mass', 'davdfavdv', '1245', 'Pipeline_One', '3', '', '2022-06-03', 1),
-(40, '23456789o0p', 'blah', '', '122', 'Pipeline_Two', '2', '2022-06-24', '2022-07-03', 1),
-(41, 'blah', 'mass', 'sasas', 'sass', 'Pipeline_One', '2', '1222-12-12', '2202-04-12', 1);
+INSERT INTO `deal` (`deal_id`, `Contact_person_Name`, `organization`, `title`, `value`, `pipeline`, `pipeline_stage`, `project_name`, `expected_closing_date`, `user_id`) VALUES
+(32, 'Ravindu', 'WIDZMART', 'Creative Start idea', '', 'Pipeline_Two', '3', 'StartTuts', '2022-05-04', 1),
+(33, 'Isuru Diluminda', 'WIDZMART', 'Receive Your Paper', '2151', 'Pipeline_One', '1', 'StartTuts', '2022-05-06', 1),
+(34, 'Maneth Ovindu Siman Meru Pathirana', 'sdgndsn', 'Creative Start idea', '75000', 'Pipeline_Two', '2', 'StartTuts', '2022-05-26', 1),
+(35, 'stage one sample', 'stage one sample', 'stage one sample', '123', 'Pipeline_One', '1', 'StartTuts', '2022-05-10', 1),
+(36, 'stage two sample', 'stage two sample', 'stage two sample', '123', 'Pipeline_One', '2', 'StartTuts', '2022-05-11', 1),
+(37, 'stage three', 'stage three', 'stage three', '1243', 'Pipeline_One', '3', 'StartTuts', '2022-05-19', 1),
+(38, 'Isuru Diluminda', 'WIDZMART', 'yifoy', '', 'Pipeline_One', '1', 'StartTuts', '2022-05-11', 1);
 
 -- --------------------------------------------------------
 
@@ -296,7 +293,7 @@ INSERT INTO `phone_type` (`pho_type_id`, `type_name`) VALUES
 --
 
 CREATE TABLE `stages` (
-  `stage_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `stage_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -304,10 +301,56 @@ CREATE TABLE `stages` (
 -- Dumping data for table `stages`
 --
 
-INSERT INTO `stages` (`stage_id`, `stage_name`) VALUES
+INSERT INTO `stages` (`id`, `stage_name`) VALUES
 (1, 'Stage one'),
 (2, 'Stage Two'),
 (3, 'Stage Three');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_status`
+--
+
+CREATE TABLE `tbl_status` (
+  `id` int(11) NOT NULL,
+  `status_name` varchar(55) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_status`
+--
+
+INSERT INTO `tbl_status` (`id`, `status_name`) VALUES
+(1, 'New'),
+(2, 'In Progress'),
+(3, 'Pending'),
+(4, 'Done');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_task`
+--
+
+CREATE TABLE `tbl_task` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `project_name` varchar(255) NOT NULL,
+  `status_id` int(11) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_task`
+--
+
+INSERT INTO `tbl_task` (`id`, `title`, `description`, `project_name`, `status_id`, `created_at`) VALUES
+(1, 'Tutorial CRUD', 'CRUD Job for the Tutorial functionality', 'StartTuts', 3, '2018-07-12 18:45:01'),
+(2, 'Listing with Filtering and Pagination', 'Tutorial listing with search filter option and pagination links', 'StartTuts', 3, '2018-07-12 18:44:54'),
+(3, 'Sorting and Change Ordering', 'Enabling dynamic sorting and change the list order with AJAX  ', 'StartTuts', 4, '2018-07-12 18:44:58'),
+(4, 'Client-side and server-side Validation', 'Validating user data with client and the server side validation mechanism.', 'StartTuts', 3, '2018-07-12 18:44:56');
 
 -- --------------------------------------------------------
 
@@ -347,16 +390,22 @@ ALTER TABLE `deal_phone_numbers`
   ADD KEY `deal_id` (`deal_id`);
 
 --
--- Indexes for table `phone_type`
---
-ALTER TABLE `phone_type`
-  ADD PRIMARY KEY (`pho_type_id`);
-
---
 -- Indexes for table `stages`
 --
 ALTER TABLE `stages`
-  ADD PRIMARY KEY (`stage_id`);
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_status`
+--
+ALTER TABLE `tbl_status`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_task`
+--
+ALTER TABLE `tbl_task`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -372,19 +421,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `deal`
 --
 ALTER TABLE `deal`
-  MODIFY `deal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
-
---
--- AUTO_INCREMENT for table `phone_type`
---
-ALTER TABLE `phone_type`
-  MODIFY `pho_type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `deal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `stages`
 --
 ALTER TABLE `stages`
-  MODIFY `stage_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tbl_status`
+--
+ALTER TABLE `tbl_status`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `tbl_task`
+--
+ALTER TABLE `tbl_task`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
