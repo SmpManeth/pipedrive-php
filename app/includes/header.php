@@ -7,7 +7,7 @@
         </div>
         <div class="search-container">
             <form action="#">
-                <input type="text" placeholder="Search.." name="search">
+                <input type="text" placeholder="   Search.." name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
@@ -58,9 +58,29 @@
             <button class="nav-link lead_buttons active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-leads" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
                 Leads
             </button>
+            <br>
             <button class="nav-link lead_buttons" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-deals" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
                 Deals
             </button>
-
+            <br>
+            <button class="nav-link lead_buttons" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-deals" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+            Activity
+            </button>
+            <br>
+            <button class="nav-link lead_buttons" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-deals" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+            Person
+            </button>
+            <br>
+            <button class="nav-link lead_buttons" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-deals" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+            Organization
+            </button>
+            <br>
+            <button class="nav-link lead_buttons" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-deals" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+            Note
+            </button>
+            <br>
+            <button class="nav-link lead_buttons" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-deals" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+            product
+            </button>
         </div>
     </div>
