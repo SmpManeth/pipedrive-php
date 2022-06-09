@@ -110,7 +110,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x < max_fields) { //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div><input type="text" name="phone-extra" class="input-field"> <div class="input-group-append"><button class="btn btn-outline-danger remove_field" type="button">Remove</button></div></div>');
+            $(wrapper).append('<div><input type="text" name="phone-extra" style="width: 150px;" class="input-field"> <select class="input-field" name="phone category" id4er="" style="width: 120px; height: 27px; padding: 0px;"><?php foreach ($mob_typr as $key => $phone_type) { ?><option class="" value="<?php echo $phone_type["pho_type_id"] ?><?php echo $phone_type["type_name"] ?></option><?php}?></select> <div class="input-group-append">   <button class="btn remove_field"><i class="fa fa-trash" aria-hidden="true"></i></button></div></div>'); 
 
         }
     });
@@ -119,7 +119,8 @@ $(document).ready(function () {
         e.preventDefault();
         $(this).parent('div').parent('div').remove(); x--;
     })
-});
+}); 
+
 $(document).ready(function () {
     var max_fields = 10; //maximum input boxes allowed
     var wrapper = $(".input_wrap"); //Fields wrapper
@@ -130,7 +131,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x < max_fields) { //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div><input type="text" name="email-extra" class="input-field"><div class="input-group-append"><button class="btn btn-outline-danger remove_field" type="button">Remove</button></div></div>');
+            $(wrapper).append('<div><input type="text" name="email-extra" class="input-field"><div class="input-group-append"> <button class="btn remove_field" style="margin-top:6px; margin-bottom:6px;" type="button"><i class="fa fa-trash" aria-hidden="true"></i></button></div></div>');
 
         }
     });
@@ -160,3 +161,14 @@ function openCity(evt, cityName) {
   evt.currentTarget.className += " active";
 }
 //everyone button menu in Dashbord edit end dhanushka//
+
+
+// function ClearFields() {
+// //  document.getElementsByName("Contact_person_Name").value="";
+//     let btnclose = document.querySelector('button');
+//     let input = document.querySelectorAll('deals.php');
+
+//     btnclose.addEventListener('click', () => {
+//         input.forEach(input => input.value = '');
+//   });
+// }

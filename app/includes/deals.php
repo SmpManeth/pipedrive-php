@@ -187,35 +187,40 @@ $mob_typr = selectAll('phone_type')
             </button>
             <div id="myDropdown1" class="dropdown-content1 shadow-sm">
 
+
                <!--everyone button edit start dhanushka -->
                <div class="nav everyone" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                   <div class="tab">
-                     <button class="tablinks" onclick="openCity(event, 'London')">Favorites</button>
-                     <button class="tablinks" onclick="openCity(event, 'Paris')">owners</button>
-                     <button class="tablinks" onclick="openCity(event, 'Tokyo')">Filters</button>
+                     <form class="d-flex" role="search">
+                        <input class="form-control me-2 input" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                     </form>
+                     <button class="tablinks" onclick="openCity(event, 'Favorites')"><i class="material-icons">star</i>Favorites</button>
+                     <button class="tablinks" onclick="openCity(event, 'owners')">owners</button>
+                     <button class="tablinks" onclick="openCity(event, 'Filters')">Filters</button>
                   </div>
 
                   <!-- Tab content -->
-                  <div id="London" class="tabcontent">
+                  <div id="Favorites" class=" tabcontent">
                      <h3>Favorites</h3>
                      <h6>Owners</h6>
                      <a href="#">add new filter</a>
                   </div>
 
-                  <div id="Paris" class="tabcontent">
+                  <div id="owners" class="tabcontent">
                      <h3>Owners</h3>
                      <h6>Everyone</h6>
                      <a href="#">add new filter</a>
                   </div>
 
-                  <div id="Tokyo" class="tabcontent">
+                  <div id="Filters" class="tabcontent">
                      <h3>Filters</h3>
-                     <a href="#">All deleted deals</a>
-                     <a href="#">All lost deals</a>
-                     <a href="#">All open deals</a>
-                     <a href="#">All won deals</a>
-                     <a href="#">More than 3 months old deals</a>
-                     <a href="#">Rotten deals</a>
+                     <a href="#">All deleted deals</a><br>
+                     <a href="#">All lost deals</a><br>
+                     <a href="#">All open deals</a><br>
+                     <a href="#">All won deals</a><br>
+                     <a href="#">More than 3 months old deals</a><br>
+                     <a href="#">Rotten deals</a><br>
                   </div>
                </div>
                <!--everyone button edit start dhanushka -->
@@ -292,10 +297,10 @@ $mob_typr = selectAll('phone_type')
 
    <div class="floating-button">
       <a href="#" class="material-icons"><i class="fa fa-plus"></i></a>
-      <a href=</div>
-
-
-
    </div>
+
+
+
+</div>
 
 </div>
