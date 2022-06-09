@@ -159,6 +159,7 @@ function openCity(evt, cityName) {
   }
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
+  document.getElementById("Favorites").click();
 }
 //everyone button menu in Dashbord edit end dhanushka//
 
