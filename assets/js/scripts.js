@@ -15,7 +15,7 @@ window.onclick = function (event) {
         for (i = 0; i < dropdowns.length; i++) {
             var openDropdown = dropdowns[i];
             if (openDropdown.classList.contains('show')) {
-                
+
                 openDropdown.classList.remove('show');
             }
         }
@@ -24,7 +24,7 @@ window.onclick = function (event) {
 
 const deal_box = document.querySelectorAll(".deals-box");
 const all_deal_stage_cols = document.querySelectorAll(".deal-stage-col");
-let draggable_deal_box = null; 
+let draggable_deal_box = null;
 
 deal_box.forEach((dealbox) => {
     dealbox.addEventListener("dragstart", dragStart);
@@ -64,7 +64,7 @@ function dragDrop() {
     this.style.border = "none";
     this.appendChild(draggable_deal_box);
     console.log("Dragg Drop");
-   
+
 }
 
 
@@ -110,7 +110,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x < max_fields) { //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div><input type="text" name="phone-extra" style="width: 150px;" class="input-field"> <select class="input-field" name="phone category" id4er="" style="width: 120px; height: 27px; padding: 0px;"><?php foreach ($mob_typr as $key => $phone_type) { ?><option class="" value="<?php echo $phone_type["pho_type_id"] ?><?php echo $phone_type["type_name"] ?></option><?php}?></select> <div class="input-group-append">   <button class="btn remove_field"><i class="fa fa-trash" aria-hidden="true"></i></button></div></div>'); 
+            $(wrapper).append('<div><input type="text" name="phone-extra" style="width: 150px;" class="input-field"> <select class="input-field" name="phone category" id4er="" style="width: 120px; height: 27px; padding: 0px;"><?php foreach ($mob_typr as $key => $phone_type) { ?><option class="" value="<?php echo $phone_type["pho_type_id"] ?><?php echo $phone_type["type_name"] ?></option><?php}?></select> <div class="input-group-append">   <button class="btn remove_field"><i class="fa fa-trash" aria-hidden="true"></i></button></div></div>');
 
         }
     });
@@ -119,7 +119,7 @@ $(document).ready(function () {
         e.preventDefault();
         $(this).parent('div').parent('div').remove(); x--;
     })
-}); 
+});
 
 $(document).ready(function () {
     var max_fields = 10; //maximum input boxes allowed
@@ -145,9 +145,10 @@ $(document).ready(function () {
 
 
 });
-    
+
 //everyone button menu in Dashbord edit start dhanushka//
 function openCity(evt, cityName) {
+<<<<<<< HEAD
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
@@ -160,6 +161,19 @@ function openCity(evt, cityName) {
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
   document.getElementById("Favorites").click();
+=======
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+>>>>>>> 74f91d1ddac6e2b4a86416f2f6c12220e03c17df
 }
 //everyone button menu in Dashbord edit end dhanushka//
 
@@ -173,3 +187,22 @@ function openCity(evt, cityName) {
 //         input.forEach(input => input.value = '');
 //   });
 // }
+
+// drag and drop funcyionality//
+$(function () {
+    var url = 'edit-status.php';
+    $('ul[id^="sort"]').sortable({
+        connectWith: ".sortable",
+        receive: function (e, ui) {
+            var status_id = $(ui.item).parent(".sortable").data("status-id");
+            var task_id = $(ui.item).data("task-id");
+            $.ajax({
+                url: url + '?status_id=' + status_id + '&task_id=' + task_id,
+                success: function (response) {
+                }
+            });
+        }
+
+    }).disableSelection();
+});
+// drag and drop funcyionality//

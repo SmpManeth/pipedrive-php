@@ -192,16 +192,16 @@ $mob_typr = selectAll('phone_type')
                <div class="nav everyone" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                   <div class="tab">
                      <form class="d-flex" role="search">
-                        <input class="form-control me-2 input" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                      </form>
-                     <button class="tablinks" onclick="openCity(event, 'Favorites')"><i class="material-icons">star</i>Favorites</button>
+                     <button class="tablinks" onclick="openCity(event, 'Favorites')">Favorites</button>
                      <button class="tablinks" onclick="openCity(event, 'owners')">owners</button>
                      <button class="tablinks" onclick="openCity(event, 'Filters')">Filters</button>
                   </div>
 
                   <!-- Tab content -->
-                  <div id="Favorites" class=" tabcontent">
+                  <div id="Favorites"  class=" tabcontent">
                      <h3>Favorites</h3>
                      <h6>Owners</h6>
                      <a href="#">add new filter</a>
