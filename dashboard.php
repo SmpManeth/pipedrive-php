@@ -9,6 +9,7 @@ include($ROOT_PATH . "/app/controllers/deals.php");
 <head>
     <?php include("app/includes/head.php") ?>
     <title>Pipeline name + Dashboard</title>
+
 </head>
 
 <body style="background-color:#F7F7F7 ">
@@ -25,6 +26,7 @@ include($ROOT_PATH . "/app/controllers/deals.php");
 
     </div>
     <?php include("app/includes/footer.php") ?>
+
 </body>
 
 </html>

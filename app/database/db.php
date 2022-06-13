@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "connect.php";
-
+ 
  
 
 function dd($value) //to be deleted
@@ -80,11 +80,12 @@ function selectAll($table)//, $conditions
     }
       
 } 
-function selectAllClients($table)//, $conditions
+
+function selectallnew($table , $conditions)//, $conditions
 {
     global $conn;
    
-    $sql = "SELECT * FROM $table WHERE `role`='client'";
+    $sql = "SELECT * FROM $table";
     //dd($sql);
     if (empty($conditions))
     {
@@ -110,44 +111,11 @@ function selectAllClients($table)//, $conditions
              }
              $i++;
          }
+     
          $stmt = executeQuery($sql, $conditions);
-         $records = $stmt->get_result()->fetch_all(MySQLi_ASSOC);
-         return $records;
-    }
-      
-} 
-function selectAllfreelancers($table)//, $conditions
-{
-    global $conn;
-   
-    $sql = "SELECT * FROM $table WHERE `role`='freelancer'";
-    //dd($sql);
-    if (empty($conditions))
-    {
-        $stmt = $conn->prepare($sql);
-        $stmt->execute();
-        $records = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-        return $records;
-    }
-    else 
-    {
-         $i = 0;
         
-        foreach ($conditions as $key => $value)
-
-         {
-             if ($i ===0)
-             {
-                $sql = $sql . " WHERE $key =?";
-             }
-             else
-             {
-               $sql = $sql . " AND $key =?";
-             }
-             $i++;
-         }
-         $stmt = executeQuery($sql, $conditions);
-         $records = $stmt->get_result()->fetch_all(MySQLi_ASSOC);
+         $records = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        
          return $records;
     }
       
