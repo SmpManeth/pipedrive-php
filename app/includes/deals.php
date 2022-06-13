@@ -1,14 +1,14 @@
 <?php
 require_once "ProjectManagement.php";
 $deals = selectAll('deal');
-$stages = selectAll('stages');
+$stages = selectAll('tbl_status');
 $currencies = selectAll('currency');
 $mob_type = selectAll('phone_type');
 
 $projectName = "";
 $projectManagement = new ProjectManagement();
 $statusResult = selectAll('tbl_status');
-$stages = array();
+
 
 
 ?>
@@ -22,7 +22,7 @@ $stages = array();
                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body p-0 ps-3 pe-3">
-               <form action="dashboard.php" method="post" enctype="multipart/form-data" name="add-deal-form" onsubmit="return validateAddDealForm()">
+               <form action="dashboard.php" method="get"  name="add-deal-form" onsubmit="return validateAddDealForm()">
                   <div class="row">
                      <div class="col-6 p-2 ps-3">
                         <div <div class="model-item text-muted">
@@ -63,10 +63,10 @@ $stages = array();
                         </div>
                         <div class="model-item text-muted">
                            <p class="">Pipeline Stage</p>
-                           <select class="input-field" name="pipeline_stage" id="" style="height: 27px; padding: 0px;">
+                           <select class="input-field" name="status_id" id="" style="height: 27px; padding: 0px;">
                               <?php foreach ($stages as $key => $stage) { ?>
-                                 <option class="" value="<?php echo $stage['stage_id'] ?>">
-                                    <?php echo $stage['stage_name'] ?></option>
+                                 <option class="" value="<?php echo $stage['id'] ?>"><?php echo $stage['status_name'] ?></option>
+                                    
                               <?php   } ?>
                            </select>
                         </div>
@@ -220,7 +220,12 @@ $stages = array();
                         foreach ($taskResult as $taskRow) {
                     ?>
 
-                            <li class="text-row ui-sortable-handle" data-task-id="<?php echo $taskRow["id"]; ?>"><?php echo $taskRow["title"]; ?></li>
+                            <li class="text-row ui-sortable-handle" data-task-id="<?php echo $taskRow["id"]; ?>">
+                            <?php echo $taskRow["title"]; ?><br>
+                            <?php echo $taskRow["Contact_person_Name"]; ?><br>
+                            <i class="fa-solid fa-user"></i>&nbsp;<?php echo $taskRow["value"]; ?>
+                           </li>
+                            
                     <?php
                         }
                     }
@@ -235,9 +240,6 @@ $stages = array();
       <div class="floating-button">
          <a href="#" class="material-icons"><i class="fa fa-plus"></i></a>
       </div>
-
-
-
    </div>
    <div class="tab-pane fade show active" id="v-pills-deals" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
       <div class="task-board">

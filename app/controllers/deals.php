@@ -7,7 +7,7 @@ $email = '';
 $admin = '';
 $password = '';
 $passwordConf = '';
-$table = 'deal';
+$table = 'tbl_task';
 // $client_users = selectAllClients($table, [`admin` => 1]);
 // $admin_users = selectAllfreelancers($table, [`admin` => 1]);
 
@@ -19,7 +19,6 @@ if (isset($_GET['del_id'])) {
     $_SESSION['message'] = 'User Deleted Succesfully';
     $_SESSION['type'] = '';
     header('location: ' . $BASE_URL . 'admin/managefreelancers.php');
-    
 }
 if (isset($_GET['dell_id'])) {
     $count = delete($table, $_GET['dell_id']);
@@ -31,19 +30,20 @@ if (isset($_GET['dell_id'])) {
 
 
 if (isset($_GET["submit_deal"])) {
-   
+    // dd($_GET);
+
     $errors = validatedeal($_GET);
- 
-    $pattern="/^[a-zA-Z]+$/";
-    $check=preg_match_all($pattern,$_GET['Contact_person_Name']);
-    if($check)
-    {
-       $name=$_GET['Contact_person_Name'];
-    }
-    else
-    {
-        $errors['error']=1;
-       $nameErr="Enter the correct pattern";
+
+
+
+    $pattern = "/^[a-zA-Z]+$/";
+    $check = preg_match_all($pattern, $_GET['Contact_person_Name']);
+
+    if ($check) {
+        $name = $_GET['Contact_person_Name'];
+    } else {
+        $errors['error'] = 1;
+        $nameErr = "Enter the correct pattern";
     }
     /* if (isset($_POST["client"])) {
         $_POST['urole'] = 'client';
@@ -51,26 +51,30 @@ if (isset($_GET["submit_deal"])) {
         $_POST['urole'] = 'freelancer';
     }*/
     if (count($errors) === 0) {
-       
+
         unset($_GET["submit_deal"]);
         unset($_GET["phone"]);
+        unset($_GET["Phone_No"]);
         unset($_GET["email"]);
+        unset($_GET["Email_Address"]);
+        unset($_GET["phone-extra"]);
         unset($_GET["currency"]);
         unset($_GET["phone_category"]);
-      
+        unset($_GET["email-extra"]);
 
 
 
+
+        $_GET['project_name'] = "";
+     
         $_GET['user_id'] = $_SESSION['id'];
-        
 
-     $postid = create($table, $_GET);
+
+        $postid = create($table, $_GET);
         $_SESSION['message'] = 'Deal Added Succesfully';
         $_SESSION['type'] = '';
         header('location: ' . $BASE_URL . 'dashboard.php');
-      
-    } 
-    else{
+    } else {
         $_SESSION['message'] = 'Error';
         $_SESSION['type'] = '';
     }

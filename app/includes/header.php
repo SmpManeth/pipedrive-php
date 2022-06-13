@@ -1,5 +1,5 @@
-    <!-- header -->
-    <div class="navbar shadow-sm" style="background-color:#FFFFFF ;">
+<!-- header -->
+<div class="navbar shadow-sm" style="background-color:#FFFFFF ;">
         <div>
             <p class=" ps-4 pt-2 fw-bold head-text">
                 <a class="text-decoration-none text-muted" href="dashboard.php">Deals</a>
@@ -7,10 +7,28 @@
         </div>
         <div class="search-container">
             <form action="#">
-                <input type="text" placeholder="Search.." name="search">
+                <input type="text" placeholder="   Search.." name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#"><i class="fa-solid fa-bullseye"> Lead</i></a>
+                <a class="dropdown-item" href="#"><i class="fa-solid fa-dollar-sign"> Deal</i></a>
+                <a class="dropdown-item" href="#"><i class="fa-solid fa-calendar"> Activity</i></a>
+                <a class="dropdown-item" href="#"><i class="fa-solid fa-user"> Person</i></a>
+                <a class="dropdown-item" href="#"><i class="fa-solid fa-building"> Organization</i></a>
+                <a class="dropdown-item" href="#"><i class="fa-solid fa-note-sticky"> Note</i></a>
+                <a class="dropdown-item" href="#"><i class="fa-solid fa-floppy-disk"> product</i></a>
+            </div>
+        </div>
+        <button type="submit"><i class="fa-solid fa-user-plus"></i></button>
+        <button type="submit"><i class="fa-solid fa-lightbulb"></i></button>
+        <button type="submit"><i class="fa-solid fa-question"></i></button>
+
         <div>
             <img class="adduser" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAJRklEQVRogcWae2wc1RXGf+fO7toQ0iQY8QhJEzuJVZxCSh2gedge79rrOMhOC7XUlgaEIJQ3FSCKqj5WqBJSKRV/UBVUNTzEq6iiSUBsbK+zm4QkEqlpgyglkMShUJwCiRND8WN35vSPXTt+7K531q74JHt35n7n3PPN3Dv33DMrzDAaGhrmpNTUC1qlSIVCOcgC0FIRZqP4gd5EV0flRNu2trZAb+8Xs0pLh2araqnrWrPj8Y7uQvqVmQreUblBVa5CuALwTWlk9FKSvk/Fcm5V+Drpv8UTYxKXlYWIsYqMfRR2qPFHDmYbyLcRvgqYQuxUzQm/lYq7yEtAFTCPbBfWaN/RI0diU/krqNNsaGtrs+pC4adAHhM426u9oG2xWOyUwN3AUC6eqrQV4q/oO3Lu/AW/FrilWHugbHHFkndwhp/B8u8C/SFZLqzAvEUVy159v+fQR/mcFSWkvj5cjfAE059j38VYq3GGHsSy5gLfykYS9PrF5UsCR3sOx3M5KmpoqeFeZuhBATSor+R61/BbQHNwfAg/qwutW5XLiWchzc3NJQqtXu3yQVQ37uro+AD0r/l4Rt2NOdu8djqQTF4qcOaYUzHQ/cB/CzBX4CDwMuOv/mXpCyT7gM+BfwCvKPoA8N4IyRXW5HLseXjUBRvbROTFTFRvijNcnUgkUgC2vf58tdyFljrzHJgjIgERGVQ4JQ69g4P9R/bt2zcAYDeEH0K5dzQQl5X9/cff7O7uTo7tr76+aYVr9A1JX3QnUbM6QCTiToxr6oVrAgRTNnoxhSdHRAAkEq8eA44V4ic5UPqAv3TwFmBW+oyeN1EEQDzefsAONsURDQHW2tj+Oa9B30ReEZNdy0aNHdnh3T6NPXu2fQb8ZdSrkXk5ezT8aeR7aenQ7Gwc70IMfgAFV3XooGf7MVCVjjEH/lw8y2XKFKXolV2U44lEYrBYewCfyIFCeENDJe9NxSlaCMLJom0zCATkaCG8PXu2faYwnI9TvBDFKdo2g2g0+hmQmpKYRirzb362Ru9CVM7xbJPHG6NC8vs1IlsBxDXXZm330mtLS8uZoNcCiNF9XmxzQWEvAMJNU1C3ALjC8myNnoT0f5FcAaQff478zottLhhXH858XWbb68/PxVNlIYDAqax+vHRqqTuaCViWO2lRKgq+03sRvz+ZNZ7ahoaLgPsBVOTlbBxPQvx+eQdIAqRckzOB8wJ1Je1H+aSzs7M3G0fUPAp6DmhCUkNPZON4EtLe3n5CRF9Ie+fndcHG73gLezzqQ+E7gesAVPT3ZEnj60LrVgkEFYZ9oteNTYnGwvNTK+X33aNwBLAQfkWR+5JwODxL4RcACq+Lk3xwIse27VJwHwMQ0c2xWOxfufx5FrI7Gv3EUjYBCFJlh8JXe/UBMJyS24EyIOXD2TgpS4hEjPhKnha4BOhNDQZ+ms9fUVvdnp7DPYvLl9YgVCis/Vrl0icPHz48UKh9bWPjMuB5AT/I5nhX55MTOXVWyW9AbwSSYnTDrsT2d/L5nE6udQ8wKDB/KKVb0sNgaoRCoTJxzSvpzZl86jfuL8e2V1dX++1Q0x8EvRtQEW6Od3bunMpv0ULi8fYDItyVOaxR43+KSCSvP9u2Sx18WwStVHCBjT6f7/M1a1pnA9SGwwtnzy1rz9wJR4Xb4rGOzYXEM+0Cgh1simU2PQDPnhGwbohGo5PqVLZtz8WU/HkM94+Jro5Ndij8EkKdKn0C55HeaJ0Ucb8Xj8XaC42j+KRxBKJj58Y1A0NOu23b4/Km2nC4HCvw2hgRIDrQ0tJyBspSlHkCFcAshR2u0cu9iIAZuCN1ofAegdXASWBu5nSvCBHX1T6MLECJCHyF9DpxCpirynM7d3RcQyRi7L17qyRJiaqcSiTaD9m2fZbr85UbtS40ql+IOMe6amoOZdurz5gQOxR+G7hI0QcEPgJ5BJg88YU+Qa53Va8SuBbYnujqaB5LqW9o2uCiN4kSnOhD4WOjbEXNw/H49kk70+kPrUzdV9T0Jbo6H8foKpSdnF6lHRXZRsp8Mx5r3ypIXyaw0XpxMLh+kR1q2q2qW0RZP1EEgMC5KmxS475lh5oeqa6uHrc19lxFGYFt22dhBdaNCEG0DyDR2fl3wM5lJ3BCASM8nhbRdLkjqZcFzi2wax/oXbPnlH2jubm5NRqN9nsW0tjYOD/p0gKyAQgCJSNtqpwoxIcqJxAej8c6NgeD6xd5FHEaQt3AcOo5IpFWIhF3SiG1DQ0XG9e0Iroh6cpKcswrMYWl9Sp60BnyPwvgivNMLhEKrqjcpqIXC9yaQ82V9q59dybgkUlB2bbtU6ukRkRbVWnNPBanhIW1vKsr+nYhXEhPbFXdkofyz0RXR1UoFKp0sPKVnY7jDC8dnezBYLi2vqHxabUC/xF0B8qPCxUB4KpzczDYvCQPRUKhdZeM8tGptrbdAF01NYcU+vPwyrACV48OLRXWqcrGYp/HKtyhOHfUhZreNUK3Kh8j7qC4EtD0K7krHNwPgVXhcHjWsENwCofpolwk4kqo8Q2QnA8QFWk9LSRdAZ82BK1UpTLTAyrjGl8AcByzBNyJ64Qr6Up9NyrduNYLI21GzU9co+tRqoFq4IJxfaouHxXiBKwOM+wMCwRmQlBWqH6Y/nDOR8bfeyNsypUg7tjR/jrw+sixHQpvA1pG3cIFo3NkdzT6icBNwLTKoFPgOIBak19+usqKUChUSZ5sw7bt0mCw6XIm3hFhaJJRbTi8UFK61hjJWvWeDhzR+K7OzvdqGxuXGVfezcZR6Bf0DcW6b2fX9v0AdrDpdkRvAJYDk4vdyluT1pH0KzCen1kJE/pYs+awvXvvMWBSHSudXIot4l4J7E+f1BuBFTkdCntmItfyjkjEBXklLyc9sTMFCKryUpWtX44QwCL1EJkaWQ6sBBAJrCDbcDqNAztrV7dP+yccxaKnp+f44oqlZeR4tw6ctai84hKMtAELcnAcMfr9o5s3H/3ShACUnT23q6T0zLVAebZ2EbmI3CIAuS8R63geZmY/UjS6u7uTycHSDcBWj6YOKvcnutpHCuDT/3XQdPHBBweHj1638cXF7394EuEyxr/DzwL5mxj9QaKr49lxZ/+PMXpGQ0PDnJQrbWpMi6BVKBciDOLybxX2omzZWbu6Pdve/X9Ti2tY9HJeyQAAAABJRU5ErkJggg==">
         </div>
@@ -22,11 +40,11 @@
             <div id="myDropdown" class="dropdown-content shadow-sm">
 
                 <div class="nav" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <p class="text-muted pt-2 ps-4 me-3"><?php echo $_SESSION['username'] ?></p>
-                    <a href="#"><img src="https://img.icons8.com/pastel-glyph/64/000000/pupil-male--v2.png" />Personal Preferences</a>
-                    <a href="#" class="nav-link lead_buttons" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true"><img src="https://img.icons8.com/ios/24/000000/settings--v1.png" />Settings
-                    </a>
-                    <a href="logout.php"><img src="https://img.icons8.com/ios/50/000000/exit.png" />Log Out</a>
+                    <p class="text-muted pt-3 ps-4 me-3"><?php echo $_SESSION['username'] ?></p>
+                        <a href="#"><img src="https://img.icons8.com/pastel-glyph/64/000000/pupil-male--v2.png" />Personal Preferences</a>
+                        <a href="#" class="nav-link lead_buttons" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true"><img src="https://img.icons8.com/ios/24/000000/settings--v1.png" />Settings
+                        </a>
+                        <a href="logout.php"><img src="https://img.icons8.com/ios/50/000000/exit.png" />Log Out</a>
 
                 </div>
             </div>
@@ -36,12 +54,32 @@
     <!-- side bar -->
     <div class=" d-flex side-bar fixed-top ">
         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <!-- <button class="nav-link lead_buttons active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-leads" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+            <button class="nav-link lead_buttons active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-leads" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
                 Leads
-            </button> -->
+            </button>
+            <br>
             <button class="nav-link lead_buttons" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-deals" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
                 Deals
             </button>
-
+            <br>
+            <button class="nav-link lead_buttons" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-deals" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+            Activity
+            </button>
+            <br>
+            <button class="nav-link lead_buttons" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-deals" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+            Person
+            </button>
+            <br>
+            <button class="nav-link lead_buttons" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-deals" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+            Organization
+            </button>
+            <br>
+            <button class="nav-link lead_buttons" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-deals" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+            Note
+            </button>
+            <br>
+            <button class="nav-link lead_buttons" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-deals" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+            product
+            </button>
         </div>
     </div>

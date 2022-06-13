@@ -16,14 +16,14 @@ function executeQuery($sql, $data)
     //sql = 'INSERT INTO `topics`( `name`, `description`) VALUES (?,?)'
     global $conn;
     $stmt = $conn->prepare($sql);
-    
+  
     $values = array_values($data);
-
+   
     
     $types= str_repeat('s', count($values));
    
     $stmt->bind_param($types,...$values);
-   
+    
     $stmt->execute();
     
     return $stmt;
@@ -154,6 +154,7 @@ function selectOne($table , $conditions = [])
 //Create Function
 function create($table, $data)
 {
+
     global $conn;
     //$sql = "INSERT INTO users SET username=?, admin=?, password=?"
     $sql ="INSERT INTO $table SET ";
@@ -173,8 +174,7 @@ function create($table, $data)
          }
          $i++;
      }
-
-   
+  
      $stmt = executeQuery($sql, $data);
    
      $id = $stmt->insert_id;
