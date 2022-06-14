@@ -1,6 +1,8 @@
 <?php include("path.php");
 include($ROOT_PATH . "/app/controllers/users.php");
 include($ROOT_PATH . "/app/controllers/deals.php");
+include($ROOT_PATH . "/app/controllers/dealsDetails.php");
+
 
 ?>
 <!DOCTYPE html>
@@ -21,6 +23,7 @@ include($ROOT_PATH . "/app/controllers/deals.php");
         <div class="tab-content table" id="v-pills-tabContent">
             <?php include("app/includes/leads.php") ?>
             <?php include("app/includes/deals.php") ?>
+            <?php include("app/includes/dealsDetails.php") ?>
             <?php include("app/includes/settings.php") ?>
         </div>
 

@@ -69,6 +69,8 @@ if (isset($_GET["submit_deal"])) {
      
         $_GET['user_id'] = $_SESSION['id'];
 
+        // dd($_SESSION);
+
 
         $postid = create($table, $_GET);
         $_SESSION['message'] = 'Deal Added Succesfully';
@@ -79,7 +81,6 @@ if (isset($_GET["submit_deal"])) {
         $_SESSION['type'] = '';
     }
 }
-
 
 if (isset($_POST["update-user"])) {
 

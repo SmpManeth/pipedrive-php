@@ -11,7 +11,7 @@
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
-        <div class="dropdown">
+        <!-- <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa-solid fa-plus"></i>
             </button>
@@ -24,7 +24,7 @@
                 <a class="dropdown-item" href="#"><i class="fa-solid fa-note-sticky"> Note</i></a>
                 <a class="dropdown-item" href="#"><i class="fa-solid fa-floppy-disk"> product</i></a>
             </div>
-        </div>
+        </div> -->
         <button type="submit"><i class="fa-solid fa-user-plus"></i></button>
         <button type="submit"><i class="fa-solid fa-lightbulb"></i></button>
         <button type="submit"><i class="fa-solid fa-question"></i></button>

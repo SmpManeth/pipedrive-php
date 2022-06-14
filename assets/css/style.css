@@ -46,10 +46,11 @@ position: relative;
 }
 
 .btn-primary-deal {
-  margin-left: 50px;
+  margin-left: 5rem;
   color: white;
   margin-top: 8px;
 }
+
 
 
 .btn-primary-1 {
@@ -672,7 +673,7 @@ h1 {
   background: #2c7cbc;
   display: inline-block;
   padding: 12px;
-  border-radius: 3px;
+  border-radius: 25px;
   width: fit-content;
   white-space: nowrap;
   overflow-x: scroll;
