@@ -7,7 +7,7 @@ $mob_type = selectAll('phone_type');
 
 $projectName = "";
 $projectManagement = new ProjectManagement();
-$statusResult = selectAll('tbl_status');
+$stages = selectAll('tbl_status');
 
 
 
@@ -139,14 +139,42 @@ $statusResult = selectAll('tbl_status');
             </div>
             <div>
             </div>
-            <div class="lkr_tag">
+
+            <?php
+            $total = 0;
+            $totalcount = 0;
+            foreach ($stages as $stagerow) {
+
+
+                $conditions['status_id'] = $stagerow["id"];
+                $conditions['project_name'] = $projectName;
+                $deals = selectallnew('tbl_task', $conditions);
+                $dealss = selectallnew('tbl_task', '');
+               
+                $totalcount = count($dealss);
+                if (!empty($deals)) {
+                    foreach ($deals as $deal) {
+                        $total = $total + $deal['value'];
+
+                     
+                        
+                      
+                    }
+                }
+            ?>
+
+            <?php
+            }
+           
+            ?>
+            <div name="lkr" class="lkr_tag">
                 <p>
-                    LKR 26,100
+                    Rs.<?php echo $total?>.00
                 </p>
             </div>
             <div class="deals_tag">
                 <p>
-                    Deals 5
+                Deals <?php echo $totalcount ?>
                 </p>
             </div>
             <div class="group_1">
@@ -208,30 +236,50 @@ $statusResult = selectAll('tbl_status');
 
         <div class="task-board">
             <?php
-            foreach ($statusResult as $statusRow) {
-                $taskResult = $projectManagement->getProjectTaskByStatus($statusRow["id"], $projectName);
+            
+            $total = 0;
+            $totalcount = 0;
+          
+            foreach ($stages as $stagerow) {
+
+
+                $conditions['status_id'] = $stagerow["id"];
+                $conditions['project_name'] = $projectName;
+                $deals = selectallnew('tbl_task', $conditions);
+
+
+                foreach ($deals as $ondeal) {
+                    $total = $total + $ondeal['value'];
+                    $totalcount = count($deals);
+                }
+
             ?>
                 <div class="status-card">
                     <div class="card-header">
-                        <span class="card-header-text"><?php echo $statusRow["status_name"]; ?></span>
+                        <span class="card-header-text"><?php echo $stagerow["status_name"];?><br> Rs.<?php echo $total;   $total = 0;
+                                                                                                  ?>.00
+                                                                                                  <br><?php echo $totalcount;
+                                                                                                  ?></span>
+
                     </div>
-                    <ul class="sortable ui-sortable" id="sort<?php echo $statusRow["id"]; ?>" data-status-id="<?php echo $statusRow["id"]; ?>">
+                    <ul class="sortable ui-sortable" id="sort<?php echo $stagerow["id"]; ?>" data-status-id="<?php echo $stagerow["id"]; ?>">
                         <?php
-                        if (!empty($taskResult)) {
-                            foreach ($taskResult as $taskRow) {
+                        if (!empty($deals)) {
+                            foreach ($deals as $deal) {
+
                         ?>
-                                <li class="text-row ui-sortable-handle" data-task-id="<?php echo $taskRow["id"]; ?>">
-                                    <?php echo $taskRow["title"]; ?><br>
-                                    <?php echo $taskRow["Contact_person_Name"]; ?><br>
-                                    <i class="fa-solid fa-user"></i>&nbsp;<?php echo $taskRow["value"]; ?>
+                                <li class="text-row ui-sortable-handle" data-task-id="<?php echo $deal["id"]; ?>">
+                                    <?php echo $deal["title"]; ?><br>
+                                    <?php echo $deal["Contact_person_Name"]; ?><br>
+                                    <i class="fa-solid fa-user"></i>&nbsp;<?php echo $deal["value"]; ?>
                                     <div class="nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                         <form action="dashboard.php" method="post">
-                                            <input type=" text" name="Deal-id" value="<?php echo $taskRow["id"]; ?>" hidden>
-                                            <button name="clickme-deal-btn" class="nav-link lead_buttons clickmebtn" data-bs-toggle="pill" data-bs-target="#v-pills-dealsDetails" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true" id="mybtn" value="<?php echo $taskRow["title"]; ?>">
-                                             
+                                            <input type=" text" name="Deal-id" value="<?php echo $deal["id"]; ?>" hidden>
+                                            <button name="clickme-deal-btn" class="nav-link lead_buttons clickmebtn" data-bs-toggle="pill" data-bs-target="#v-pills-dealsDetails" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true" id="mybtn" value="<?php echo $deal["title"]; ?>">
+                                                <input type="submit" name="clickme-deal-btn" value=" Click me">
 
                                             </button>
-                                            <input type="submit" name="clickme-deal-btn" value=" Click me">
+
                                         </form>
                                     </div>
 

@@ -86,7 +86,7 @@ function selectallnew($table , $conditions)//, $conditions
     global $conn;
    
     $sql = "SELECT * FROM $table";
-    //dd($sql);
+    // dd($sql);
     if (empty($conditions))
     {
         $stmt = $conn->prepare($sql);
@@ -111,7 +111,7 @@ function selectallnew($table , $conditions)//, $conditions
              }
              $i++;
          }
-     
+        //  dd($sql);
          $stmt = executeQuery($sql, $conditions);
         
          $records = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
@@ -145,7 +145,7 @@ function selectOne($table , $conditions = [])
 
          $sql = $sql . " LIMIT 1";
 
-  
+         
          $stmt = executeQuery($sql, $conditions);
          $records = $stmt->get_result()->fetch_assoc();
          return $records;

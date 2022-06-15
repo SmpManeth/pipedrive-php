@@ -1,12 +1,7 @@
 <?php
 require "DBController.php";
 class ProjectManagement {
-    function getProjectTaskByStatus($statusId, $projectName) {
-        $db_handle = new DBController();
-        $query = "SELECT * FROM tbl_task WHERE status_id= ? AND project_name = ?";
-        $result = $db_handle->runQuery($query, 'is', array($statusId, $projectName));
-        return $result;
-    }
+   
     
     function getAllStatus() {
         $db_handle = new DBController();
