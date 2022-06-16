@@ -125,9 +125,15 @@ $stages = selectAll('tbl_status');
                     <img class="filter-menu-options" src="https://img.icons8.com/ios-glyphs/30/000000/bar-chart.png" />
                 </button>
             </div>
-            <div class="shadow btnfilter"> <button type="button">
-                    <img class="filter-menu-options" src="<?php echo $BASE_URL . 'assets/images/stack-48.png' ?>" />
-                </button></div>
+            <div class="nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+
+
+                <div class="shadow btnfilter"> <button  class="nav-link" data-bs-toggle="pill" data-bs-target="#v-pills-dealsTable" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                        <img class="filter-menu-options" src="<?php echo $BASE_URL . 'assets/images/stack-48.png' ?>" />
+                    </button></div>
+            </div>
+
             <div class="shadow btnfilter"> <button type="button">
                     <img class="filter-menu-options" src="https://img.icons8.com/ios-filled/50/000000/money-circulation.png" />
                 </button></div>
@@ -150,31 +156,27 @@ $stages = selectAll('tbl_status');
                 $conditions['project_name'] = $projectName;
                 $deals = selectallnew('tbl_task', $conditions);
                 $dealss = selectallnew('tbl_task', '');
-               
+
                 $totalcount = count($dealss);
                 if (!empty($deals)) {
                     foreach ($deals as $deal) {
                         $total = $total + $deal['value'];
-
-                     
-                        
-                      
                     }
                 }
             ?>
 
             <?php
             }
-           
+
             ?>
             <div name="lkr" class="lkr_tag">
                 <p>
-                    Rs.<?php echo $total?>.00
+                    Rs.<?php echo $total ?>.00
                 </p>
             </div>
             <div class="deals_tag">
                 <p>
-                Deals <?php echo $totalcount ?>
+                    Deals <?php echo $totalcount ?>
                 </p>
             </div>
             <div class="group_1">
@@ -236,10 +238,10 @@ $stages = selectAll('tbl_status');
 
         <div class="task-board">
             <?php
-            
+
             $total = 0;
             $totalcount = 0;
-          
+
             foreach ($stages as $stagerow) {
 
 
@@ -256,10 +258,11 @@ $stages = selectAll('tbl_status');
             ?>
                 <div class="status-card">
                     <div class="card-header">
-                        <span class="card-header-text"><?php echo $stagerow["status_name"];?><br> Rs.<?php echo $total;   $total = 0;
-                                                                                                  ?>.00
-                                                                                                  <br><?php echo $totalcount;
-                                                                                                  ?></span>
+                        <span class="card-header-text"><?php echo $stagerow["status_name"]; ?><br> Rs.<?php echo $total;
+                                                                                                        $total = 0;
+                                                                                                        ?>.00
+                            <br><?php echo $totalcount;
+                                ?></span>
 
                     </div>
                     <ul class="sortable ui-sortable" id="sort<?php echo $stagerow["id"]; ?>" data-status-id="<?php echo $stagerow["id"]; ?>">

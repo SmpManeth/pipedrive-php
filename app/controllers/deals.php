@@ -66,9 +66,6 @@ if (isset($_GET["submit_deal"])) {
         unset($_GET["phone_category"]);
         unset($_GET["email-extra"]);
 
-
-
-
         $_GET['project_name'] = "";
      
         $_GET['user_id'] = $_SESSION['id'];
@@ -110,8 +107,6 @@ if (isset($_POST["update-user"])) {
         $passwordConf = $_POST['passwordConf'];
     }
 }
-
-
 
 if (isset($_GET['id'])) {
     $uid = $_GET['id'];

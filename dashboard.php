@@ -2,6 +2,7 @@
 include($ROOT_PATH . "/app/controllers/users.php");
 include($ROOT_PATH . "/app/controllers/deals.php");
 include($ROOT_PATH . "/app/controllers/dealsDetails.php");
+include($ROOT_PATH . "/app/controllers/dealsTable.php");
 
 
 ?>
@@ -24,6 +25,7 @@ include($ROOT_PATH . "/app/controllers/dealsDetails.php");
             <?php include("app/includes/leads.php") ?>
             <?php include("app/includes/deals.php") ?>
             <?php include("app/includes/dealsDetails.php") ?>
+            <?php include("app/includes/dealsTable.php") ?>
             <?php include("app/includes/settings.php") ?>
         </div>
 
