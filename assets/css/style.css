@@ -741,3 +741,6 @@ ul {
 }
 /* Drag and dropebale */
 
+.span6{
+  display: flex;
+}

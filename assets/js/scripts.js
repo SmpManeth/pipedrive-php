@@ -551,7 +551,7 @@ $(document).ready(function () {
 	      });
 
 	      var blob = new Blob([convert(data)], { type: 'application/octet-stream' });
-	      (0, _filesaver.saveAs)(blob, fileName + '.xlsx');
+	      (0, _filesaver.saveAs)(blob, fileName + '.csv');
 	    }
 	  }]);
 	  return Table2Excel;
