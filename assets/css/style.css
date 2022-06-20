@@ -672,11 +672,10 @@ h1 {
 .task-board {
   background: #2c7cbc;
   display: inline-block;
-  padding: 12px;
+  padding: 500px;
   border-radius: 25px;
   width: fit-content;
   white-space: nowrap;
-  overflow-x: scroll;
   min-height: 300px;
 }
 
@@ -741,6 +740,11 @@ ul {
 }
 /* Drag and dropebale */
 
-.span6{
-  display: flex;
+.button-loading{
+  float: right;
+  margin-top: 10px;
+}
+.excel-expoter-btn{
+  float: right;
+  margin-right: 10px;
 }

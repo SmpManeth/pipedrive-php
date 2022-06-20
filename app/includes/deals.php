@@ -9,9 +9,8 @@ $projectName = "";
 $projectManagement = new ProjectManagement();
 $stages = selectAll('tbl_status');
 
-
-
 ?>
+
 <div class="tab-pane fade show active" id="v-pills-deals" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -85,9 +84,9 @@ $stages = selectAll('tbl_status');
                                     <h11 class="modal-title" style="color:black"> PERSON </h11>
                                     <p class="">Phone</p>
                                     <input class="input-field" name="Phone_No" id="Phone_No" type="text" maxlength="10" style="width: 150px;" size="27" class="rounded-lg float-right ml-2 mr-3">
-                                    <select class="input-field" name="phone category" id4er="" style="width: 120px; height: 27px; padding: 0px;">
+                                    <select class="input-field" name="phone category" id="" style="width: 120px; height: 27px; padding: 0px;">
                                         <?php foreach ($mob_type as $key => $phone_type) { ?>
-                                            <option class="" value="<?php echo $phone_type['pho_type_id'] ?>">
+                                            <option class="" value="<?php echo $phone_type['pho_type_id']?>">
                                                 <?php echo $phone_type['type_name'] ?></option>
                                         <?php
                                         }
@@ -129,7 +128,7 @@ $stages = selectAll('tbl_status');
 
 
 
-                <div class="shadow btnfilter"> <button  class="nav-link" data-bs-toggle="pill" data-bs-target="#v-pills-dealsTable" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                <div class="shadow btnfilter"> <button class="nav-link" data-bs-toggle="pill" data-bs-target="#v-pills-dealsTable" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
                         <img class="filter-menu-options" src="<?php echo $BASE_URL . 'assets/images/stack-48.png' ?>" />
                     </button></div>
             </div>
@@ -176,7 +175,7 @@ $stages = selectAll('tbl_status');
             </div>
             <div class="deals_tag">
                 <p>
-                    Deals <?php echo $totalcount ?>
+                    Deals <?php echo $totalcount; $totalcount = 0;?> 
                 </p>
             </div>
             <div class="group_1">
@@ -260,8 +259,10 @@ $stages = selectAll('tbl_status');
                     <div class="card-header">
                         <span class="card-header-text"><?php echo $stagerow["status_name"]; ?><br> Rs.<?php echo $total;
                                                                                                         $total = 0;
+
+
                                                                                                         ?>.00
-                            <br><?php echo $totalcount;
+                            <br><?php echo $totalcount; $totalcount =0;
                                 ?></span>
 
                     </div>

@@ -69,8 +69,6 @@ function reset_form()
 }
 
 
-
-
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {
     if (!event.target.matches('.dropbtn')) {
@@ -216,9 +214,8 @@ $(document).ready(function () {
           $.ajax({
              url: url + '?status_id=' + status_id + '&task_id=' + task_id,
              success: function (url) {
-               console.log(url);
+				location.reload();
             
-             
            }
           });
           

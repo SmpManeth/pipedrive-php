@@ -1,4 +1,5 @@
 <?php
+// Data import form CSV file functionality
 $dataincsv = array();
 if (isset($_POST["Import"])) {
 
@@ -22,17 +23,18 @@ if (isset($_POST["Import"])) {
 			// skip row of csv
 		} else {
 
-$dataincsv['Contact_person_Name']= $data[0];
-$dataincsv['organization']= $data[1];
-$dataincsv['title']= $data[2];
-$dataincsv['value']= $data[3];
-$dataincsv['pipeline']= $data[4];
-$dataincsv['prospected_closing_date']= $data[5];
-$dataincsv['expected_closing_date']= $data[6];
-$dataincsv['project_name']= $data[7];
-$dataincsv['status_id']= $data[8];
-$dataincsv['user_id']= $data[9];
-$postid = create('tbl_task', $dataincsv);
+		// Data arrenge in to arry and pass to the database
+			$dataincsv['Contact_person_Name']= $data[0];
+			$dataincsv['organization']= $data[1];
+			$dataincsv['title']= $data[2];
+			$dataincsv['value']= $data[3];
+			$dataincsv['pipeline']= $data[4];
+			$dataincsv['prospected_closing_date']= $data[5];
+			$dataincsv['expected_closing_date']= $data[6];
+			$dataincsv['project_name']= $data[7];
+			$dataincsv['status_id']= $data[8];
+			$dataincsv['user_id']= $data[9];
+			$postid = create('tbl_task', $dataincsv);
 		}
 	}
 }

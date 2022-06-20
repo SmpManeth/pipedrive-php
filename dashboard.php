@@ -10,7 +10,11 @@ include($ROOT_PATH . "/app/controllers/import.php");
 <html lang="en">
 
 <head>
-    <?php include("app/includes/head.php") ?>
+
+    
+    <?php 
+  
+    include("app/includes/head.php") ?>
     <title>Pipeline name + Dashboard</title>
 
 </head>

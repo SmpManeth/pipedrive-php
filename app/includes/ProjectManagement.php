@@ -15,5 +15,6 @@ class ProjectManagement {
         $query = "UPDATE tbl_task SET status_id = ? WHERE id = ?";
         $result = $db_handle->update($query, 'ii', array($status_id, $task_id));
         return $result;
+       
     }
 }
