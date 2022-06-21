@@ -94,12 +94,10 @@ $stages = selectAll('tbl_status');
                                         style="width: 150px;" size="27" class="rounded-lg float-right ml-2 mr-3">
                                     <select class="input-field" name="phone category" id=""
                                         style="width: 120px; height: 27px; padding: 0px;">
-                                        <?php foreach ($mob_type as $key => $phone_type) { ?>
-                                        <option class="" value="<?php echo $phone_type['pho_type_id'] ?>">
-                                            <?php echo $phone_type['type_name'] ?></option>
-                                        <?php
-                                        }
-                                        ?>
+                                        <option class="" value="Work">Work</option>
+                                        <option class="" value="Home">Home</option>
+                                        <option class="" value="Mobile">Mobile</option>
+                                        <option class="" value="Others">Others</option>
                                     </select>
                                     <label id="Phone_No_error" style="font-size: 12px; color: red"></label>
                                     <br>
@@ -331,19 +329,4 @@ $stages = selectAll('tbl_status');
 
         </div>
     </div>
-</div>
-
-//////////////
-
-<div>
-    <input type="text" name="phone-extra" style="width: 150px;" class="input-field">
-    <select class="input-field" name="phone category" id4er="" style="width: 120px; height: 27px; padding: 0px;">
-        <option class="" value="Pipeline_One">Work</option>
-        <option class="" value="Pipeline_Two">Home</option>
-        <option class="" value="Pipeline_One">Mobile</option>
-        <option class="" value="Pipeline_Two">Others</option>
-    </select>
-    <button class="remove_field" style="margin-top:2px; margin-bottom:2px" ; type="button"><i class="fas fa-trash-alt"
-            aria-hidden="true"></i></button>
-    <div class="input-group-append"></div>
 </div>
