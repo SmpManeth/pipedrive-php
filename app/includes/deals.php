@@ -11,7 +11,8 @@ $stages = selectAll('tbl_status');
 
 ?>
 
-<div class="tab-pane fade show active" id="v-pills-deals" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
+<div class="tab-pane fade show active" id="v-pills-deals" role="tabpanel" aria-labelledby="v-pills-home-tab"
+    tabindex="0">
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -21,13 +22,15 @@ $stages = selectAll('tbl_status');
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-0 ps-3 pe-3">
-                    <form action="dashboard.php" method="get" name="add-deal-form" onsubmit="return validateAddDealForm()">
+                    <form action="dashboard.php" method="get" name="add-deal-form"
+                        onsubmit="return validateAddDealForm()">
                         <div class="row">
                             <div class="col-6 p-2 ps-3">
                                 <div <div class="model-item text-muted">
                                     <p class="">Contact Person</p>
                                     <i class="fa fa-user icon"></i>
-                                    <input class="input-field input-text" name="Contact_person_Name" id="Contact_person_Name" type="text">
+                                    <input class="input-field input-text" name="Contact_person_Name"
+                                        id="Contact_person_Name" type="text">
                                     <label id="Contact_person_Name_error" style="font-size: 12px; color: red"></label>
                                 </div>
                                 <div class="model-item text-muted">
@@ -41,11 +44,13 @@ $stages = selectAll('tbl_status');
                                 </div>
                                 <div class="model-item text-muted">
                                     <p class="">Value</p>
-                                    <input class="input-field" type="text" name="value" id="Value_No" style="width: 125px;">
-                                    <select class="input-field" name="currency" id="" style="width: 120px; height: 27px; padding: 0px;">
+                                    <input class="input-field" type="text" name="value" id="Value_No"
+                                        style="width: 125px;">
+                                    <select class="input-field" name="currency" id=""
+                                        style="width: 120px; height: 27px; padding: 0px;">
                                         <?php foreach ($currencies as $key => $currency) { ?>
-                                            <option class="" value="<?php echo $currency['curr_id'] ?>">
-                                                <?php echo $currency['currency_name'] ?></option>
+                                        <option class="" value="<?php echo $currency['curr_id'] ?>">
+                                            <?php echo $currency['currency_name'] ?></option>
 
                                         <?php
                                         }
@@ -55,17 +60,19 @@ $stages = selectAll('tbl_status');
                                 </div>
                                 <div class="model-item text-muted">
                                     <p class="">Pipeline</p>
-                                    <select class="input-field" name="pipeline" id="" style="height: 27px; padding: 0px;">
+                                    <select class="input-field" name="pipeline" id=""
+                                        style="height: 27px; padding: 0px;">
                                         <option class="" value="Pipeline_One">Pipeline One</option>
                                         <option class="" value="Pipeline_Two">Pipeline Two</option>
                                     </select>
                                 </div>
                                 <div class="model-item text-muted">
                                     <p class="">Pipeline Stage</p>
-                                    <select class="input-field" name="status_id" id="" style="height: 27px; padding: 0px;">
+                                    <select class="input-field" name="status_id" id=""
+                                        style="height: 27px; padding: 0px;">
                                         <?php foreach ($stages as $key => $stage) { ?>
-                                            <option class="" value="<?php echo $stage['id'] ?>">
-                                                <?php echo $stage['status_name'] ?></option>
+                                        <option class="" value="<?php echo $stage['id'] ?>">
+                                            <?php echo $stage['status_name'] ?></option>
 
                                         <?php   } ?>
                                     </select>
@@ -83,11 +90,13 @@ $stages = selectAll('tbl_status');
                                 <div class="model-item text-muted">
                                     <h11 class="modal-title" style="color:black"> PERSON </h11>
                                     <p class="">Phone</p>
-                                    <input class="input-field" name="Phone_No" id="Phone_No" type="text" maxlength="10" style="width: 150px;" size="27" class="rounded-lg float-right ml-2 mr-3">
-                                    <select class="input-field" name="phone category" id="" style="width: 120px; height: 27px; padding: 0px;">
+                                    <input class="input-field" name="Phone_No" id="Phone_No" type="text" maxlength="10"
+                                        style="width: 150px;" size="27" class="rounded-lg float-right ml-2 mr-3">
+                                    <select class="input-field" name="phone category" id=""
+                                        style="width: 120px; height: 27px; padding: 0px;">
                                         <?php foreach ($mob_type as $key => $phone_type) { ?>
-                                            <option class="" value="<?php echo $phone_type['pho_type_id']?>">
-                                                <?php echo $phone_type['type_name'] ?></option>
+                                        <option class="" value="<?php echo $phone_type['pho_type_id'] ?>">
+                                            <?php echo $phone_type['type_name'] ?></option>
                                         <?php
                                         }
                                         ?>
@@ -101,7 +110,8 @@ $stages = selectAll('tbl_status');
 
                                 <div class="model-item text-muted">
                                     <p class="">EmailAddress</p>
-                                    <input class="input-field" name="Email_Address" id="Email_Address" type="text" style="width: 275px;">
+                                    <input class="input-field" name="Email_Address" id="Email_Address" type="text"
+                                        style="width: 275px;">
                                     <label id="Email_Address_error" style="font-size: 12px; color: red"></label>
                                     <br>
                                     <div class="input_wrap" style="margin-top:6px;"></div>
@@ -110,7 +120,8 @@ $stages = selectAll('tbl_status');
                             </div>
                         </div>
                         <div class="modal-footer" padding=>
-                            <input type="reset" name="reset" value="Close" class="btn btn-primary" data-bs-dismiss="modal">
+                            <input type="reset" name="reset" value="Close" class="btn btn-primary"
+                                data-bs-dismiss="modal">
                             <input type="submit" name="submit_deal" value="Save" class="btn btn-primary">
                         </div>
                     </form>
@@ -128,17 +139,21 @@ $stages = selectAll('tbl_status');
 
 
 
-                <div class="shadow btnfilter"> <button class="nav-link" data-bs-toggle="pill" data-bs-target="#v-pills-dealsTable" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                <div class="shadow btnfilter"> <button class="nav-link" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-dealsTable" type="button" role="tab" aria-controls="v-pills-home"
+                        aria-selected="true">
                         <img class="filter-menu-options" src="<?php echo $BASE_URL . 'assets/images/stack-48.png' ?>" />
                     </button></div>
             </div>
 
             <div class="shadow btnfilter"> <button type="button">
-                    <img class="filter-menu-options" src="https://img.icons8.com/ios-filled/50/000000/money-circulation.png" />
+                    <img class="filter-menu-options"
+                        src="https://img.icons8.com/ios-filled/50/000000/money-circulation.png" />
                 </button></div>
             <div>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary-deal" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn btn-primary-deal" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
                     + Deal
                 </button>
             </div>
@@ -175,7 +190,8 @@ $stages = selectAll('tbl_status');
             </div>
             <div class="deals_tag">
                 <p>
-                    Deals <?php echo $totalcount; $totalcount = 0;?> 
+                    Deals <?php echo $totalcount;
+                            $totalcount = 0; ?>
                 </p>
             </div>
             <div class="group_1">
@@ -255,57 +271,79 @@ $stages = selectAll('tbl_status');
                 }
 
             ?>
-                <div class="status-card">
-                    <div class="card-header">
-                        <span class="card-header-text"><?php echo $stagerow["status_name"]; ?><br> Rs.<?php echo $total;
+            <div class="status-card">
+                <div class="card-header">
+                    <span class="card-header-text"><?php echo $stagerow["status_name"]; ?><br> Rs.<?php echo $total;
                                                                                                         $total = 0;
 
 
                                                                                                         ?>.00
-                            <br><?php echo $totalcount; $totalcount =0;
+                        <br><?php echo $totalcount;
+                                $totalcount = 0;
                                 ?></span>
 
-                    </div>
-                    <ul class="sortable ui-sortable" id="sort<?php echo $stagerow["id"]; ?>" data-status-id="<?php echo $stagerow["id"]; ?>">
-                        <?php
+                </div>
+                <ul class="sortable ui-sortable" id="sort<?php echo $stagerow["id"]; ?>"
+                    data-status-id="<?php echo $stagerow["id"]; ?>">
+                    <?php
                         if (!empty($deals)) {
                             foreach ($deals as $deal) {
 
                         ?>
-                                <li class="text-row ui-sortable-handle" data-task-id="<?php echo $deal["id"]; ?>">
-                                    <?php echo $deal["title"]; ?><br>
-                                    <?php echo $deal["Contact_person_Name"]; ?><br>
-                                    <i class="fa-solid fa-user"></i>&nbsp;<?php echo $deal["value"]; ?>
-                                    <div class="nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                        <form action="dashboard.php" method="post">
-                                            <input type=" text" name="Deal-id" value="<?php echo $deal["id"]; ?>" hidden>
-                                            <button name="clickme-deal-btn" class="nav-link lead_buttons clickmebtn" data-bs-toggle="pill" data-bs-target="#v-pills-dealsDetails" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true" id="mybtn" value="<?php echo $deal["title"]; ?>">
-                                                <input type="submit" name="clickme-deal-btn" value=" Click me">
+                    <li class="text-row ui-sortable-handle" data-task-id="<?php echo $deal["id"]; ?>">
+                        <?php echo $deal["title"]; ?><br>
+                        <?php echo $deal["Contact_person_Name"]; ?><br>
+                        <i class="fa-solid fa-user"></i>&nbsp;<?php echo $deal["value"]; ?>
+                        <div class="nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <form action="dashboard.php" method="post">
+                                <input type=" text" name="Deal-id" value="<?php echo $deal["id"]; ?>" hidden>
+                                <button name="clickme-deal-btn" class="nav-link lead_buttons clickmebtn"
+                                    data-bs-toggle="pill" data-bs-target="#v-pills-dealsDetails" type="button"
+                                    role="tab" aria-controls="v-pills-home" aria-selected="true" id="mybtn"
+                                    value="<?php echo $deal["title"]; ?>">
+                                    <input type="submit" name="clickme-deal-btn" value=" Click me">
 
-                                            </button>
+                                </button>
 
-                                        </form>
-                                    </div>
+                            </form>
+                        </div>
 
-                                </li>
-                        <?php
+                    </li>
+                    <?php
                             }
                         }
                         ?>
-                    </ul>
-                </div>
+                </ul>
+            </div>
             <?php
             }
             ?>
         </div>
 
         <div class="floating-button">
-            <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="material-icons"><i class="fa fa-plus"></i></a>
+            <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="material-icons"><i
+                    class="fa fa-plus"></i></a>
         </div>
     </div>
-    <div class="tab-pane fade show active" id="v-pills-deals" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
+    <div class="tab-pane fade show active" id="v-pills-deals" role="tabpanel" aria-labelledby="v-pills-home-tab"
+        tabindex="0">
         <div class="task-board">
 
         </div>
     </div>
+</div>
+
+//////////////
+
+<div>
+    <input type="text" name="phone-extra" style="width: 150px;" class="input-field">
+    <select class="input-field" name="phone category" id4er="" style="width: 120px; height: 27px; padding: 0px;">
+        <option class="" value="Pipeline_One">Work</option>
+        <option class="" value="Pipeline_Two">Home</option>
+        <option class="" value="Pipeline_One">Mobile</option>
+        <option class="" value="Pipeline_Two">Others</option>
+    </select>
+    <button class="remove_field" style="margin-top:2px; margin-bottom:2px" ; type="button"><i class="fas fa-trash-alt"
+            aria-hidden="true"></i></button>
+    <div class="input-group-append"></div>
 </div>
