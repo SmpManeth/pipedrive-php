@@ -1,13 +1,13 @@
 <?php
 require_once "ProjectManagement.php";
-$deals = selectAll('deal');
-$stages = selectAll('tbl_status');
+$deals = selectAll('deals');
+$stages = selectAll('stages');
 $currencies = selectAll('currency');
 $mob_type = selectAll('phone_type');
 
 $projectName = "";
 $projectManagement = new ProjectManagement();
-$stages = selectAll('tbl_status');
+$stages = selectAll('stages');
 
 ?>
 
@@ -166,8 +166,8 @@ $stages = selectAll('tbl_status');
 
                 $conditions['status_id'] = $stagerow["id"];
                 $conditions['project_name'] = $projectName;
-                $deals = selectallnew('tbl_task', $conditions);
-                $dealss = selectallnew('tbl_task', '');
+                $deals = selectallnew('deals', $conditions);
+                $dealss = selectallnew('deals', '');
 
                 $totalcount = count($dealss);
                 if (!empty($deals)) {
@@ -260,7 +260,7 @@ $stages = selectAll('tbl_status');
 
                 $conditions['status_id'] = $stagerow["id"];
                 $conditions['project_name'] = $projectName;
-                $deals = selectallnew('tbl_task', $conditions);
+                $deals = selectallnew('deals', $conditions);
 
 
                 foreach ($deals as $ondeal) {

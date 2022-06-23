@@ -1,21 +1,23 @@
 <?php
 include($ROOT_PATH . "/app/helpers/validatedeal.php");
 $errors = array();
+$conditions = array();
+$contactConditions = array();
+$emailCondition = array();
 $username = '';
 $id = '';
 $email = '';
 $admin = '';
 $password = '';
 $passwordConf = '';
-$table = 'tbl_task';
+$table = 'deals';
 // $client_users = selectAllClients($table, [`admin` => 1]);
 // $admin_users = selectAllfreelancers($table, [`admin` => 1]);
 
-if(isset($_GET['lkr'])) {
-    
+if (isset($_GET['lkr'])) {
 
 }
-// dd($_GET);
+
 
 //delete users
 if (isset($_GET['del_id'])) {
@@ -34,11 +36,9 @@ if (isset($_GET['dell_id'])) {
 
 
 if (isset($_GET["submit_deal"])) {
-    // dd($_GET);
-
+    //dd($_GET);
+   
     $errors = validatedeal($_GET);
-
-
 
     $pattern = "/^[a-zA-Z]+$/";
     $check = preg_match_all($pattern, $_GET['Contact_person_Name']);
@@ -49,31 +49,42 @@ if (isset($_GET["submit_deal"])) {
         $errors['error'] = 1;
         $nameErr = "Enter the correct pattern";
     }
-    /* if (isset($_POST["client"])) {
-        $_POST['urole'] = 'client';
-    } elseif (isset($_POST["freelancer"])) {
-        $_POST['urole'] = 'freelancer';
-    }*/
+    
+    $_POST["submit_deal"] = $_GET["submit_deal"];
+
+
     if (count($errors) === 0) {
-
-        unset($_GET["submit_deal"]);
-        unset($_GET["phone"]);
-        unset($_GET["Phone_No"]);
-        unset($_GET["email"]);
-        unset($_GET["Email_Address"]);
-        unset($_GET["phone-extra"]);
-        unset($_GET["currency"]);
-        unset($_GET["phone_category"]);
-        unset($_GET["email-extra"]);
-
         $_GET['project_name'] = "";
-     
+        // dd($_GET);
         $_GET['user_id'] = $_SESSION['id'];
 
-        // dd($_SESSION);
+        $conditions['Contact_person_Name'] = $_GET['Contact_person_Name'];
+        $conditions['organization'] = $_GET['organization'];
+        $conditions['title'] = $_GET['title'];
+        $conditions['value'] = $_GET['value'];
+        $conditions['pipeline'] = $_GET['pipeline'];
+        $conditions['status_id'] = $_GET['status_id'];
+        $conditions['prospected_closing_date'] = $_GET['prospected_closing_date'];
+        $conditions['expected_closing_date'] = $_GET['expected_closing_date'];
+        $conditions['project_name'] = $_GET['project_name'];
+        $conditions['user_id'] = $_GET['user_id'];
 
+        
+        $contactConditions['Phone_No'] = $_GET['Phone_No'];
+        $contactConditions['phone_category'] = $_GET['phone_category'];
+        // dd($contactConditions);
 
-        $postid = create($table, $_GET);
+        $emailCondition['Email_Address'] = $_GET['Email_Address'];
+        // dd($emailCondition);
+
+        $dealId = create($table, $conditions);
+        $contactConditions['deal_id'] = $dealId;
+        $postid = create('deal_phone_numbers', $contactConditions);
+
+        $emailCondition['deal_id'] = $dealId;
+        $postid2 = create('deal_email', $emailCondition);
+        
+       
         $_SESSION['message'] = 'Deal Added Succesfully';
         $_SESSION['type'] = '';
         header('location: ' . $BASE_URL . 'dashboard.php');

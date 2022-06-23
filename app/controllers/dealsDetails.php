@@ -1,6 +1,6 @@
 <?php
 
-$table = 'tbl_task';
+$table = 'deals';
 $onedeal = "";
 
 if (isset($_POST['clickme-deal-btn'])) {

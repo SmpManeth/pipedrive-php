@@ -16,6 +16,7 @@ function executeQuery($sql, $data)
     //sql = 'INSERT INTO `topics`( `name`, `description`) VALUES (?,?)'
     global $conn;
     $stmt = $conn->prepare($sql);
+ 
   
     $values = array_values($data);
    

@@ -34,7 +34,7 @@ if (isset($_POST["Import"])) {
 			$dataincsv['project_name']= $data[7];
 			$dataincsv['status_id']= $data[8];
 			$dataincsv['user_id']= $data[9];
-			$postid = create('tbl_task', $dataincsv);
+			$postid = create('deals', $dataincsv);
 		}
 	}
 }

@@ -1,6 +1,6 @@
 <?php
 
-$table = 'tbl_task';
+$table = 'deals';
 $onedeals = "";
 $allDeals = selectAll($table);
 
