@@ -95,7 +95,8 @@ $stages = selectAll('stages');
                                     <select class="input-field" name="phone category" id=""
                                         style="width: 120px; height: 27px; padding: 0px;">
                                         <option class="" value="Work">Work</option>
-                                        <option class="" value="Home">Home</option>
+                                        <option class="" value="Home">Home</option> 
+                                        
                                         <option class="" value="Mobile">Mobile</option>
                                         <option class="" value="Others">Others</option>
                                     </select>
