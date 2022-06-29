@@ -177,7 +177,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x < max_fields) { //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div><input type="text" name="phone-extra" style="width: 150px;" class="input-field">&nbsp;<select class="input-field" name="phone category" id4er="" style="width: 120px; height: 27px; padding: 0px;">option class="" value="Pipeline_One">Work</option><option class="" value="Work">Work</option><option class="" value="Home">Home</option><option class="" value="Mobile">Mobile</option><option class="" value="Others">Others</option></select><button class="remove_field" style="margin-top:2px; margin-bottom:2px" ; type="button"><i class="fas fa-trash-alt" aria-hidden="true"></i></button><div class="input-group-append"></div></div>');    
+            $(wrapper).append('<div><input type="text" name="phone_extra" style="width: 150px;" class="input-field">&nbsp;<select class="input-field" name="phone_category_extra" id="" style="width: 120px; height: 27px; padding: 0px;">option class="" value="Pipeline_One">Work</option><option class="" value="Work">Work</option><option class="" value="Home">Home</option><option class="" value="Mobile">Mobile</option><option class="" value="Others">Others</option></select><button class="remove_field" style="margin-top:2px; margin-bottom:2px" ; type="button"><i class="fas fa-trash-alt" aria-hidden="true"></i></button><div class="input-group-append"></div></div>');    
 		    }
         });
 
@@ -196,7 +196,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x < max_fields) { //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div><input type="text" name="email-extra" style="width: 275px;" class="input-field"><button class="remove_field" style="margin-top:2px; margin-bottom:2px;" type="button"><i class="fa fa-trash" aria-hidden="true"></i></button><div class="input-group-append"></div></div> ');
+            $(wrapper).append('<div><input type="text" name="email_extra" style="width: 275px;" class="input-field"><button class="remove_field" style="margin-top:2px; margin-bottom:2px;" type="button"><i class="fa fa-trash" aria-hidden="true"></i></button><div class="input-group-append"></div></div> ');
         }
     });
 

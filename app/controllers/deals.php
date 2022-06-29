@@ -55,7 +55,7 @@ if (isset($_GET["submit_deal"])) {
 
     if (count($errors) === 0) {
         $_GET['project_name'] = "";
-        // dd($_GET);
+        //dd($_GET);
         $_GET['user_id'] = $_SESSION['id'];
 
         $conditions['Contact_person_Name'] = $_GET['Contact_person_Name'];
@@ -66,16 +66,21 @@ if (isset($_GET["submit_deal"])) {
         $conditions['status_id'] = $_GET['status_id'];
         $conditions['prospected_closing_date'] = $_GET['prospected_closing_date'];
         $conditions['expected_closing_date'] = $_GET['expected_closing_date'];
+        $conditions['Address'] = $_GET['Address'];
+        $conditions['Make_Modeling'] = $_GET['Make_Modeling'];
         $conditions['project_name'] = $_GET['project_name'];
         $conditions['user_id'] = $_GET['user_id'];
-
+        //dd($conditions);
         
         $contactConditions['Phone_No'] = $_GET['Phone_No'];
         $contactConditions['phone_category'] = $_GET['phone_category'];
-        // dd($contactConditions);
+        $contactConditions['phone_extra'] = $_GET['phone_extra'];
+        $contactConditions['phone_category_extra'] = $_GET['phone_category_extra'];
+        //dd($contactConditions);
 
         $emailCondition['Email_Address'] = $_GET['Email_Address'];
-        // dd($emailCondition);
+        $emailCondition['email_extra'] = $_GET['email_extra'];
+        //dd($emailCondition);
 
         $dealId = create($table, $conditions);
         $contactConditions['deal_id'] = $dealId;
@@ -94,7 +99,7 @@ if (isset($_GET["submit_deal"])) {
     }
 }
 
-if (isset($_POST["update-user"])) {
+if (isset($_POST["update_user"])) {
 
     $errors = updateUser($_POST);
 

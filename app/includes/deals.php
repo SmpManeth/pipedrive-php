@@ -26,7 +26,7 @@ $stages = selectAll('stages');
                         onsubmit="return validateAddDealForm()">
                         <div class="row">
                             <div class="col-6 p-2 ps-3">
-                                <div <div class="model-item text-muted">
+                                <div class="model-item text-muted">
                                     <p class="">Contact Person</p>
                                     <i class="fa fa-user icon"></i>
                                     <input class="input-field input-text" name="Contact_person_Name"
@@ -108,13 +108,23 @@ $stages = selectAll('stages');
                                 </div>
 
                                 <div class="model-item text-muted">
-                                    <p class="">EmailAddress</p>
+                                    <p class="">Email Address</p>
                                     <input class="input-field" name="Email_Address" id="Email_Address" type="text"
                                         style="width: 275px;">
                                     <label id="Email_Address_error" style="font-size: 12px; color: red"></label>
                                     <br>
                                     <div class="input_wrap" style="margin-top:6px;"></div>
                                     <a class="add_f_button text-decoration-none  h6"> + Add Email </a>
+                                </div>
+                                <div class="model-item text-muted">
+                                    <p class="">Address</p>
+                                    <input class="input-field" name="Address" id="Address" type="text"
+                                        style="width: 275px;">
+                                </div>
+                                <div class="model-item text-muted">
+                                    <p class="">Make Modeling</p>
+                                    <input class="input-field" name="Make_Modeling" id="Make_Modeling" type="text"
+                                        style="width: 275px;">
                                 </div>
                             </div>
                         </div>
