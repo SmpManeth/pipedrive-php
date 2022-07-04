@@ -394,7 +394,14 @@ position: relative;
 
 .show {
   display: block;
+  margin-left: 3px;
 }
+
+.table-cont {
+  margin-left: 200px !important;
+}
+
+
 .model-item p {
   margin: 0px;
   padding: 0px;
@@ -670,9 +677,9 @@ h1 {
   font-weight: normal;
 }
 .task-board {
-  background: #2c7cbc;
+ 
   display: inline-block;
-  padding: 500px;
+  padding-top: 25px;
   border-radius: 25px;
   width: fit-content;
   white-space: nowrap;
@@ -716,7 +723,7 @@ ul.sortable li:last-child {
 
 ul {
   list-style: none;
-  margin: 0;
+  margin: 10px;
   padding: 0px;
 }
 
@@ -749,3 +756,4 @@ ul {
   float: right;
   margin-right: 10px;
 }
+/* Table Css */

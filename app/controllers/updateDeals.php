@@ -1,5 +1,4 @@
 <?php 
-$table = 'deals';
 $onedeal = "";
 
 if (isset($_POST['clickme-deal-btn'])) {

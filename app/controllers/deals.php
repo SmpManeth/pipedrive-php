@@ -11,6 +11,7 @@ $admin = '';
 $password = '';
 $passwordConf = '';
 $table = 'deals';
+$results=array();
 // $client_users = selectAllClients($table, [`admin` => 1]);
 // $admin_users = selectAllfreelancers($table, [`admin` => 1]);
 
@@ -55,7 +56,7 @@ if (isset($_GET["submit_deal"])) {
 
     if (count($errors) === 0) {
         $_GET['project_name'] = "";
-        //dd($_GET);
+        // dd($_GET);
         $_GET['user_id'] = $_SESSION['id'];
 
         $conditions['Contact_person_Name'] = $_GET['Contact_person_Name'];
@@ -99,22 +100,31 @@ if (isset($_GET["submit_deal"])) {
     }
 }
 
-if (isset($_POST["update_user"])) {
+if (isset($_GET['dealid'])) {
+    
+  
+    $id=$_GET['dealid'];
+    
+    $sql = "SELECT * FROM deals INNER JOIN deal_phone_numbers ON deals.id = deal_phone_numbers.deal_id INNER JOIN deal_email ON deals.id = deal_email.deal_id WHERE deals.id=$id";
+    // dd($sql);
+    $results = mysqli_query($conn, $sql);
+   
+   
+   
+}
 
-    $errors = updateUser($_POST);
+if (isset($_POST["`update_user`"])) {
 
     if (count($errors) === 0) {
 
-        $id = $_POST['id'];
-        unset($_POST["update-user"], $_POST["passwordConf"], $_POST['id']);
-
-        $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        // $_POST['admin'] = isset($_POST['admin']) ? 1 : 0;
-
-        $count = updatework($table, $id, $_POST);
+     
+        unset($_POST["update-user"]);
+       
+        
+      //  $count = updatework($table, $id, $_POST);
         $_SESSION['message'] = " User Updated Succesfuly";
         $_SESSION['type'] = '';
-        header('location: ' . $BASE_URL . 'admin/admindashboard.php');
+       // header('location: ' . $BASE_URL . 'admin/admindashboard.php');
         exit();
     } else {
         $username = $_POST['username'];

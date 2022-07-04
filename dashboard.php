@@ -13,7 +13,7 @@ include($ROOT_PATH . "/app/controllers/import.php");
     <?php
 
     include("app/includes/head.php") ?>
-    <title>Pipeline name + Dashboard</title>
+    <title>Sterling Pipline</title>
 
 </head>
 
@@ -23,14 +23,9 @@ include($ROOT_PATH . "/app/controllers/import.php");
     <?php include("app/includes/header.php") ?>
     <div class="d-flex sidenav-menu">
 
-        <div class="tab-content table" id="v-pills-tabContent">
-            <?php include("app/includes/leads.php") ?>
-            <?php include("app/includes/deals.php") ?>
-            <?php include("app/includes/dealsDetails.php") ?>
-            <?php include("app/includes/dealsTable.php") ?>
-            <?php include("app/includes/settings.php") ?>
 
-        </div>
+
+       
 
     </div>
     <?php include("app/includes/footer.php") ?>

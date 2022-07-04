@@ -1,5 +1,5 @@
 <?php 
-include("path.php");
+include("../../path.php");
 include($ROOT_PATH . "/app/includes/ProjectManagement.php");
 
 $projectManagement = new ProjectManagement();
