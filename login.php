@@ -1,5 +1,11 @@
 <?php include("path.php");
-include($ROOT_PATH . "/app/controllers/users.php"); ?>
+require_once "app/includes/ProjectManagement.php";
+include($ROOT_PATH . "/app/controllers/users.php");
+include($ROOT_PATH . "/app/controllers/deals.php");
+include($ROOT_PATH . "/app/controllers/dealsDetails.php");
+include($ROOT_PATH . "/app/controllers/dealsTable.php");
+include($ROOT_PATH . "/app/controllers/import.php"); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 

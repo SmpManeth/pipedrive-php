@@ -2,7 +2,7 @@
 <div class="navbar shadow-sm" style="background-color:#FFFFFF ;">
         <div>
             <p class=" ps-4 pt-2 fw-bold head-text">
-                <a class="text-decoration-none text-muted" href="dashboard.php">Deals</a>
+                <a class="text-decoration-none text-muted" href="<?php echo $BASE_URL . 'dashboard.php' ?>">Deals</a>
             </p>
         </div>
         <div class="search-container">
@@ -51,11 +51,11 @@
     <!-- side bar -->
     <div class=" d-flex side-bar fixed-top ">
         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link lead_buttons active" href="<?php echo $BASE_URL . 'app/includes/leads.php' ?>">
+        <a class="nav-link lead_buttons active" href="<?php echo $BASE_URL . 'leads.php' ?>">
             
             Leads
 </a>
-        <br> <a class="nav-link lead_buttons " href="<?php echo $BASE_URL . 'app/includes/deals.php' ?>">
+        <br> <a class="nav-link lead_buttons " href="<?php echo $BASE_URL . 'deals.php' ?>">
             
             Deals
 </a>

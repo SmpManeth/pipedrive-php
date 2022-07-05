@@ -4,6 +4,7 @@ $errors = array();
 $conditions = array();
 $contactConditions = array();
 $emailCondition = array();
+$commCondition = array();
 $username = '';
 $id = '';
 $email = '';
@@ -11,12 +12,11 @@ $admin = '';
 $password = '';
 $passwordConf = '';
 $table = 'deals';
-$results=array();
+$results = array();
 // $client_users = selectAllClients($table, [`admin` => 1]);
 // $admin_users = selectAllfreelancers($table, [`admin` => 1]);
 
 if (isset($_GET['lkr'])) {
-
 }
 
 
@@ -37,8 +37,8 @@ if (isset($_GET['dell_id'])) {
 
 
 if (isset($_GET["submit_deal"])) {
-    //dd($_GET);
-   
+    // dd($_GET);
+
     $errors = validatedeal($_GET);
 
     $pattern = "/^[a-zA-Z]+$/";
@@ -50,7 +50,7 @@ if (isset($_GET["submit_deal"])) {
         $errors['error'] = 1;
         $nameErr = "Enter the correct pattern";
     }
-    
+
     $_POST["submit_deal"] = $_GET["submit_deal"];
 
 
@@ -71,8 +71,8 @@ if (isset($_GET["submit_deal"])) {
         $conditions['Make_Modeling'] = $_GET['Make_Modeling'];
         $conditions['project_name'] = $_GET['project_name'];
         $conditions['user_id'] = $_GET['user_id'];
-        //dd($conditions);
-        
+        // dd($conditions);
+
         $contactConditions['Phone_No'] = $_GET['Phone_No'];
         $contactConditions['phone_category'] = $_GET['phone_category'];
         $contactConditions['phone_extra'] = $_GET['phone_extra'];
@@ -83,14 +83,20 @@ if (isset($_GET["submit_deal"])) {
         $emailCondition['email_extra'] = $_GET['email_extra'];
         //dd($emailCondition);
 
+        $commCondition['deal_comment'] = $_GET['deal_comment'];
+        //dd($commCondition);
+
         $dealId = create($table, $conditions);
         $contactConditions['deal_id'] = $dealId;
         $postid = create('deal_phone_numbers', $contactConditions);
 
         $emailCondition['deal_id'] = $dealId;
         $postid2 = create('deal_email', $emailCondition);
-        
-       
+
+        $commCondition['deal_id'] = $dealId;
+        $postid3 = create('deal_comment', $commCondition);
+
+
         $_SESSION['message'] = 'Deal Added Succesfully';
         $_SESSION['type'] = '';
         header('location: ' . $BASE_URL . 'dashboard.php');
@@ -101,82 +107,51 @@ if (isset($_GET["submit_deal"])) {
 }
 
 if (isset($_GET['dealid'])) {
-    
-  
-    $id=$_GET['dealid'];
-    
+
+
+    $id = $_GET['dealid'];
+
     $sql = "SELECT * FROM deals INNER JOIN deal_phone_numbers ON deals.id = deal_phone_numbers.deal_id INNER JOIN deal_email ON deals.id = deal_email.deal_id WHERE deals.id=$id";
     // dd($sql);
     $results = mysqli_query($conn, $sql);
-   
-   
-   
 }
 
-if (isset($_POST["`update_user`"])) {
+if (isset($_GET["update_deals"])) {
+ 
+    //  $errors = updateUser($_POST);
 
     if (count($errors) === 0) {
 
-     
-        unset($_POST["update-user"]);
-       
+        $id = $_GET['deal-id'];
+        unset($_GET["update_deals"], $_GET["deal-id"]);
+ 
+        $contactConditions['deal_id'] = $id;
+        $contactConditions['Phone_No'] = $_GET['Phone_No'];
+        $contact=$contactConditions['Phone_No'];
+ 
+        $emailCondition['deal_id'] =$id;
+        $emailCondition['Email_Address'] = $_GET['Email_Address'];
+        $email=$emailCondition['Email_Address'];
+
+unset($_GET["Phone_No"], $_GET["Email_Address"]);
+
+
+        update($table, $id, $_GET);
+        $sql = "UPDATE `deal_phone_numbers` SET `Phone_No`= $contact WHERE `deal_id`=$id";
+        $results = mysqli_query( $conn, $sql);
         
-      //  $count = updatework($table, $id, $_POST);
+        update($table, $id, $_GET);
+        $sql = "UPDATE `deal_email` SET `Email_Address`= '$email' WHERE `deal_id`=$id";
+       
+        $results2 = mysqli_query( $conn, $sql);
+        //  dd($results2);
+
         $_SESSION['message'] = " User Updated Succesfuly";
         $_SESSION['type'] = '';
-       // header('location: ' . $BASE_URL . 'admin/admindashboard.php');
+        header('location: ' . $BASE_URL . 'deals.php');
         exit();
     } else {
-        $username = $_POST['username'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $passwordConf = $_POST['passwordConf'];
+       
     }
 }
-
-if (isset($_GET['id'])) {
-    $uid = $_GET['id'];
-    $user = selectOne($table, ['id' => $uid]);
-
-    $id = $user['id'];
-    $admin = $user['role'];
-    $usernamess = $user['username'];
-    $email = $user['email'];
-    $countryy = $user['country'];
-}
-
-if (isset($_POST['login-btn'])) {
-
-    $errors = validateLogin($_POST);
-
-    if (count($errors) === 0) {
-
-
-        $user = selectOne($table, ['username' => $_POST['username']]);
-
-
-
-        if ($user && password_verify($_POST['password'], $user['password'])) {
-
-            loginUser($user);
-        } else {
-            dd("Errors");
-            array_push($errors, 'Wrong Credentials');
-        }
-    }
-}
-
-
-/*
-if (isset($_POST['add-topic'])) {
-    //unset($_POST['add-topic']);
-    $topic_id = create( $table, $_POST);
-    $user = selectOne($table, ['id' => $topic_id]);
-    $_SESSION['message'] = 'Topic Created Succesfully';
-    $_SESSION['type'] = 'success';
-    header('location: ' . $BASE_URL . 'admin/topics/index.php');
-    exit();
-
-    
-}
-*/
+ 

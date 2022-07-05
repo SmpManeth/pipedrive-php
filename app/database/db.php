@@ -235,8 +235,10 @@ function update($table, $id, $data)
          $i++;
      }
 
-     $sql = $sql ." WHERE userid=?";
-     $data['userid'] = $id;
+     $sql = $sql ." WHERE id=?";
+     $data['id'] = $id;
+
+   
      
 
      $stmt = executeQuery($sql, $data);

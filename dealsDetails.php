@@ -1,12 +1,9 @@
-<?php include("../../path.php");
-require_once "ProjectManagement.php";
+<?php include("path.php");
 include($ROOT_PATH . "/app/controllers/users.php");
 include($ROOT_PATH . "/app/controllers/deals.php");
 include($ROOT_PATH . "/app/controllers/dealsDetails.php");
 include($ROOT_PATH . "/app/controllers/dealsTable.php");
 include($ROOT_PATH . "/app/controllers/import.php");
-
-
 ?>
 
 <!DOCTYPE html>
@@ -21,8 +18,9 @@ include($ROOT_PATH . "/app/controllers/import.php");
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Sterling Pipline</title>
 
 </head>
@@ -33,6 +31,16 @@ include($ROOT_PATH . "/app/controllers/import.php");
     <?php include($ROOT_PATH . "/app/includes/header.php") ?>
     <div class="d-flex sidenav-menu">
 
+    <div class="tab-pane fade show" id="v-pills-dealsDetails" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
+
+<h2>
+    <?php echo $onedeal['Contact_person_Name']?> <br>
+    <?php echo $onedeal['value']?>
+    
+</h2>
+
+</div>
+
 
     </div>
     <?php include($ROOT_PATH . "/app/includes/footer.php") ?>
@@ -40,3 +48,8 @@ include($ROOT_PATH . "/app/controllers/import.php");
 </body>
 
 </html>
+
+
+
+
+

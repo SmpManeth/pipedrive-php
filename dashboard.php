@@ -1,9 +1,11 @@
 <?php include("path.php");
+require_once "app/includes/ProjectManagement.php";
 include($ROOT_PATH . "/app/controllers/users.php");
 include($ROOT_PATH . "/app/controllers/deals.php");
 include($ROOT_PATH . "/app/controllers/dealsDetails.php");
 include($ROOT_PATH . "/app/controllers/dealsTable.php");
-include($ROOT_PATH . "/app/controllers/import.php");
+include($ROOT_PATH . "/app/controllers/import.php");;
+
 
 ?>
 <!DOCTYPE html>
@@ -21,13 +23,7 @@ include($ROOT_PATH . "/app/controllers/import.php");
 
     <!-- header and Sidebar -->
     <?php include("app/includes/header.php") ?>
-    <div class="d-flex sidenav-menu">
-
-
-
-       
-
-    </div>
+    
     <?php include("app/includes/footer.php") ?>
 
 </body>
