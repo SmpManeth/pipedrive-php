@@ -14,4 +14,4 @@ unset($_SESSION['type']);
 session_destroy();
 
 //redirect to the homepage
-header('location: ' . $BASE_URL . 'login.php');
+header('location: ' . $BASE_URL . 'index.php');

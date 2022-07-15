@@ -1,7 +1,6 @@
-<?php
+<?php 
 
 include("../../path.php");
-require_once "ProjectManagement.php";
 include($ROOT_PATH . "/app/controllers/users.php");
 include($ROOT_PATH . "/app/controllers/deals.php");
 include($ROOT_PATH . "/app/controllers/dealsDetails.php");
@@ -31,6 +30,50 @@ $results = mysqli_query($connect, $sql);
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+<script>
+    function downloadCSV(csv, filename) {
+    var csvFile;
+    var downloadLink;
+
+    // CSV file
+    csvFile = new Blob([csv], {type: "text/csv"});
+
+    // Download link
+    downloadLink = document.createElement("a");
+
+    // File name
+    downloadLink.download = filename;
+
+    // Create a link to the file
+    downloadLink.href = window.URL.createObjectURL(csvFile);
+
+    // Hide download link
+    downloadLink.style.display = "none";
+
+    // Add the link to DOM
+    document.body.appendChild(downloadLink);
+
+    // Click download link
+    downloadLink.click();
+}
+function exportTableToCSV(filename) {
+    var csv = [];
+    var rows = document.querySelectorAll("table tr");
+    
+    for (var i = 0; i < rows.length; i++) {
+        var row = [], cols = rows[i].querySelectorAll("td, th");
+        
+        for (var j = 0; j < cols.length; j++) 
+            row.push(cols[j].innerText);
+        
+        csv.push(row.join(","));        
+    }
+
+    // Download CSV file
+    downloadCSV(csv.join("\n"), filename);
+}
+</script>
+
     <title>Sterling Pipline</title>
 
 </head>
@@ -43,7 +86,7 @@ $results = mysqli_query($connect, $sql);
     <div class="tab-pane fade show table-cont">
 
         <div class="mb-3">
-            <form class="form-horizontal well" action="dashboard.php" method="post" name="upload_excel"
+            <form class="form-horizontal well" action="dealsTable.php" method="post" name="upload_excel"
                 enctype="multipart/form-data">
 
                 <input class="form-control bar" type="file" name="file" id="file" class="input-large" required>
@@ -73,6 +116,10 @@ $results = mysqli_query($connect, $sql);
                     </th>
                     <th class="th-sm">Exp.Closing Date
                     </th>
+                    <th class="th-sm">Status Id
+                    </th>
+                    <th class="th-sm">Comment
+                    </th>
                     <th class="th-sm">
                     </th>
                 </tr>
@@ -92,7 +139,9 @@ $results = mysqli_query($connect, $sql);
                     <td class="pt-3-half"><?php echo $onerow["Phone_No"]; ?> </td>
                     <td class="pt-3-half"><?php echo $onerow["prospected_closing_date"]; ?> </td>
                     <td class="pt-3-half"><?php echo $onerow["expected_closing_date"]; ?> </td>
-                    <td class="pt-3-half"><?php echo $onerow["id"]; ?> </td>
+                    <td class="pt-3-half"><?php echo $onerow["status_id"]; ?> </td>
+                    <td class="pt-3-half"><?php echo $onerow["deal_comment"]; ?> </td>
+                    <td hidden class="pt-3-half"><?php echo $onerow["id"]; ?> </td>
                     <td>
                         <div class="shadow btnfilter">
                             <a
@@ -108,26 +157,26 @@ $results = mysqli_query($connect, $sql);
           ?>
             </tbody>
         </table>
-        <button id="downloadexcel" class="btn btn-primary excel-expoter-btn">Export to CSV</button><br />
+        <button onclick="exportTableToCSV('deals_list.csv')" class="btn btn-primary excel-expoter-btn">Export to CSV</button><br />
     </div>
     </div>
-    <script>
+    <!-- <script>
     // data export functionality
+
     document.getElementById('downloadexcel').addEventListener('click', function() {
         var table2excel = new Table2Excel();
         table2excel.export(document.querySelectorAll("#deal-table"));
     });
-    // data export functionality
-
-    // Serach function in data table
-    $(document).ready(function() {
-        $("#myInput").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $("#myTable tr").filter(function() {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-        });
+    </script> -->
+    <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
+  });
+});
     // Serach function in data table
     </script>
     <?php include($ROOT_PATH . "/app/includes/footer.php") ?>

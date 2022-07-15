@@ -15,9 +15,10 @@ function executeQuery($sql, $data)
     
     //sql = 'INSERT INTO `topics`( `name`, `description`) VALUES (?,?)'
     global $conn;
-    $stmt = $conn->prepare($sql);
- 
-  
+    
+ $stmt = $conn->prepare($sql);
+    
+//   dd($sql);
     $values = array_values($data);
    
     
@@ -175,7 +176,7 @@ function create($table, $data)
          }
          $i++;
      }
-  
+
      $stmt = executeQuery($sql, $data);
    
      $id = $stmt->insert_id;

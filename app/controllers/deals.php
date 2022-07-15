@@ -37,7 +37,7 @@ if (isset($_GET['dell_id'])) {
 
 
 if (isset($_GET["submit_deal"])) {
-    // dd($_GET);
+    //dd($_GET);
 
     $errors = validatedeal($_GET);
 
@@ -69,6 +69,7 @@ if (isset($_GET["submit_deal"])) {
         $conditions['expected_closing_date'] = $_GET['expected_closing_date'];
         $conditions['Address'] = $_GET['Address'];
         $conditions['Make_Modeling'] = $_GET['Make_Modeling'];
+        $conditions['deal_comment'] = $_GET['deal_comment'];
         $conditions['project_name'] = $_GET['project_name'];
         $conditions['user_id'] = $_GET['user_id'];
         // dd($conditions);
@@ -77,14 +78,11 @@ if (isset($_GET["submit_deal"])) {
         $contactConditions['phone_category'] = $_GET['phone_category'];
         $contactConditions['phone_extra'] = $_GET['phone_extra'];
         $contactConditions['phone_category_extra'] = $_GET['phone_category_extra'];
-        //dd($contactConditions);
+        // dd($contactConditions);
 
         $emailCondition['Email_Address'] = $_GET['Email_Address'];
         $emailCondition['email_extra'] = $_GET['email_extra'];
-        //dd($emailCondition);
-
-        $commCondition['deal_comment'] = $_GET['deal_comment'];
-        //dd($commCondition);
+        // dd($emailCondition);
 
         $dealId = create($table, $conditions);
         $contactConditions['deal_id'] = $dealId;
@@ -93,8 +91,6 @@ if (isset($_GET["submit_deal"])) {
         $emailCondition['deal_id'] = $dealId;
         $postid2 = create('deal_email', $emailCondition);
 
-        $commCondition['deal_id'] = $dealId;
-        $postid3 = create('deal_comment', $commCondition);
 
 
         $_SESSION['message'] = 'Deal Added Succesfully';
@@ -117,6 +113,7 @@ if (isset($_GET['dealid'])) {
 }
 
 if (isset($_GET["update_deals"])) {
+    
  
     //  $errors = updateUser($_POST);
 
@@ -132,20 +129,28 @@ if (isset($_GET["update_deals"])) {
         $emailCondition['deal_id'] =$id;
         $emailCondition['Email_Address'] = $_GET['Email_Address'];
         $email=$emailCondition['Email_Address'];
+        
 
-unset($_GET["Phone_No"], $_GET["Email_Address"]);
+        
+
+        unset($_GET["Phone_No"], $_GET["Email_Address"]);
 
 
         update($table, $id, $_GET);
         $sql = "UPDATE `deal_phone_numbers` SET `Phone_No`= $contact WHERE `deal_id`=$id";
         $results = mysqli_query( $conn, $sql);
-        
+        // dd($sql);
         update($table, $id, $_GET);
         $sql = "UPDATE `deal_email` SET `Email_Address`= '$email' WHERE `deal_id`=$id";
-       
+        // dd($sql);
         $results2 = mysqli_query( $conn, $sql);
         //  dd($results2);
 
+        // update($table, $id, $_GET);
+        // $sql = "UPDATE `deal_comment` SET `deal_comment`= '$comm' WHERE `deal_id`=$id";
+        // $results3 = mysqli_query( $conn, $sql);
+
+        // dd($results);
         $_SESSION['message'] = " User Updated Succesfuly";
         $_SESSION['type'] = '';
         header('location: ' . $BASE_URL . 'deals.php');

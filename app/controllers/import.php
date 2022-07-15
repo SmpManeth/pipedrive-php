@@ -24,22 +24,17 @@ if (isset($_POST["Import"])) {
 		} else {
 
 		// Data arrenge in to arry and pass to the database
-			$dataincsv['Contact_person_Name']= $data[0];
-			$dataincsv['organization']= $data[1];
-			$dataincsv['title']= $data[2];
-			$dataincsv['value']= $data[3];
-			$dataincsv['pipeline']= $data[4];
+			$dataincsv['organization']= $data[0];
+			$dataincsv['Contact_person_Name']= $data[1];
+			// $dataincsv['Email_Address']= $data[2];
+			$dataincsv['Address']= $data[3];
+			// $dataincsv['pipeline']= $data[4];
 			$dataincsv['prospected_closing_date']= $data[5];
 			$dataincsv['expected_closing_date']= $data[6];
 			$dataincsv['project_name']= $data[7];
 			$dataincsv['status_id']= $data[8];
-			$dataincsv['user_id']= $data[9];
-			$dataincsvnew['Phone_No']= $data[10];
-			$dataincsvnew['phone_category']= $data[11];
-			$dataincsvnew['phone_extra']= $data[12];
-			$dataincsvnew['phone_category_extra']= $data[13];
-			$dataincsvnewmail['Email_Address']= $data[14];
-			$dataincsvnewmail['email_extra']= $data[15];
+			$dataincsv['deal_comment']= $data[9];
+
 			$postid = create('deals', $dataincsv);
 			$dataincsvnew['deal_id']= $postid;
 			$dataincsvnewmail['deal_id']= $postid;
