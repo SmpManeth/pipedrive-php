@@ -25,7 +25,7 @@ include($ROOT_PATH . "/app/controllers/import.php");
                     <div class="company-logo">
                         <img src="https://www.sterlinglanka.com/wp-content/uploads/2019/08/rrrr.png" alt="company logo">
                     </div>
-                    <form id="login-form" class="form" action="login.php" method="post">
+                    <form id="login-form" class="form" action="deals.php" method="post">
                         <div class="divider d-flex align-items-center my-4">
                             <p class="text-center fw-bold mx-3 mb-0 h4">Login</p>
                         </div>

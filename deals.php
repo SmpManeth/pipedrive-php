@@ -27,8 +27,7 @@ $stages = selectAll('stages');
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Sterling Pipline</title>
 
@@ -41,11 +40,9 @@ $stages = selectAll('stages');
     <div class="d-flex sidenav-menu">
 
 
-        <div class="tab-pane fade show" id="v-pills-deals" role="tabpanel" aria-labelledby="v-pills-home-tab"
-            tabindex="0">
+        <div class="tab-pane fade show" id="v-pills-deals" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header " style="background-color:#dee2e6">
@@ -53,17 +50,14 @@ $stages = selectAll('stages');
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body p-0 ps-3 pe-3">
-                            <form action="dashboard.php" method="get" name="add-deal-form"
-                                onsubmit="return validateAddDealForm()">
+                            <form action="dashboard.php" method="get" name="add-deal-form" onsubmit="return validateAddDealForm()">
                                 <div class="row">
                                     <div class="col-6 p-2 ps-3">
                                         <div class="model-item text-muted">
                                             <p class="">Contact Person</p>
                                             <i class="fa fa-user icon"></i>
-                                            <input class="input-field input-text" name="Contact_person_Name"
-                                                id="Contact_person_Name" type="text">
-                                            <label id="Contact_person_Name_error"
-                                                style="font-size: 12px; color: red"></label>
+                                            <input class="input-field input-text" name="Contact_person_Name" id="Contact_person_Name" type="text">
+                                            <label id="Contact_person_Name_error" style="font-size: 12px; color: red"></label>
                                         </div>
                                         <div class="model-item text-muted">
                                             <p class="">Organization</p>
@@ -76,13 +70,11 @@ $stages = selectAll('stages');
                                         </div>
                                         <div class="model-item text-muted">
                                             <p class="">Value</p>
-                                            <input class="input-field" type="text" name="value" id="Value_No"
-                                                style="width: 125px;">
-                                            <select class="input-field" name="currency" id=""
-                                                style="width: 120px; height: 27px; padding: 0px;">
+                                            <input class="input-field" type="text" name="value" id="Value_No" style="width: 125px;">
+                                            <select class="input-field" name="currency" id="" style="width: 120px; height: 27px; padding: 0px;">
                                                 <?php foreach ($currencies as $key => $currency) { ?>
-                                                <option class="" value="<?php echo $currency['curr_id'] ?>">
-                                                    <?php echo $currency['currency_name'] ?></option>
+                                                    <option class="" value="<?php echo $currency['curr_id'] ?>">
+                                                        <?php echo $currency['currency_name'] ?></option>
 
                                                 <?php
                                                 }
@@ -92,19 +84,17 @@ $stages = selectAll('stages');
                                         </div>
                                         <div class="model-item text-muted">
                                             <p class="">Pipeline</p>
-                                            <select class="input-field" name="pipeline" id=""
-                                                style="height: 27px; padding: 0px;">
+                                            <select class="input-field" name="pipeline" id="" style="height: 27px; padding: 0px;">
                                                 <option class="" value="Pipeline_One">Pipeline One</option>
                                                 <option class="" value="Pipeline_Two">Pipeline Two</option>
                                             </select>
                                         </div>
                                         <div class="model-item text-muted">
                                             <p class="">Pipeline Stage</p>
-                                            <select class="input-field" name="status_id" id=""
-                                                style="height: 27px; padding: 0px;">
+                                            <select class="input-field" name="status_id" id="" style="height: 27px; padding: 0px;">
                                                 <?php foreach ($stages as $key => $stage) { ?>
-                                                <option class="" value="<?php echo $stage['id'] ?>">
-                                                    <?php echo $stage['status_name'] ?></option>
+                                                    <option class="" value="<?php echo $stage['id'] ?>">
+                                                        <?php echo $stage['status_name'] ?></option>
 
                                                 <?php   } ?>
                                             </select>
@@ -122,11 +112,8 @@ $stages = selectAll('stages');
                                         <div class="model-item text-muted">
                                             <h11 class="modal-title" style="color:black"> PERSON </h11>
                                             <p class="">Phone</p>
-                                            <input class="input-field" name="Phone_No" id="Phone_No" type="text"
-                                                maxlength="10" style="width: 150px;" size="27"
-                                                class="rounded-lg float-right ml-2 mr-3">
-                                            <select class="input-field" name="phone category" id=""
-                                                style="width: 120px; height: 27px; padding: 0px;">
+                                            <input class="input-field" name="Phone_No" id="Phone_No" type="text" maxlength="10" style="width: 150px;" size="27" class="rounded-lg float-right ml-2 mr-3">
+                                            <select class="input-field" name="phone category" id="" style="width: 120px; height: 27px; padding: 0px;">
                                                 <option class="" value="Work">Work</option>
                                                 <option class="" value="Home">Home</option>
                                                 <option class="" value="Mobile">Mobile</option>
@@ -141,8 +128,7 @@ $stages = selectAll('stages');
 
                                         <div class="model-item text-muted">
                                             <p class="">Email Address</p>
-                                            <input class="input-field" name="Email_Address" id="Email_Address"
-                                                type="text" style="width: 275px;">
+                                            <input class="input-field" name="Email_Address" id="Email_Address" type="text" style="width: 275px;">
                                             <label id="Email_Address_error" style="font-size: 12px; color: red"></label>
                                             <br>
                                             <div class="input_wrap" style="margin-top:6px;"></div>
@@ -150,17 +136,14 @@ $stages = selectAll('stages');
                                         </div>
                                         <div class="model-item text-muted">
                                             <p class="">Address</p>
-                                            <input class="input-field" name="Address" id="Address" type="text"
-                                                style="width: 275px;">
+                                            <input class="input-field" name="Address" id="Address" type="text" style="width: 275px;">
                                         </div>
                                         <div class="model-item text-muted">
                                             <p class="">Make Modeling</p>
-                                            <input class="input-field" name="Make_Modeling" id="Make_Modeling"
-                                                type="text" style="width: 275px;">
+                                            <input class="input-field" name="Make_Modeling" id="Make_Modeling" type="text" style="width: 275px;">
                                         </div>
                                         <div>
-                                            <textarea name="deal_comment" id="deal_comment"
-                                                style="font-family:sans-serif;font-size:1.2em;">
+                                            <textarea name="deal_comment" id="deal_comment" style="font-family:sans-serif;font-size:1.2em;">
                                                 Hey... say something!
                                             </textarea>
                                         </div>
@@ -168,8 +151,7 @@ $stages = selectAll('stages');
                                     </div>
                                 </div>
                                 <div class="modal-footer" padding=>
-                                    <input type="reset" name="reset" value="Close" class="btn btn-primary"
-                                        data-bs-dismiss="modal">
+                                    <input type="reset" name="reset" value="Close" class="btn btn-primary" data-bs-dismiss="modal">
                                     <input type="submit" name="submit_deal" value="Save" class="btn btn-primary">
                                 </div>
                             </form>
@@ -180,27 +162,23 @@ $stages = selectAll('stages');
             <div class="row d-flex filter-head">
                 <div class="d-flex filters">
                     <div class="shadow btnfilter "> <button type="button">
-                            <img class="filter-menu-options"
-                                src="https://img.icons8.com/ios-glyphs/30/000000/bar-chart.png" />
+                            <img class="filter-menu-options" src="https://img.icons8.com/ios-glyphs/30/000000/bar-chart.png" />
                         </button>
                     </div>
 
                     <div class="shadow btnfilter">
                         <a href="<?php echo $BASE_URL . 'app/includes/dealsTable.php' ?>">
-                            <img class="filter-menu-options"
-                                src="<?php echo $BASE_URL . 'assets/images/stack-48.png' ?>" />
+                            <img class="filter-menu-options" src="<?php echo $BASE_URL . 'assets/images/stack-48.png' ?>" />
                         </a>
                     </div>
 
 
                     <div class="shadow btnfilter"> <button type="button">
-                            <img class="filter-menu-options"
-                                src="https://img.icons8.com/ios-filled/50/000000/money-circulation.png" />
+                            <img class="filter-menu-options" src="https://img.icons8.com/ios-filled/50/000000/money-circulation.png" />
                         </button></div>
                     <div>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary-deal" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">
+                        <button type="button" class="btn btn-primary-deal" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             + Deal
                         </button>
                     </div>
@@ -318,57 +296,53 @@ $stages = selectAll('stages');
                         }
 
                     ?>
-                    <div class="status-card">
-                        <div class="card-header">
-                            <span class="card-header-text"><?php echo $stagerow["status_name"]; ?><br> Rs.<?php echo $total;
+                        <div class="status-card">
+                            <div class="card-header">
+                                <span class="card-header-text"><?php echo $stagerow["status_name"]; ?><br> Rs.<?php echo $total;
                                                                                                                 $total = 0;
 
 
                                                                                                                 ?>.00
-                                <br><?php echo $totalcount;
+                                    <br><?php echo $totalcount;
                                         $totalcount = 0;
                                         ?></span>
 
-                        </div>
-                        <ul class="sortable ui-sortable" id="sort<?php echo $stagerow["id"]; ?>"
-                            data-status-id="<?php echo $stagerow["id"]; ?>">
-                            <?php
+                            </div>
+                            <ul class="sortable ui-sortable" id="sort<?php echo $stagerow["id"]; ?>" data-status-id="<?php echo $stagerow["id"]; ?>">
+                                <?php
                                 if (!empty($deals)) {
                                     foreach ($deals as $deal) {
 
                                 ?>
-                            <li class="text-row ui-sortable-handle" data-task-id="<?php echo $deal["id"]; ?>">
-                                <?php echo $deal["title"]; ?><br>
-                                <?php echo $deal["Contact_person_Name"]; ?><br>
-                                <i class="fa-solid fa-user"></i>&nbsp;<?php echo $deal["value"]; ?>
-                                <div class="nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                    <form action="dealsDetails.php" method="post">
-                                        <input type=" text" name="Deal-id" value="<?php echo $deal["id"]; ?>" hidden>
-                                        <input id="mybtn" type="submit" name="clickme-deal-btn" value=" Click me"
-                                            value="<?php echo $deal["title"]; ?>">
+                                        <li class="text-row ui-sortable-handle" data-task-id="<?php echo $deal["id"]; ?>">
+                                            <?php echo $deal["title"]; ?><br>
+                                            <?php echo $deal["Contact_person_Name"]; ?><br>
+                                            <i class="fa-solid fa-user"></i>&nbsp;<?php echo $deal["value"]; ?>
+                                            <div class="nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                                <form action="dealsDetails.php" method="post">
+                                                    <input type=" text" name="Deal-id" value="<?php echo $deal["id"]; ?>" hidden>
+                                                    <input id="mybtn" type="submit" name="clickme-deal-btn" value=" Click me" value="<?php echo $deal["title"]; ?>">
 
-                                    </form>
-                                </div>
+                                                </form>
+                                            </div>
 
-                            </li>
-                            <?php
+                                        </li>
+                                <?php
                                     }
                                 }
                                 ?>
-                        </ul>
-                    </div>
+                            </ul>
+                        </div>
                     <?php
                     }
                     ?>
                 </div>
 
                 <div class="floating-button">
-                    <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="material-icons"><i
-                            class="fa fa-plus"></i></a>
+                    <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="material-icons"><i class="fa fa-plus"></i></a>
                 </div>
             </div>
-            <div class="tab-pane fade show active" id="v-pills-deals" role="tabpanel" aria-labelledby="v-pills-home-tab"
-                tabindex="0">
+            <div class="tab-pane fade show active" id="v-pills-deals" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
 
             </div>
         </div>
