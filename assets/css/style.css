@@ -1,13 +1,22 @@
 /* index */
+<<<<<<< HEAD
 .container {
+=======
+.container-reg {
+>>>>>>> a1af4a2c0c2ff11ac899dcace99db0cc9eea8f68
   position: relative;
   width: 100%;
   max-width: 400px;
 }
 
 .container img {
+<<<<<<< HEAD
   width: 99rem;
   height: 45rem;
+=======
+  width: 84.3rem;
+  height: 37.8rem;
+>>>>>>> a1af4a2c0c2ff11ac899dcace99db0cc9eea8f68
 }
 
 .container .para {

@@ -12,9 +12,15 @@
 </head>
 
 <body>
+<<<<<<< HEAD
 	<div class="container">
 		<img src="assets/images/bg2.jpg" alt="Snow">
 		<p class="para">Welcome To the Sterling PipeDeive</p>
+=======
+	<div class="container-reg">
+		<img src="assets/images/bg2.jpg" alt="Snow">
+		<p class="para">Welcome To the Sterling PipeDriver</p>
+>>>>>>> a1af4a2c0c2ff11ac899dcace99db0cc9eea8f68
 		<button class="btn" onclick="location.href='login.php'" >Lts Go...</button>
 	</div>
 

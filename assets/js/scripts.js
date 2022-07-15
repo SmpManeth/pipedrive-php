@@ -1,3 +1,24 @@
+
+  $(function() {
+    var url = 'edit-status.php';
+    $('ul[id^="sort"]').sortable({
+       connectWith: ".sortable",
+       receive: function(e, ui) {
+          var status_id = $(ui.item).parent(".sortable").data("status-id");
+          var task_id = $(ui.item).data("task-id");
+          $.ajax({
+             url: url + '?status_id=' + status_id + '&task_id=' + task_id,
+             success: function (url) {
+				location.reload();
+            
+           }
+          });
+          
+       }
+
+    }).disableSelection();
+ });
+ 
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function myFunction() {
@@ -162,6 +183,7 @@ $(document).ready(function () {
         $(this).parent('div').remove(); x--;
     })
 });
+<<<<<<< HEAD
 
 
   $(function() {
@@ -183,9 +205,11 @@ $(document).ready(function () {
 
     }).disableSelection();
  });
+=======
+
+
+>>>>>>> a1af4a2c0c2ff11ac899dcace99db0cc9eea8f68
    
-//    <!-- MDB
-  type="text/javascript"
 
 
 	
