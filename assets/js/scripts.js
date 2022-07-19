@@ -52,14 +52,14 @@ function validateAddDealForm(){
             error_flag = true;
         }
 
-         //value
-               if (/^[0-9]+$/.test(Value)){
-                document.getElementById('Value_error').style.color = "";
-            }
-            else{
-                document.getElementById('Value_error').innerHTML=' * Only Numeric Characters';
-                error_flag = true;
-            }
+        //  //value
+        //        if (/^[0-9]+$/.test(Value)){
+        //         document.getElementById('Value_error').style.color = "";
+        //     }
+        //     else{
+        //         document.getElementById('Value_error').innerHTML=' * Only Numeric Characters';
+        //         error_flag = true;
+        //     }
 
                 //   email
                   if (/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/.test(EmailAddress)){
@@ -183,7 +183,6 @@ $(document).ready(function () {
         $(this).parent('div').remove(); x--;
     })
 });
-<<<<<<< HEAD
 
 
   $(function() {
@@ -205,10 +204,6 @@ $(document).ready(function () {
 
     }).disableSelection();
  });
-=======
-
-
->>>>>>> a1af4a2c0c2ff11ac899dcace99db0cc9eea8f68
    
 
 

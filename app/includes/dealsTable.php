@@ -89,7 +89,7 @@ function exportTableToCSV(filename) {
             <form class="form-horizontal well" action="dealsTable.php" method="post" name="upload_excel"
                 enctype="multipart/form-data">
 
-                <input class="form-control bar" type="file" name="file" id="file" class="input-large" required>
+                <input type="file" name="file" id="file" class="input-large" required>
                 <input value="Upload CSV Files" type="submit" id="submit" name="Import"
                     class="btn btn-primary button-loading" data-loading-text="Loading...">
             </form>

@@ -1,6 +1,8 @@
 <?php
 // Data import form CSV file functionality
 $dataincsv = array();
+$dataincsvnew = array();
+$dataincsvnewmail = array();
 if (isset($_POST["Import"])) {
 
 	$file = $_FILES["file"]["tmp_name"];
@@ -14,7 +16,7 @@ if (isset($_POST["Import"])) {
 
 	$file_open = fopen($file, "r");
 
-	while (($data = fgetcsv($file_open, 1000, ",")) !== FALSE) {
+	while (($data = fgetcsv($file_open, 10000, ",")) !== FALSE) {
 		$row++;
 		$num = count($data);
 
@@ -26,14 +28,13 @@ if (isset($_POST["Import"])) {
 		// Data arrenge in to arry and pass to the database
 			$dataincsv['organization']= $data[0];
 			$dataincsv['Contact_person_Name']= $data[1];
-			// $dataincsv['Email_Address']= $data[2];
+			$dataincsvnewmail['Email_Address']= $data[2];
 			$dataincsv['Address']= $data[3];
-			// $dataincsv['pipeline']= $data[4];
+			$dataincsvnew['Phone_No']= $data[4];
 			$dataincsv['prospected_closing_date']= $data[5];
 			$dataincsv['expected_closing_date']= $data[6];
-			$dataincsv['project_name']= $data[7];
-			$dataincsv['status_id']= $data[8];
-			$dataincsv['deal_comment']= $data[9];
+			$dataincsv['status_id']= $data[7];
+			$dataincsv['deal_comment']= $data[8];
 
 			$postid = create('deals', $dataincsv);
 			$dataincsvnew['deal_id']= $postid;

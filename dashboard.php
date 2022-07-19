@@ -70,7 +70,7 @@ $stages = selectAll('stages');
                                         </div>
                                         <div class="model-item text-muted">
                                             <p class="">Value</p>
-                                            <input class="input-field" type="text" name="value" id="Value_No" style="width: 125px;">
+                                            <input class="input-field" type="text" name="value" id="Value_No" style="width: 125px;" value="0.00">
                                             <select class="input-field" name="currency" id="" style="width: 120px; height: 27px; padding: 0px;">
                                                 <?php foreach ($currencies as $key => $currency) { ?>
                                                     <option class="" value="<?php echo $currency['curr_id'] ?>">
@@ -80,7 +80,7 @@ $stages = selectAll('stages');
                                                 }
                                                 ?>
                                             </select>
-                                            <label id="Value_error" style="font-size: 12px; color: red"></label>
+                                            <!-- <label id="Value_error" style="font-size: 12px; color: red"></label> -->
                                         </div>
                                         <div class="model-item text-muted">
                                             <p class="">Pipeline</p>

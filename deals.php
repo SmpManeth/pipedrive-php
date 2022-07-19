@@ -5,6 +5,7 @@ include($ROOT_PATH . "/app/controllers/deals.php");
 include($ROOT_PATH . "/app/controllers/dealsDetails.php");
 include($ROOT_PATH . "/app/controllers/dealsTable.php");
 include($ROOT_PATH . "/app/controllers/import.php");
+
 $deals = selectAll('deals');
 $stages = selectAll('stages');
 $currencies = selectAll('currency');
@@ -12,7 +13,9 @@ $currencies = selectAll('currency');
 $projectName = "";
 $projectManagement = new ProjectManagement();
 $stages = selectAll('stages');
-
+if (empty($_SESSION['id'])){
+	header('location: ' . $BASE_URL . 'login.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -70,7 +73,7 @@ $stages = selectAll('stages');
                                         </div>
                                         <div class="model-item text-muted">
                                             <p class="">Value</p>
-                                            <input class="input-field" type="text" name="value" id="Value_No" style="width: 125px;">
+                                            <input class="input-field" type="text" name="value" id="Value_No" style="width: 125px;" value="0.00" >
                                             <select class="input-field" name="currency" id="" style="width: 120px; height: 27px; padding: 0px;">
                                                 <?php foreach ($currencies as $key => $currency) { ?>
                                                     <option class="" value="<?php echo $currency['curr_id'] ?>">
@@ -129,7 +132,6 @@ $stages = selectAll('stages');
                                         <div class="model-item text-muted">
                                             <p class="">Email Address</p>
                                             <input class="input-field" name="Email_Address" id="Email_Address" type="text" style="width: 275px;">
-                                            <label id="Email_Address_error" style="font-size: 12px; color: red"></label>
                                             <br>
                                             <div class="input_wrap" style="margin-top:6px;"></div>
                                             <a class="add_f_button text-decoration-none  h6"> + Add Email </a>

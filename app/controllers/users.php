@@ -17,9 +17,6 @@ $table = 'users';
 
 
 
-
-
-
 function loginUser($user)
 {
 
